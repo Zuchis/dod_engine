@@ -74,6 +74,9 @@ int main()
         
 
         program.use();
+        Matrix4 translation = math::translate(Vector3(0.0f,0.0f,engine::cameraDistance * -1));
+        Matrix4 rotation    = rotationQuaternion.toMatrix();
+        camera.setViewMatrix(translation * rotation);
         program.setUniform("Matrix", modelMatrix.getData());
 
         //glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
