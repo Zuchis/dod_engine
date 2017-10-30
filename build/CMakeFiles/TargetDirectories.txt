@@ -1,3 +1,0 @@
-/home/zuchis/dod_engine/build/CMakeFiles/rebuild_cache.dir
-/home/zuchis/dod_engine/build/CMakeFiles/dod_engine.dir
-/home/zuchis/dod_engine/build/CMakeFiles/edit_cache.dir
