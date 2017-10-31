@@ -23,7 +23,9 @@ int main()
 
     math::Quaternion rotationQuaternion(1.0f,0.0f,0.0f,0.0f);
 
-    sf::RenderWindow window(sf::VideoMode(width, height), "Sick Engine M8");
+    sf::Window window(sf::VideoMode(width, height), "Sick Engine M8", sf::Style::Default, sf::ContextSettings(0, 0, 0, 3, 3));
+
+    glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 
     engine_init();
 
@@ -56,7 +58,9 @@ int main()
     engine::Mesh cube(tamSquare);
     cube.create();
 
-    while (window.isOpen())
+    bool running = true;
+
+    while (running)
     {
         // Treat the events 
 
@@ -64,7 +68,7 @@ int main()
         while (window.pollEvent(event))
         {
             if (event.type == sf::Event::Closed)
-                window.close();
+                running = false;
             else if (event.type == sf::Event::Resized) {
                 glViewport(0,0, event.size.width, event.size.height);
             }
@@ -79,7 +83,9 @@ int main()
         camera.setViewMatrix(translation * rotation);
         program.setUniform("Matrix", modelMatrix.getData());
 
-        //glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+        glClear(GL_COLOR_BUFFER_BIT);
 
         cube.draw();
 
