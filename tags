@@ -1,0 +1,1476 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Angle0	8-SceneManager.cpp	/^float Angle0 = 0.0f, Angle1 = -45.0f, Angle2 = -135.0f, Angle3 = 90.0f;$/;"	v
+Angle1	8-SceneManager.cpp	/^float Angle0 = 0.0f, Angle1 = -45.0f, Angle2 = -135.0f, Angle3 = 90.0f;$/;"	v
+Angle2	8-SceneManager.cpp	/^float Angle0 = 0.0f, Angle1 = -45.0f, Angle2 = -135.0f, Angle3 = 90.0f;$/;"	v
+Angle3	8-SceneManager.cpp	/^float Angle0 = 0.0f, Angle1 = -45.0f, Angle2 = -135.0f, Angle3 = 90.0f;$/;"	v
+ArcballCamera	camera.h	/^        ArcballCamera(GLuint _UBO_BP)$/;"	f	class:ArcballCamera	access:public	signature:(GLuint _UBO_BP)
+ArcballCamera	camera.h	/^class ArcballCamera : public ICamera {$/;"	c	inherits:ICamera
+ArcballCamera::ArcballCamera	camera.h	/^        ArcballCamera(GLuint _UBO_BP)$/;"	f	class:ArcballCamera	access:public	signature:(GLuint _UBO_BP)
+ArcballCamera::setProjectionMatrix	camera.h	/^        virtual void setProjectionMatrix(Matrix4 projectionMatrix) {$/;"	f	class:ArcballCamera	access:public	signature:(Matrix4 projectionMatrix)
+ArcballCamera::setViewMatrix	camera.h	/^        virtual void setViewMatrix(Matrix4 viewMatrix) {$/;"	f	class:ArcballCamera	access:public	signature:(Matrix4 viewMatrix)
+BACKWARD	camera.h	/^    BACKWARD,$/;"	e	enum:Movement
+CAMERA_H	camera.h	2;"	d
+CAPTION	5-OBJ_loader.cpp	37;"	d	file:
+CAPTION	8-SceneManager.cpp	15;"	d	file:
+CAPTION	applications/3dtangram.cpp	4;"	d	file:
+CAPTION	applications/hello3dWorld.cpp	36;"	d	file:
+CAPTION	applications/meshLoader.cpp	7;"	d	file:
+CAPTION	applications/objectRotation.cpp	11;"	d	file:
+CAPTION	applications/sceneGraphTangram.cpp	7;"	d	file:
+CAPTION	applications/tangram.cpp	3;"	d	file:
+CC	Makefile	/^CC=g++$/;"	m
+CFLAGS	Makefile	/^CFLAGS=-c -Wall -g -std=c++0x -lGL -lGLU -lglut -lGLEW #-lsfml-window -lsfml-system$/;"	m
+CFLAGSL	Makefile	/^CFLAGSL=-std=c++0x -lGL -lGLU -lglut -lGLEW #-lsfml-window -lsfml-system$/;"	m
+COLORS	applications/hello3dWorld.cpp	43;"	d	file:
+COLORS	shaderprogram.h	15;"	d
+CONVERT_2D_TO_3D_MATRIX	matrixfactory.h	/^    Matrix3 CONVERT_2D_TO_3D_MATRIX(Matrix2 m){$/;"	f	namespace:math	signature:(Matrix2 m)
+CONVERT_3D_TO_2D_MATRIX	matrixfactory.h	/^    Matrix2 CONVERT_3D_TO_2D_MATRIX(Matrix3 m){$/;"	f	namespace:math	signature:(Matrix3 m)
+CONVERT_3D_TO_4D_MATRIX	matrixfactory.h	/^    Matrix4 CONVERT_3D_TO_4D_MATRIX(Matrix3 m){$/;"	f	namespace:math	signature:(Matrix3 m)
+CONVERT_4D_TO_3D_MATRIX	matrixfactory.h	/^    Matrix3 CONVERT_4D_TO_3D_MATRIX(Matrix4 m){$/;"	f	namespace:math	signature:(Matrix4 m)
+Camera	camera.h	/^        Camera(Vector3 _position = Vector3(0.0f,0.0f,6.0f), Vector3 _up = Vector3(0.0f,1.0f,0.0f), GLfloat _yaw = (GLfloat)YAW, GLfloat _pitch = (GLfloat)PITCH) $/;"	f	class:Camera	access:public	signature:(Vector3 _position = Vector3(0.0f,0.0f,6.0f), Vector3 _up = Vector3(0.0f,1.0f,0.0f), GLfloat _yaw = (GLfloat)YAW, GLfloat _pitch = (GLfloat)PITCH)
+Camera	camera.h	/^class Camera {$/;"	c
+Camera::Camera	camera.h	/^        Camera(Vector3 _position = Vector3(0.0f,0.0f,6.0f), Vector3 _up = Vector3(0.0f,1.0f,0.0f), GLfloat _yaw = (GLfloat)YAW, GLfloat _pitch = (GLfloat)PITCH) $/;"	f	class:Camera	access:public	signature:(Vector3 _position = Vector3(0.0f,0.0f,6.0f), Vector3 _up = Vector3(0.0f,1.0f,0.0f), GLfloat _yaw = (GLfloat)YAW, GLfloat _pitch = (GLfloat)PITCH)
+Camera::computeKeyboardInputs	camera.h	/^        void computeKeyboardInputs(Movement direction, GLfloat deltaTime)$/;"	f	class:Camera	access:public	signature:(Movement direction, GLfloat deltaTime)
+Camera::computeMouseMovement	camera.h	/^        void computeMouseMovement(GLfloat xoffset, GLfloat yoffset){$/;"	f	class:Camera	access:public	signature:(GLfloat xoffset, GLfloat yoffset)
+Camera::computeMouseScroll	camera.h	/^        void computeMouseScroll(GLfloat yoffset)$/;"	f	class:Camera	access:public	signature:(GLfloat yoffset)
+Camera::front	camera.h	/^        Vector3 front;$/;"	m	class:Camera	access:public
+Camera::getViewMatrix	camera.h	/^        Matrix4 getViewMatrix(){$/;"	f	class:Camera	access:public	signature:()
+Camera::lookAt	camera.h	/^        Matrix4 lookAt(Vector3 eye, Vector3 center, Vector3 up){$/;"	f	class:Camera	access:public	signature:(Vector3 eye, Vector3 center, Vector3 up)
+Camera::mouseSensitivity	camera.h	/^        GLfloat mouseSensitivity;$/;"	m	class:Camera	access:public
+Camera::movementSpeed	camera.h	/^        GLfloat movementSpeed;$/;"	m	class:Camera	access:public
+Camera::pitch	camera.h	/^        GLfloat pitch;$/;"	m	class:Camera	access:public
+Camera::position	camera.h	/^        Vector3 position;$/;"	m	class:Camera	access:public
+Camera::right	camera.h	/^        Vector3 right;$/;"	m	class:Camera	access:public
+Camera::up	camera.h	/^        Vector3 up;$/;"	m	class:Camera	access:public
+Camera::updateCameraVectors	camera.h	/^        void updateCameraVectors(){$/;"	f	class:Camera	access:private	signature:()
+Camera::worldUp	camera.h	/^        Vector3 worldUp;$/;"	m	class:Camera	access:public
+Camera::yaw	camera.h	/^        GLfloat yaw;$/;"	m	class:Camera	access:public
+Camera::zoom	camera.h	/^        GLfloat zoom;$/;"	m	class:Camera	access:public
+Create2DIdentity	matrixfactory.h	/^    Matrix2 Create2DIdentity(){$/;"	f	namespace:math	signature:()
+Create2DRotation	matrixfactory.h	/^    Matrix2 Create2DRotation(float angle){$/;"	f	namespace:math	signature:(float angle)
+Create2DScalingMatrix	matrixfactory.h	/^    Matrix2 Create2DScalingMatrix(float XFactor, float YFactor){$/;"	f	namespace:math	signature:(float XFactor, float YFactor)
+Create3DDualMatrix	matrixfactory.h	/^    Matrix3 Create3DDualMatrix(Vector3 a){$/;"	f	namespace:math	signature:(Vector3 a)
+Create3DIdentity	matrixfactory.h	/^    Matrix3 Create3DIdentity(){$/;"	f	namespace:math	signature:()
+Create3DScalingMatrix	matrixfactory.h	/^    Matrix3 Create3DScalingMatrix(float XFactor, float YFactor, float ZFactor){$/;"	f	namespace:math	signature:(float XFactor, float YFactor, float ZFactor)
+Create3DTranslation	matrixfactory.h	/^    Matrix3 Create3DTranslation(float XTranslation, float YTranslation){$/;"	f	namespace:math	signature:(float XTranslation, float YTranslation)
+Create3DXRotation	matrixfactory.h	/^    Matrix3 Create3DXRotation(float angle){$/;"	f	namespace:math	signature:(float angle)
+Create3DYRotation	matrixfactory.h	/^    Matrix3 Create3DYRotation(float angle){$/;"	f	namespace:math	signature:(float angle)
+Create3DZRotation	matrixfactory.h	/^    Matrix3 Create3DZRotation(float angle){$/;"	f	namespace:math	signature:(float angle)
+Create4DIdentity	matrixfactory.h	/^    Matrix4 Create4DIdentity(){$/;"	f	namespace:math	signature:()
+Create4DTranslation	matrixfactory.h	/^    Matrix4 Create4DTranslation(float XTranslation, float YTranslation, float ZTranslation){$/;"	f	namespace:math	signature:(float XTranslation, float YTranslation, float ZTranslation)
+CreateAxisRotation	matrixfactory.h	/^    Matrix3 CreateAxisRotation(float angle,Vector3 axis){$/;"	f	namespace:math	signature:(float angle,Vector3 axis)
+CreateTransformMatrix	matrixfactory.h	/^    Matrix4 CreateTransformMatrix(float xTranslation,float yTranslation,float zTranslation,float angle, float scalingFactor){$/;"	f	namespace:math	signature:(float xTranslation,float yTranslation,float zTranslation,float angle, float scalingFactor)
+DataType	mesh.h	/^    enum DataType{$/;"	g	namespace:engine
+Distance	8-SceneManager.cpp	/^float Distance = 20.0f;$/;"	v
+DistanceStep	8-SceneManager.cpp	/^const float DistanceStep = 1.5f;$/;"	v
+ENGINE_H	engine.h	2;"	d
+EXECUTABLE	Makefile	/^EXECUTABLE=magic$/;"	m
+FORWARD	camera.h	/^    FORWARD,$/;"	e	enum:Movement
+FRAGMENT	shaderprogram.h	/^        FRAGMENT = GL_FRAGMENT_SHADER$/;"	e	enum:ShaderType::Type
+FragmentShader	applications/hello3dWorld.cpp	/^const GLchar* FragmentShader =$/;"	v
+FragmentShaderId	5-OBJ_loader.cpp	/^GLuint VertexShaderId, FragmentShaderId, ProgramId;$/;"	v
+FragmentShaderId	applications/hello3dWorld.cpp	/^GLuint VertexShaderId, FragmentShaderId, ProgramId;$/;"	v
+FrameCount	5-OBJ_loader.cpp	/^unsigned int FrameCount = 0;$/;"	v
+FrameCount	applications/3dtangram.cpp	/^unsigned int FrameCount = 0;$/;"	v
+FrameCount	applications/hello3dWorld.cpp	/^unsigned int FrameCount = 0;$/;"	v
+FrameCount	applications/meshLoader.cpp	/^unsigned int FrameCount = 0;$/;"	v
+FrameCount	applications/objectRotation.cpp	/^unsigned int FrameCount = 0;$/;"	v
+FrameCount	applications/sceneGraphTangram.cpp	/^unsigned int FrameCount = 0;$/;"	v
+FrameCount	applications/tangram.cpp	/^unsigned int FrameCount = 0;$/;"	v
+Front	8-SceneManager.cpp	/^vec3 Front;$/;"	v
+G_rotX	applications/objectRotation.cpp	/^Matrix4 G_rotX = math::CONVERT_3D_TO_4D_MATRIX(math::CreateAxisRotation(0.0f,Vector3(1.0f,0.0f,0.0f)));$/;"	v
+G_rotY	applications/objectRotation.cpp	/^Matrix4 G_rotY = math::CONVERT_3D_TO_4D_MATRIX(math::CreateAxisRotation(0.0f,Vector3(0.0f,1.0f,0.0f)));$/;"	v
+G_rotation	applications/objectRotation.cpp	/^Matrix4 G_rotation = math::CONVERT_3D_TO_4D_MATRIX(math::Create3DZRotation(0.0f));$/;"	v
+I	5-OBJ_loader.cpp	/^const Matrix I = {$/;"	v
+I	applications/hello3dWorld.cpp	/^const Matrix I = {$/;"	v
+ICamera	camera.h	/^        ICamera(GLuint _UBO_BP) {$/;"	f	class:ICamera	access:public	signature:(GLuint _UBO_BP)
+ICamera	camera.h	/^class ICamera {$/;"	c
+ICamera::ICamera	camera.h	/^        ICamera(GLuint _UBO_BP) {$/;"	f	class:ICamera	access:public	signature:(GLuint _UBO_BP)
+ICamera::UBO_BP	camera.h	/^        GLuint UBO_BP;$/;"	m	class:ICamera	access:protected
+ICamera::matricesVbo	camera.h	/^        GLuint matricesVbo;$/;"	m	class:ICamera	access:protected
+ICamera::setProjectionMatrix	camera.h	/^        virtual void setProjectionMatrix(Matrix4 projectionMatrix) = 0;$/;"	p	class:ICamera	access:public	signature:(Matrix4 projectionMatrix)
+ICamera::setViewMatrix	camera.h	/^        virtual void setViewMatrix(Matrix4 viewMatrix) = 0;$/;"	p	class:ICamera	access:public	signature:(Matrix4 viewMatrix)
+IUpdatable	managers.h	/^            IUpdatable() {}$/;"	f	class:engine::IUpdatable	access:public	signature:()
+IUpdatable	managers.h	/^    class IUpdatable {$/;"	c	namespace:engine
+KeyBuffer	managers.h	/^            KeyBuffer() {$/;"	f	class:engine::KeyBuffer	access:protected	signature:()
+KeyBuffer	managers.h	/^    class KeyBuffer {$/;"	c	namespace:engine
+LDFLAGS	Makefile	/^LDFLAGS=#-lGL -lGLU -lglut$/;"	m
+LEFT	camera.h	/^    LEFT,$/;"	e	enum:Movement
+LastMousePositionX	8-SceneManager.cpp	/^int LastMousePositionX, LastMousePositionY;$/;"	v
+LastMousePositionY	8-SceneManager.cpp	/^int LastMousePositionX, LastMousePositionY;$/;"	v
+M0	applications/3dtangram.cpp	/^  float* M0 = _M0.getData();$/;"	v
+M0	applications/meshLoader.cpp	/^  float* M0 = _M0.getData();$/;"	v
+M0	applications/tangram.cpp	/^ const float* M0 = _M0.getData();$/;"	v
+M1	applications/3dtangram.cpp	/^  float* M1 = _M1.getData();$/;"	v
+M1	applications/meshLoader.cpp	/^  float* M1 = _M1.getData();$/;"	v
+M1	applications/objectRotation.cpp	/^  float* M1 = _M1.getData();$/;"	v
+M1	applications/tangram.cpp	/^ const float* M1 = _M1.getData();$/;"	v
+M2	applications/3dtangram.cpp	/^  float* M2 = _M2.getData();$/;"	v
+M2	applications/meshLoader.cpp	/^  float* M2 = _M2.getData();$/;"	v
+M2	applications/tangram.cpp	/^ const float* M2 = _M2.getData();$/;"	v
+M3	applications/3dtangram.cpp	/^  float* M3 = _M3.getData();$/;"	v
+M3	applications/meshLoader.cpp	/^  float* M3 = _M3.getData();$/;"	v
+M3	applications/tangram.cpp	/^ const float* M3 = _M3.getData();$/;"	v
+M4	applications/3dtangram.cpp	/^  float* M4 = _M4.getData();$/;"	v
+M4	applications/meshLoader.cpp	/^  float* M4 = _M4.getData();$/;"	v
+M4	applications/tangram.cpp	/^ const float* M4 = _M4.getData();$/;"	v
+M5	applications/3dtangram.cpp	/^  float* M5 = _M5.getData();$/;"	v
+M5	applications/meshLoader.cpp	/^  float* M5 = _M5.getData();$/;"	v
+M5	applications/tangram.cpp	/^ const float* M5 = _M5.getData();$/;"	v
+M6	applications/3dtangram.cpp	/^  float* M6 = _M6.getData();$/;"	v
+M6	applications/meshLoader.cpp	/^  float* M6 = _M6.getData();$/;"	v
+M6	applications/tangram.cpp	/^ const float* M6 = _M6.getData();$/;"	v
+MANAGERS_H	managers.h	2;"	d
+MATHF_H	mathf.h	2;"	d
+MATRIXFACTORY_H	matrixfactory.h	2;"	d
+MATRIX_H	matrix.h	2;"	d
+MESH_H	mesh.h	2;"	d
+MOUSE_SCROLL_DOWN	camera.h	/^    MOUSE_SCROLL_DOWN = 4$/;"	e	enum:WheelMovement
+MOUSE_SCROLL_UP	camera.h	/^    MOUSE_SCROLL_UP = 3,$/;"	e	enum:WheelMovement
+Map	managers.h	/^            typedef std::unordered_map<std::string,Mesh*> Map;$/;"	t	class:engine::MeshManager	access:private
+Map	managers.h	/^            typedef std::unordered_map<std::string,SceneGraph*> Map;$/;"	t	class:engine::SceneGraphManager	access:private
+Map	managers.h	/^            typedef std::unordered_map<std::string,ShaderProgram*> Map;$/;"	t	class:engine::ShaderProgramManager	access:private
+Matrix	5-OBJ_loader.cpp	/^typedef GLfloat Matrix[16];$/;"	t	file:
+Matrix	applications/hello3dWorld.cpp	/^typedef GLfloat Matrix[16];$/;"	t	file:
+Matrix	applications/objectRotation.cpp	/^typedef GLfloat Matrix[16];$/;"	t	file:
+Matrix2	matrix.h	/^            Matrix2(){$/;"	f	class:math::Matrix2	access:public	signature:()
+Matrix2	matrix.h	/^            Matrix2(const Matrix2 &m){$/;"	f	class:math::Matrix2	access:public	signature:(const Matrix2 &m)
+Matrix2	matrix.h	/^            Matrix2(float a00, float a01,$/;"	f	class:math::Matrix2	access:public	signature:(float a00, float a01, float a10, float a11)
+Matrix2	matrix.h	/^            Matrix2(float values[4]){$/;"	f	class:math::Matrix2	access:public	signature:(float values[4])
+Matrix2	matrix.h	/^            Matrix2(std::vector<float> values){$/;"	f	class:math::Matrix2	access:public	signature:(std::vector<float> values)
+Matrix2	matrix.h	/^    class Matrix2{$/;"	c	namespace:math
+Matrix3	matrix.h	/^            Matrix3(){$/;"	f	class:math::Matrix3	access:public	signature:()
+Matrix3	matrix.h	/^            Matrix3(const Matrix3 &m){$/;"	f	class:math::Matrix3	access:public	signature:(const Matrix3 &m)
+Matrix3	matrix.h	/^            Matrix3(float a00, float a01, float a02,$/;"	f	class:math::Matrix3	access:public	signature:(float a00, float a01, float a02, float a10, float a11, float a12, float a20, float a21, float a22)
+Matrix3	matrix.h	/^            Matrix3(float values[9]){$/;"	f	class:math::Matrix3	access:public	signature:(float values[9])
+Matrix3	matrix.h	/^            Matrix3(std::vector<float> values){$/;"	f	class:math::Matrix3	access:public	signature:(std::vector<float> values)
+Matrix3	matrix.h	/^    class Matrix3{$/;"	c	namespace:math
+Matrix4	matrix.h	/^            Matrix4(){$/;"	f	class:math::Matrix4	access:public	signature:()
+Matrix4	matrix.h	/^            Matrix4(const Matrix4 &m){$/;"	f	class:math::Matrix4	access:public	signature:(const Matrix4 &m)
+Matrix4	matrix.h	/^            Matrix4(float a00, float a01, float a02, float a03,$/;"	f	class:math::Matrix4	access:public	signature:(float a00, float a01, float a02, float a03, float a10, float a11, float a12, float a13, float a20, float a21, float a22, float a23, float a30, float a31, float a32, float a33)
+Matrix4	matrix.h	/^            Matrix4(float values[16]){$/;"	f	class:math::Matrix4	access:public	signature:(float values[16])
+Matrix4	matrix.h	/^            Matrix4(std::vector<float> values){$/;"	f	class:math::Matrix4	access:public	signature:(std::vector<float> values)
+Matrix4	matrix.h	/^    class Matrix4{$/;"	c	namespace:math
+Mesh	mesh.h	/^            Mesh(std::string& filename) {$/;"	f	class:engine::Mesh	access:public	signature:(std::string& filename)
+Mesh	mesh.h	/^    class Mesh {$/;"	c	namespace:engine
+MeshManager	managers.h	/^            MeshManager() {}$/;"	f	class:engine::MeshManager	access:protected	signature:()
+MeshManager	managers.h	/^    class MeshManager {$/;"	c	namespace:engine
+ModelMatrix	5-OBJ_loader.cpp	/^const Matrix ModelMatrix = {$/;"	v
+ModelMatrix	applications/hello3dWorld.cpp	/^const Matrix ModelMatrix = {$/;"	v
+ModelMatrix	applications/objectRotation.cpp	/^GLfloat ModelMatrix[] = {$/;"	v
+ModelMatrixStack	8-SceneManager.cpp	/^MatrixStack ModelMatrixStack;$/;"	v
+ModelMatrix_UId	5-OBJ_loader.cpp	/^GLint ModelMatrix_UId, ViewMatrix_UId, ProjectionMatrix_UId;$/;"	v
+Movement	camera.h	/^enum Movement {$/;"	g
+NORMALS	5-OBJ_loader.cpp	45;"	d	file:
+NORMALS	mesh.h	/^        NORMALS = 2$/;"	e	enum:engine::DataType
+Normal	5-OBJ_loader.cpp	/^} Normal;$/;"	t	typeref:struct:__anon7	file:
+Normals	5-OBJ_loader.cpp	/^std::vector <Normal> Normals, normalData;$/;"	v
+NormalsLoaded	5-OBJ_loader.cpp	/^bool TexcoordsLoaded, NormalsLoaded;$/;"	v
+OBJECTLOADER_H	objectloader.h	2;"	d
+OBJECTS	Makefile	/^OBJECTS=$(SOURCES:.c=.o)$/;"	m
+ObjectLoader	objectloader.h	/^           ObjectLoader() {}$/;"	f	class:engine::ObjectLoader	access:public	signature:()
+ObjectLoader	objectloader.h	/^    class ObjectLoader {$/;"	c	namespace:engine
+Ortho	matrixfactory.h	/^    Matrix4 Ortho(float left, float right, float bottom, float top, float near, float far){$/;"	f	namespace:math	signature:(float left, float right, float bottom, float top, float near, float far)
+PITCH	camera.h	17;"	d
+Perspective	matrixfactory.h	/^    Matrix4 Perspective(float fovy, float aspect, float zNear, float zFar) {$/;"	f	namespace:math	signature:(float fovy, float aspect, float zNear, float zFar)
+ProgramId	5-OBJ_loader.cpp	/^GLuint VertexShaderId, FragmentShaderId, ProgramId;$/;"	v
+ProgramId	applications/hello3dWorld.cpp	/^GLuint VertexShaderId, FragmentShaderId, ProgramId;$/;"	v
+ProjectionMatrix1	5-OBJ_loader.cpp	/^const Matrix ProjectionMatrix1 = {$/;"	v
+ProjectionMatrix1	applications/3dtangram.cpp	/^GLfloat ProjectionMatrix1[] = {$/;"	v
+ProjectionMatrix1	applications/hello3dWorld.cpp	/^const Matrix ProjectionMatrix1 = {$/;"	v
+ProjectionMatrix1	applications/meshLoader.cpp	/^GLfloat ProjectionMatrix1[] = {$/;"	v
+ProjectionMatrix1	applications/objectRotation.cpp	/^GLfloat ProjectionMatrix1[] = {$/;"	v
+ProjectionMatrix2	5-OBJ_loader.cpp	/^const Matrix ProjectionMatrix2 = {$/;"	v
+ProjectionMatrix2	applications/3dtangram.cpp	/^GLfloat ProjectionMatrix2[] = {$/;"	v
+ProjectionMatrix2	applications/hello3dWorld.cpp	/^const Matrix ProjectionMatrix2 = {$/;"	v
+ProjectionMatrix2	applications/meshLoader.cpp	/^GLfloat ProjectionMatrix2[] = {$/;"	v
+ProjectionMatrix2	applications/objectRotation.cpp	/^GLfloat ProjectionMatrix2[] = {$/;"	v
+ProjectionMatrix_UId	5-OBJ_loader.cpp	/^GLint ModelMatrix_UId, ViewMatrix_UId, ProjectionMatrix_UId;$/;"	v
+QUATERNIONS_H	quaternion.h	2;"	d
+Quaternion	quaternion.h	/^            Quaternion(float _t = 0.0f, float _x = 0.0f, float _y = 0.0f, float _z = 0.0f){$/;"	f	class:math::Quaternion	access:public	signature:(float _t = 0.0f, float _x = 0.0f, float _y = 0.0f, float _z = 0.0f)
+Quaternion	quaternion.h	/^            Quaternion(float theta, Vector4 axis){$/;"	f	class:math::Quaternion	access:public	signature:(float theta, Vector4 axis)
+Quaternion	quaternion.h	/^    class Quaternion{$/;"	c	namespace:math
+RGBA	applications/hello3dWorld.cpp	/^	GLfloat RGBA[4];$/;"	m	struct:__anon1	file:	access:public
+RGBA	applications/objectRotation.cpp	/^	GLfloat RGBA[4];$/;"	m	struct:__anon2	file:	access:public
+RIGHT	camera.h	/^    RIGHT$/;"	e	enum:Movement
+RenderException	scene.h	/^            RenderException( const std::string & msg ) :$/;"	f	class:engine::RenderException	access:public	signature:( const std::string & msg )
+RenderException	scene.h	/^    class RenderException : public std::runtime_error {$/;"	c	namespace:engine	inherits:std::runtime_error
+RotationAngleX	8-SceneManager.cpp	/^float RotationAngleX = 0.0f;$/;"	v
+RotationAngleY	8-SceneManager.cpp	/^float RotationAngleY = 0.0f;$/;"	v
+SCENE_H	scene.h	2;"	d
+SENSITIVITY	camera.h	19;"	d
+SHADERPROGRAM_H	shaderprogram.h	2;"	d
+SOURCES	Makefile	/^SOURCES= applications\/sceneGraphTangram.cpp$/;"	m
+SPEED	camera.h	18;"	d
+SceneGraph	scene.h	/^            SceneGraph() {$/;"	f	class:engine::SceneGraph	access:public	signature:()
+SceneGraph	scene.h	/^    class SceneGraph {$/;"	c	namespace:engine
+SceneGraphException	scene.h	/^            SceneGraphException( const std::string & msg ) :$/;"	f	class:engine::SceneGraphException	access:public	signature:( const std::string & msg )
+SceneGraphException	scene.h	/^    class SceneGraphException : public std::runtime_error {$/;"	c	namespace:engine	inherits:std::runtime_error
+SceneGraphManager	managers.h	/^            SceneGraphManager() {}$/;"	f	class:engine::SceneGraphManager	access:protected	signature:()
+SceneGraphManager	managers.h	/^    class SceneGraphManager {$/;"	c	namespace:engine
+SceneNode	scene.h	/^            SceneNode(std::string _tag = "") {$/;"	f	class:engine::SceneNode	access:public	signature:(std::string _tag = Ó)
+SceneNode	scene.h	/^    class SceneNode {$/;"	c	namespace:engine
+ShaderProgram	shaderprogram.h	/^        ShaderProgram(){$/;"	f	class:ShaderProgram	access:public	signature:()
+ShaderProgram	shaderprogram.h	/^class ShaderProgram {$/;"	c
+ShaderProgram::ShaderProgram	shaderprogram.h	/^        ShaderProgram(){$/;"	f	class:ShaderProgram	access:public	signature:()
+ShaderProgram::addUniformBlock	shaderprogram.h	/^        void addUniformBlock(const char* name, GLuint location){$/;"	f	class:ShaderProgram	access:public	signature:(const char* name, GLuint location)
+ShaderProgram::bindAttribLocation	shaderprogram.h	/^        void bindAttribLocation(GLuint location, const char* name){$/;"	f	class:ShaderProgram	access:public	signature:(GLuint location, const char* name)
+ShaderProgram::bindFragDataLocation	shaderprogram.h	/^        void bindFragDataLocation(GLuint location, const char* name){$/;"	f	class:ShaderProgram	access:public	signature:(GLuint location, const char* name)
+ShaderProgram::compileShaderFromFile	shaderprogram.h	/^        void compileShaderFromFile(const char* fileName, ShaderType::Type type)$/;"	f	class:ShaderProgram	access:public	signature:(const char* fileName, ShaderType::Type type)
+ShaderProgram::getProgramID	shaderprogram.h	/^        int getProgramID(){$/;"	f	class:ShaderProgram	access:public	signature:()
+ShaderProgram::getUniformLocation	shaderprogram.h	/^        GLint getUniformLocation(const char* name){$/;"	f	class:ShaderProgram	access:private	signature:(const char* name)
+ShaderProgram::isLinked	shaderprogram.h	/^        bool isLinked(){$/;"	f	class:ShaderProgram	access:public	signature:()
+ShaderProgram::link	shaderprogram.h	/^        void link() throw(ShaderProgramException){$/;"	f	class:ShaderProgram	access:public	signature:()
+ShaderProgram::linked	shaderprogram.h	/^        bool linked;$/;"	m	class:ShaderProgram	access:private
+ShaderProgram::logString	shaderprogram.h	/^        std::string logString;$/;"	m	class:ShaderProgram	access:private
+ShaderProgram::programID	shaderprogram.h	/^        GLuint programID;$/;"	m	class:ShaderProgram	access:private
+ShaderProgram::setUniform	shaderprogram.h	/^        void setUniform(const char* name, GLfloat* m){$/;"	f	class:ShaderProgram	access:public	signature:(const char* name, GLfloat* m)
+ShaderProgram::setUniform	shaderprogram.h	/^        void setUniform(const char* name, float x, float y, float z, float w){$/;"	f	class:ShaderProgram	access:public	signature:(const char* name, float x, float y, float z, float w)
+ShaderProgram::uniformIDs	shaderprogram.h	/^        std::unordered_map<std::string,GLint> uniformIDs;$/;"	m	class:ShaderProgram	access:private
+ShaderProgram::use	shaderprogram.h	/^        void use() throw(ShaderProgramException){$/;"	f	class:ShaderProgram	access:public	signature:()
+ShaderProgram::~ShaderProgram	shaderprogram.h	/^        ~ShaderProgram(){$/;"	f	class:ShaderProgram	access:public	signature:()
+ShaderProgramException	shaderprogram.h	/^        ShaderProgramException( const std::string & msg ) :$/;"	f	class:ShaderProgramException	access:public	signature:( const std::string & msg )
+ShaderProgramException	shaderprogram.h	/^class ShaderProgramException : public std::runtime_error {$/;"	c	inherits:std::runtime_error
+ShaderProgramException::ShaderProgramException	shaderprogram.h	/^        ShaderProgramException( const std::string & msg ) :$/;"	f	class:ShaderProgramException	access:public	signature:( const std::string & msg )
+ShaderProgramManager	managers.h	/^            ShaderProgramManager() {}$/;"	f	class:engine::ShaderProgramManager	access:protected	signature:()
+ShaderProgramManager	managers.h	/^    class ShaderProgramManager {$/;"	c	namespace:engine
+ShaderType	shaderprogram.h	/^namespace ShaderType {$/;"	n
+ShaderType::FRAGMENT	shaderprogram.h	/^        FRAGMENT = GL_FRAGMENT_SHADER$/;"	e	enum:ShaderType::Type
+ShaderType::Type	shaderprogram.h	/^    enum Type{$/;"	g	namespace:ShaderType
+ShaderType::VERTEX	shaderprogram.h	/^        VERTEX = GL_VERTEX_SHADER,$/;"	e	enum:ShaderType::Type
+Simulation	managers.h	/^            Simulation() {}$/;"	f	class:engine::Simulation	access:protected	signature:()
+Simulation	managers.h	/^    class Simulation {$/;"	c	namespace:engine
+TEXCOORDS	5-OBJ_loader.cpp	44;"	d	file:
+TEXCOORDS	mesh.h	/^        TEXCOORDS = 1,$/;"	e	enum:engine::DataType
+Texcoord	5-OBJ_loader.cpp	/^} Texcoord;$/;"	t	typeref:struct:__anon6	file:
+Texcoords	5-OBJ_loader.cpp	/^std::vector <Texcoord> Texcoords, texcoordData;$/;"	v
+TexcoordsLoaded	5-OBJ_loader.cpp	/^bool TexcoordsLoaded, NormalsLoaded;$/;"	v
+Type	shaderprogram.h	/^    enum Type{$/;"	g	namespace:ShaderType
+UBO_BP	8-SceneManager.cpp	/^GLuint UBO_BP = 0;$/;"	v
+UBO_BP	applications/hello3dWorld.cpp	/^const GLuint UBO_BP = 0;$/;"	v
+UBO_BP	applications/sceneGraphTangram.cpp	/^GLuint UBO_BP = 0;$/;"	v
+UBO_BP	camera.h	/^        GLuint UBO_BP;$/;"	m	class:ICamera	access:protected
+UboId	applications/hello3dWorld.cpp	/^GLint UboId, UniformId;$/;"	v
+UniformId	applications/hello3dWorld.cpp	/^GLint UboId, UniformId;$/;"	v
+VECTOR_H	vector.h	2;"	d
+VERTEX	shaderprogram.h	/^        VERTEX = GL_VERTEX_SHADER,$/;"	e	enum:ShaderType::Type
+VERTICES	5-OBJ_loader.cpp	43;"	d	file:
+VERTICES	applications/hello3dWorld.cpp	42;"	d	file:
+VERTICES	mesh.h	/^        VERTICES = 0,$/;"	e	enum:engine::DataType
+VaoId	5-OBJ_loader.cpp	/^GLuint VaoId;$/;"	v
+VaoId	applications/3dtangram.cpp	/^GLuint VaoId[3], VboId[2];$/;"	v
+VaoId	applications/hello3dWorld.cpp	/^GLuint VaoId, VboId[2];$/;"	v
+VaoId	applications/meshLoader.cpp	/^GLuint VaoId[3], VboId[2];$/;"	v
+VaoId	applications/objectRotation.cpp	/^GLuint VaoId[3], VboId[2];$/;"	v
+VaoId	applications/tangram.cpp	/^GLuint VaoId[3], VboId[2];$/;"	v
+VboId	applications/3dtangram.cpp	/^GLuint VaoId[3], VboId[2];$/;"	v
+VboId	applications/hello3dWorld.cpp	/^GLuint VaoId, VboId[2];$/;"	v
+VboId	applications/meshLoader.cpp	/^GLuint VaoId[3], VboId[2];$/;"	v
+VboId	applications/objectRotation.cpp	/^GLuint VaoId[3], VboId[2];$/;"	v
+VboId	applications/tangram.cpp	/^GLuint VaoId[3], VboId[2];$/;"	v
+VboNormals	5-OBJ_loader.cpp	/^GLuint VboVertices, VboTexcoords, VboNormals;$/;"	v
+VboTexcoords	5-OBJ_loader.cpp	/^GLuint VboVertices, VboTexcoords, VboNormals;$/;"	v
+VboVertices	5-OBJ_loader.cpp	/^GLuint VboVertices, VboTexcoords, VboNormals;$/;"	v
+Vector2	vector.h	/^            Vector2(const Vector2 &v){$/;"	f	class:math::Vector2	access:public	signature:(const Vector2 &v)
+Vector2	vector.h	/^            Vector2(float x1 = 0.0f, float y1 = 0.0f){$/;"	f	class:math::Vector2	access:public	signature:(float x1 = 0.0f, float y1 = 0.0f)
+Vector2	vector.h	/^    class Vector2{$/;"	c	namespace:math
+Vector3	vector.h	/^            Vector3(const Vector3 &v){$/;"	f	class:math::Vector3	access:public	signature:(const Vector3 &v)
+Vector3	vector.h	/^            Vector3(float x1 = 0.0f, float y1 = 0.0f, float z1 = 0.0f){$/;"	f	class:math::Vector3	access:public	signature:(float x1 = 0.0f, float y1 = 0.0f, float z1 = 0.0f)
+Vector3	vector.h	/^    class Vector3{$/;"	c	namespace:math
+Vector4	vector.h	/^            Vector4(const Vector3 &v){$/;"	f	class:math::Vector4	access:public	signature:(const Vector3 &v)
+Vector4	vector.h	/^            Vector4(const Vector4 &v){$/;"	f	class:math::Vector4	access:public	signature:(const Vector4 &v)
+Vector4	vector.h	/^            Vector4(float x1 = 0.0f, float y1 = 0.0f, float z1 = 0.0f, float w1 = 0.0f){$/;"	f	class:math::Vector4	access:public	signature:(float x1 = 0.0f, float y1 = 0.0f, float z1 = 0.0f, float w1 = 0.0f)
+Vector4	vector.h	/^    class Vector4{$/;"	c	namespace:math
+Vertex	5-OBJ_loader.cpp	/^} Vertex;$/;"	t	typeref:struct:__anon5	file:
+Vertex	applications/hello3dWorld.cpp	/^} Vertex;$/;"	t	typeref:struct:__anon1	file:
+Vertex	applications/objectRotation.cpp	/^} Vertex;$/;"	t	typeref:struct:__anon2	file:
+VertexShader	applications/hello3dWorld.cpp	/^const GLchar* VertexShader =$/;"	v
+VertexShaderId	5-OBJ_loader.cpp	/^GLuint VertexShaderId, FragmentShaderId, ProgramId;$/;"	v
+VertexShaderId	applications/hello3dWorld.cpp	/^GLuint VertexShaderId, FragmentShaderId, ProgramId;$/;"	v
+Vertices	5-OBJ_loader.cpp	/^std::vector <Vertex> Vertices, vertexData;$/;"	v
+Vertices	applications/hello3dWorld.cpp	/^const Vertex Vertices[] = \/\/ no indices?$/;"	v
+Vertices	applications/objectRotation.cpp	/^const Vertex Vertices[] = \/\/ no indices?$/;"	v
+ViewMatrix1	5-OBJ_loader.cpp	/^const Matrix ViewMatrix1 = {$/;"	v
+ViewMatrix1	applications/3dtangram.cpp	/^GLfloat ViewMatrix1[] = {$/;"	v
+ViewMatrix1	applications/hello3dWorld.cpp	/^const Matrix ViewMatrix1 = {$/;"	v
+ViewMatrix1	applications/meshLoader.cpp	/^GLfloat ViewMatrix1[] = {$/;"	v
+ViewMatrix1	applications/objectRotation.cpp	/^GLfloat ViewMatrix1[] = {$/;"	v
+ViewMatrix2	5-OBJ_loader.cpp	/^const Matrix ViewMatrix2 = {$/;"	v
+ViewMatrix2	applications/3dtangram.cpp	/^GLfloat ViewMatrix2[] = {$/;"	v
+ViewMatrix2	applications/hello3dWorld.cpp	/^const Matrix ViewMatrix2 = {$/;"	v
+ViewMatrix2	applications/meshLoader.cpp	/^GLfloat ViewMatrix2[] = {$/;"	v
+ViewMatrix2	applications/objectRotation.cpp	/^GLfloat ViewMatrix2[] = {$/;"	v
+ViewMatrix_UId	5-OBJ_loader.cpp	/^GLint ModelMatrix_UId, ViewMatrix_UId, ProjectionMatrix_UId;$/;"	v
+WheelMovement	camera.h	/^enum WheelMovement {$/;"	g
+WinX	5-OBJ_loader.cpp	/^int WinX = 640, WinY = 480;$/;"	v
+WinX	8-SceneManager.cpp	/^int WinX = 640, WinY = 480;$/;"	v
+WinX	applications/3dtangram.cpp	/^int WinX = 640, WinY = 480;$/;"	v
+WinX	applications/hello3dWorld.cpp	/^int WinX = 640, WinY = 480;$/;"	v
+WinX	applications/meshLoader.cpp	/^int WinX = 640, WinY = 480;$/;"	v
+WinX	applications/objectRotation.cpp	/^int WinX = 640, WinY = 480;$/;"	v
+WinX	applications/sceneGraphTangram.cpp	/^int WinX = 640, WinY = 480;$/;"	v
+WinX	applications/tangram.cpp	/^int WinX = 640, WinY = 480;$/;"	v
+WinY	5-OBJ_loader.cpp	/^int WinX = 640, WinY = 480;$/;"	v
+WinY	8-SceneManager.cpp	/^int WinX = 640, WinY = 480;$/;"	v
+WinY	applications/3dtangram.cpp	/^int WinX = 640, WinY = 480;$/;"	v
+WinY	applications/hello3dWorld.cpp	/^int WinX = 640, WinY = 480;$/;"	v
+WinY	applications/meshLoader.cpp	/^int WinX = 640, WinY = 480;$/;"	v
+WinY	applications/objectRotation.cpp	/^int WinX = 640, WinY = 480;$/;"	v
+WinY	applications/sceneGraphTangram.cpp	/^int WinX = 640, WinY = 480;$/;"	v
+WinY	applications/tangram.cpp	/^int WinX = 640, WinY = 480;$/;"	v
+WindowHandle	5-OBJ_loader.cpp	/^int WindowHandle = 0;$/;"	v
+WindowHandle	applications/3dtangram.cpp	/^int WindowHandle = 0;$/;"	v
+WindowHandle	applications/hello3dWorld.cpp	/^int WindowHandle = 0;$/;"	v
+WindowHandle	applications/meshLoader.cpp	/^int WindowHandle = 0;$/;"	v
+WindowHandle	applications/objectRotation.cpp	/^int WindowHandle = 0;$/;"	v
+WindowHandle	applications/sceneGraphTangram.cpp	/^int WindowHandle = 0;$/;"	v
+WindowHandle	applications/tangram.cpp	/^int WindowHandle = 0;$/;"	v
+XYZW	applications/hello3dWorld.cpp	/^	GLfloat XYZW[4];$/;"	m	struct:__anon1	file:	access:public
+XYZW	applications/objectRotation.cpp	/^	GLfloat XYZW[4];$/;"	m	struct:__anon2	file:	access:public
+YAW	camera.h	16;"	d
+ZOOM	camera.h	20;"	d
+_M0	applications/3dtangram.cpp	/^Matrix4 _M0 = math::CreateTransformMatrix( -0.15f,-0.2f,0.0f,170.0f,2.0f);$/;"	v
+_M0	applications/meshLoader.cpp	/^Matrix4 _M0 = math::CreateTransformMatrix( -0.15f,-0.2f,0.0f,170.0f,2.0f);$/;"	v
+_M0	applications/tangram.cpp	/^Matrix4 _M0 = MatrixFactory::CreateTransformMatrix( -0.15f,-0.2f,0.0f,170.0f,2.0f);$/;"	v
+_M1	applications/3dtangram.cpp	/^Matrix4 _M1 = math::CreateTransformMatrix(-0.51f,0.41f,0.0f,33.0f,1.25f);$/;"	v
+_M1	applications/meshLoader.cpp	/^Matrix4 _M1 = math::CreateTransformMatrix(-0.51f,0.41f,0.0f,33.0f,1.25f);$/;"	v
+_M1	applications/objectRotation.cpp	/^Matrix4 _M1 = math::CreateTransformMatrix(0.0f,0.0f,0.0f,0.0f,1.0f);$/;"	v
+_M1	applications/tangram.cpp	/^Matrix4 _M1 = MatrixFactory::CreateTransformMatrix(-0.51f,0.41f,0.0f,33.0f,1.25f);$/;"	v
+_M2	applications/3dtangram.cpp	/^Matrix4 _M2 = math::CreateTransformMatrix(-0.12f,0.4f,0.0f,-56.0f,1.0f);$/;"	v
+_M2	applications/meshLoader.cpp	/^Matrix4 _M2 = math::CreateTransformMatrix(-0.12f,0.4f,0.0f,-56.0f,1.0f);$/;"	v
+_M2	applications/tangram.cpp	/^Matrix4 _M2 = MatrixFactory::CreateTransformMatrix(-0.12f,0.4f,0.0f,-56.0f,1.0f);$/;"	v
+_M3	applications/3dtangram.cpp	/^Matrix4 _M3 = math::CreateTransformMatrix( 0.35f,-0.28f,0.0,125.0f,2.0f);$/;"	v
+_M3	applications/meshLoader.cpp	/^Matrix4 _M3 = math::CreateTransformMatrix( 0.35f,-0.28f,0.0,125.0f,2.0f);$/;"	v
+_M3	applications/tangram.cpp	/^Matrix4 _M3 = MatrixFactory::CreateTransformMatrix( 0.35f,-0.28f,0.0,125.0f,2.0f);$/;"	v
+_M4	applications/3dtangram.cpp	/^Matrix4 _M4 = math::CreateTransformMatrix( -0.13f,0.40f,0.0,78.0f,1.5f);$/;"	v
+_M4	applications/meshLoader.cpp	/^Matrix4 _M4 = math::CreateTransformMatrix( -0.13f,0.40f,0.0,78.0f,1.5f);$/;"	v
+_M4	applications/tangram.cpp	/^Matrix4 _M4 = MatrixFactory::CreateTransformMatrix( -0.13f,0.40f,0.0,78.0f,1.5f);$/;"	v
+_M5	applications/3dtangram.cpp	/^Matrix4 _M5 = math::CreateTransformMatrix( 0.15f,-0.55f,0.0,80.0f,1.2f);$/;"	v
+_M5	applications/meshLoader.cpp	/^Matrix4 _M5 = math::CreateTransformMatrix( 0.15f,-0.55f,0.0,80.0f,1.2f);$/;"	v
+_M5	applications/tangram.cpp	/^Matrix4 _M5 = MatrixFactory::CreateTransformMatrix( 0.15f,-0.55f,0.0,80.0f,1.2f);$/;"	v
+_M6	applications/3dtangram.cpp	/^Matrix4 _M6 = math::CreateTransformMatrix( -0.97f,-0.2f,0.0f,-12.0f,1.2f);$/;"	v
+_M6	applications/meshLoader.cpp	/^Matrix4 _M6 = math::CreateTransformMatrix( -0.97f,-0.2f,0.0f,-12.0f,1.2f);$/;"	v
+_M6	applications/tangram.cpp	/^Matrix4 _M6 = MatrixFactory::CreateTransformMatrix( -0.97f,-0.2f,0.0f,-12.0f,1.2f);$/;"	v
+__anon1::RGBA	applications/hello3dWorld.cpp	/^	GLfloat RGBA[4];$/;"	m	struct:__anon1	file:	access:public
+__anon1::XYZW	applications/hello3dWorld.cpp	/^	GLfloat XYZW[4];$/;"	m	struct:__anon1	file:	access:public
+__anon2::RGBA	applications/objectRotation.cpp	/^	GLfloat RGBA[4];$/;"	m	struct:__anon2	file:	access:public
+__anon2::XYZW	applications/objectRotation.cpp	/^	GLfloat XYZW[4];$/;"	m	struct:__anon2	file:	access:public
+__anon5::x	5-OBJ_loader.cpp	/^	GLfloat x, y, z;$/;"	m	struct:__anon5	file:	access:public
+__anon5::y	5-OBJ_loader.cpp	/^	GLfloat x, y, z;$/;"	m	struct:__anon5	file:	access:public
+__anon5::z	5-OBJ_loader.cpp	/^	GLfloat x, y, z;$/;"	m	struct:__anon5	file:	access:public
+__anon6::u	5-OBJ_loader.cpp	/^	GLfloat u, v;$/;"	m	struct:__anon6	file:	access:public
+__anon6::v	5-OBJ_loader.cpp	/^	GLfloat u, v;$/;"	m	struct:__anon6	file:	access:public
+__anon7::nx	5-OBJ_loader.cpp	/^	GLfloat nx, ny, nz;$/;"	m	struct:__anon7	file:	access:public
+__anon7::ny	5-OBJ_loader.cpp	/^	GLfloat nx, ny, nz;$/;"	m	struct:__anon7	file:	access:public
+__anon7::nz	5-OBJ_loader.cpp	/^	GLfloat nx, ny, nz;$/;"	m	struct:__anon7	file:	access:public
+activeSceneGraph	applications/sceneGraphTangram.cpp	/^std::string activeSceneGraph = "squirrel";$/;"	v
+add	managers.h	/^            void add(IUpdatable* updater){$/;"	f	class:engine::Simulation	access:public	signature:(IUpdatable* updater)
+add	managers.h	/^            void add(std::string name, Mesh* mesh){$/;"	f	class:engine::MeshManager	access:public	signature:(std::string name, Mesh* mesh)
+add	managers.h	/^            void add(std::string name, SceneGraph* program){$/;"	f	class:engine::SceneGraphManager	access:public	signature:(std::string name, SceneGraph* program)
+add	managers.h	/^            void add(std::string name, ShaderProgram* program){$/;"	f	class:engine::ShaderProgramManager	access:public	signature:(std::string name, ShaderProgram* program)
+addShader	5-OBJ_loader.cpp	/^const GLuint addShader(const GLuint program_id, const GLenum shader_type, const std::string& filename) $/;"	f	signature:(const GLuint program_id, const GLenum shader_type, const std::string& filename)
+addUniformBlock	shaderprogram.h	/^        void addUniformBlock(const char* name, GLuint location){$/;"	f	class:ShaderProgram	access:public	signature:(const char* name, GLuint location)
+animate	applications/sceneGraphTangram.cpp	/^void animate(float t) {$/;"	f	signature:(float t)
+animationDuration	applications/sceneGraphTangram.cpp	/^float animationDuration = 5.0f;$/;"	v
+appluMatrix	scene.h	/^            void appluMatrix(math::Matrix4 matrix) {$/;"	f	class:engine::SceneNode	access:public	signature:(math::Matrix4 matrix)
+applyCameraMovement	applications/sceneGraphTangram.cpp	/^void applyCameraMovement() {$/;"	f	signature:()
+applyGroundMovement	applications/sceneGraphTangram.cpp	/^void applyGroundMovement() {$/;"	f	signature:()
+applyMatrixToChildren	scene.h	/^            void applyMatrixToChildren(Matrix4 matrix) {$/;"	f	class:engine::SceneNode	access:public	signature:(Matrix4 matrix)
+applyMotion	applications/3dtangram.cpp	/^void applyMotion() {$/;"	f	signature:()
+applyMotion	applications/meshLoader.cpp	/^void applyMotion() {$/;"	f	signature:()
+applyMotion	applications/sceneGraphTangram.cpp	/^void applyMotion() {$/;"	f	signature:()
+axis	applications/objectRotation.cpp	/^Vector3 axis;$/;"	v
+axis	quaternion.h	/^            Vector4 axis() {$/;"	f	class:math::Quaternion	access:public	signature:()
+bigTriangle1	applications/sceneGraphTangram.cpp	/^SceneNode *ground, *bigTriangle1, *bigTriangle2, *mediumTriangle, *smallTriangle1, *smallTriangle2, *square1, *paralelogram;$/;"	v
+bigTriangle2	applications/sceneGraphTangram.cpp	/^SceneNode *ground, *bigTriangle1, *bigTriangle2, *mediumTriangle, *smallTriangle1, *smallTriangle2, *square1, *paralelogram;$/;"	v
+bindAttribLocation	shaderprogram.h	/^        void bindAttribLocation(GLuint location, const char* name){$/;"	f	class:ShaderProgram	access:public	signature:(GLuint location, const char* name)
+bindFragDataLocation	shaderprogram.h	/^        void bindFragDataLocation(GLuint location, const char* name){$/;"	f	class:ShaderProgram	access:public	signature:(GLuint location, const char* name)
+boxPositions	applications/sceneGraphTangram.cpp	/^std::unordered_map<std::string,Vector3> squirrelPositions, boxPositions;$/;"	v
+boxRotations	applications/sceneGraphTangram.cpp	/^std::unordered_map<std::string,Quaternion> squirrelRotations, boxRotations;$/;"	v
+camera	applications/3dtangram.cpp	/^Camera camera = Camera();$/;"	v
+camera	applications/meshLoader.cpp	/^Camera camera = Camera();$/;"	v
+camera	applications/objectRotation.cpp	/^Camera camera = Camera();$/;"	v
+camera	scene.h	/^            ICamera* camera;$/;"	m	class:engine::SceneGraph	access:private
+checkCompilation	5-OBJ_loader.cpp	/^const GLuint checkCompilation(const GLuint shader_id, const std::string& filename) $/;"	f	signature:(const GLuint shader_id, const std::string& filename)
+checkLinkage	5-OBJ_loader.cpp	/^void checkLinkage(const GLuint program_id) {$/;"	f	signature:(const GLuint program_id)
+checkOpenGLError	5-OBJ_loader.cpp	/^void checkOpenGLError(std::string error)$/;"	f	signature:(std::string error)
+checkOpenGLError	applications/3dtangram.cpp	/^void checkOpenGLError(std::string error)$/;"	f	signature:(std::string error)
+checkOpenGLError	applications/hello3dWorld.cpp	/^void checkOpenGLError(std::string error)$/;"	f	signature:(std::string error)
+checkOpenGLError	applications/meshLoader.cpp	/^void checkOpenGLError(std::string error)$/;"	f	signature:(std::string error)
+checkOpenGLError	applications/objectRotation.cpp	/^void checkOpenGLError(std::string error)$/;"	f	signature:(std::string error)
+checkOpenGLError	applications/sceneGraphTangram.cpp	/^void checkOpenGLError(std::string error)$/;"	f	signature:(std::string error)
+checkOpenGLError	applications/tangram.cpp	/^void checkOpenGLError(std::string error)$/;"	f	signature:(std::string error)
+checkOpenGLInfo	applications/3dtangram.cpp	/^void checkOpenGLInfo()$/;"	f	signature:()
+checkOpenGLInfo	applications/meshLoader.cpp	/^void checkOpenGLInfo()$/;"	f	signature:()
+checkOpenGLInfo	applications/objectRotation.cpp	/^void checkOpenGLInfo()$/;"	f	signature:()
+checkOpenGLInfo	applications/sceneGraphTangram.cpp	/^void checkOpenGLInfo()$/;"	f	signature:()
+checkOpenGLInfo	applications/tangram.cpp	/^void checkOpenGLInfo()$/;"	f	signature:()
+children	scene.h	/^            std::vector<SceneNode*> children;$/;"	m	class:engine::SceneNode	access:public
+clean	matrix.h	/^            void clean(){$/;"	f	class:math::Matrix3	access:public	signature:()
+clean	matrix.h	/^            void clean(){$/;"	f	class:math::Matrix4	access:public	signature:()
+clean	quaternion.h	/^            void clean () {$/;"	f	class:math::Quaternion	access:public	signature:()
+clean	vector.h	/^            void clean(){$/;"	f	class:math::Vector2	access:public	signature:()
+clean	vector.h	/^            void clean(){$/;"	f	class:math::Vector3	access:public	signature:()
+clean	vector.h	/^            void clean(){$/;"	f	class:math::Vector4	access:public	signature:()
+cleanup	5-OBJ_loader.cpp	/^void cleanup()$/;"	f	signature:()
+cleanup	8-SceneManager.cpp	/^void cleanup()$/;"	f	signature:()
+cleanup	applications/3dtangram.cpp	/^void cleanup()$/;"	f	signature:()
+cleanup	applications/hello3dWorld.cpp	/^void cleanup()$/;"	f	signature:()
+cleanup	applications/meshLoader.cpp	/^void cleanup()$/;"	f	signature:()
+cleanup	applications/objectRotation.cpp	/^void cleanup()$/;"	f	signature:()
+cleanup	applications/sceneGraphTangram.cpp	/^void cleanup()$/;"	f	signature:()
+cleanup	applications/tangram.cpp	/^void cleanup()$/;"	f	signature:()
+column	matrix.h	/^            std::vector<float> column(int col){$/;"	f	class:math::Matrix2	access:public	signature:(int col)
+column	matrix.h	/^            std::vector<float> column(int col){$/;"	f	class:math::Matrix3	access:public	signature:(int col)
+column	matrix.h	/^            std::vector<float> column(int col){$/;"	f	class:math::Matrix4	access:public	signature:(int col)
+compareEqual	mathf.h	/^    inline float compareEqual(float x, float y) {$/;"	f	namespace:math	signature:(float x, float y)
+compileShaderFromFile	shaderprogram.h	/^        void compileShaderFromFile(const char* fileName, ShaderType::Type type)$/;"	f	class:ShaderProgram	access:public	signature:(const char* fileName, ShaderType::Type type)
+computeAngleAxis	applications/objectRotation.cpp	/^void computeAngleAxis(){$/;"	f	signature:()
+computeAngleAxis	applications/sceneGraphTangram.cpp	/^void computeAngleAxis(){$/;"	f	signature:()
+computeInterpolation	applications/sceneGraphTangram.cpp	/^void computeInterpolation() {$/;"	f	signature:()
+computeKeyboardInputs	camera.h	/^        void computeKeyboardInputs(Movement direction, GLfloat deltaTime)$/;"	f	class:Camera	access:public	signature:(Movement direction, GLfloat deltaTime)
+computeMouseMovement	camera.h	/^        void computeMouseMovement(GLfloat xoffset, GLfloat yoffset){$/;"	f	class:Camera	access:public	signature:(GLfloat xoffset, GLfloat yoffset)
+computeMouseScroll	camera.h	/^        void computeMouseScroll(GLfloat yoffset)$/;"	f	class:Camera	access:public	signature:(GLfloat yoffset)
+computeTime	applications/sceneGraphTangram.cpp	/^void computeTime() {$/;"	f	signature:()
+computeViewMatrix	applications/objectRotation.cpp	/^void computeViewMatrix() {$/;"	f	signature:()
+conjugate	quaternion.h	/^            Quaternion conjugate() {return Quaternion(t, -x, -y, -z);}$/;"	f	class:math::Quaternion	access:public	signature:()
+copy	matrix.h	/^            Matrix2 copy(){$/;"	f	class:math::Matrix2	access:public	signature:()
+copy	matrix.h	/^            Matrix3 copy(){$/;"	f	class:math::Matrix3	access:public	signature:()
+copy	matrix.h	/^            Matrix4 copy(){$/;"	f	class:math::Matrix4	access:public	signature:()
+copy	vector.h	/^            Vector2 copy(){$/;"	f	class:math::Vector2	access:public	signature:()
+copy	vector.h	/^            Vector3 copy(){$/;"	f	class:math::Vector3	access:public	signature:()
+copy	vector.h	/^            Vector4 copy(){$/;"	f	class:math::Vector4	access:public	signature:()
+cotangent	mathf.h	/^    inline float cotangent(float value){$/;"	f	namespace:math	signature:(float value)
+create	mesh.h	/^            void create() {$/;"	f	class:engine::Mesh	access:public	signature:()
+createBufferObjects	5-OBJ_loader.cpp	/^void createBufferObjects()$/;"	f	signature:()
+createBufferObjects	applications/3dtangram.cpp	/^void createBufferObjects()$/;"	f	signature:()
+createBufferObjects	applications/hello3dWorld.cpp	/^void createBufferObjects()$/;"	f	signature:()
+createBufferObjects	applications/meshLoader.cpp	/^void createBufferObjects()$/;"	f	signature:()
+createBufferObjects	applications/objectRotation.cpp	/^void createBufferObjects()$/;"	f	signature:()
+createBufferObjects	applications/tangram.cpp	/^void createBufferObjects()$/;"	f	signature:()
+createEnvironmentSceneGraph	8-SceneManager.cpp	/^void createEnvironmentSceneGraph(SceneGraph* scenegraph)$/;"	f	signature:(SceneGraph* scenegraph)
+createMachineSceneGraph	8-SceneManager.cpp	/^void createMachineSceneGraph(SceneGraph* scenegraph)$/;"	f	signature:(SceneGraph* scenegraph)
+createMesh	5-OBJ_loader.cpp	/^void createMesh(std::string& filename)$/;"	f	signature:(std::string& filename)
+createMeshes	8-SceneManager.cpp	/^void createMeshes()$/;"	f	signature:()
+createMeshes	applications/sceneGraphTangram.cpp	/^void createMeshes()$/;"	f	signature:()
+createNode	scene.h	/^            SceneNode* createNode(std::string tag = "") {$/;"	f	class:engine::SceneGraph	access:public	signature:(std::string tag = Ó)
+createNode	scene.h	/^            SceneNode* createNode(std::string tag = "") {$/;"	f	class:engine::SceneNode	access:public	signature:(std::string tag = Ó)
+createScene	8-SceneManager.cpp	/^void createScene()$/;"	f	signature:()
+createShaderProgram	5-OBJ_loader.cpp	/^void createShaderProgram(std::string& vs_file, std::string& fs_file)$/;"	f	signature:(std::string& vs_file, std::string& fs_file)
+createShaderProgram	applications/3dtangram.cpp	/^void createShaderProgram()$/;"	f	signature:()
+createShaderProgram	applications/hello3dWorld.cpp	/^void createShaderProgram()$/;"	f	signature:()
+createShaderProgram	applications/meshLoader.cpp	/^void createShaderProgram()$/;"	f	signature:()
+createShaderProgram	applications/objectRotation.cpp	/^void createShaderProgram()$/;"	f	signature:()
+createShaderProgram	applications/sceneGraphTangram.cpp	/^void createShaderProgram()$/;"	f	signature:()
+createShaderProgram	applications/tangram.cpp	/^void createShaderProgram()$/;"	f	signature:()
+createShaderPrograms	8-SceneManager.cpp	/^void createShaderPrograms()$/;"	f	signature:()
+createSimulation	8-SceneManager.cpp	/^void createSimulation()$/;"	f	signature:()
+createSimulation	applications/sceneGraphTangram.cpp	/^void createSimulation()$/;"	f	signature:()
+createSquirrel	applications/sceneGraphTangram.cpp	/^void createSquirrel() {$/;"	f	signature:()
+createTanBox	applications/sceneGraphTangram.cpp	/^void createTanBox() {$/;"	f	signature:()
+cross	vector.h	/^            friend Vector3 cross (Vector3 u, Vector3 v);$/;"	p	class:math::Vector3	access:friend	signature:(Vector3 u, Vector3 v)
+cross	vector.h	/^    Vector3 cross (Vector3 u, Vector3 v){$/;"	f	namespace:math	signature:(Vector3 u, Vector3 v)
+currentInterpolation	applications/sceneGraphTangram.cpp	/^float currentInterpolation = 0.0f;$/;"	v
+currentX	applications/objectRotation.cpp	/^GLfloat currentX = 0.0f, currentY = 0.0f;$/;"	v
+currentX	applications/sceneGraphTangram.cpp	/^GLfloat currentX, currentY;$/;"	v
+currentY	applications/objectRotation.cpp	/^GLfloat currentX = 0.0f, currentY = 0.0f;$/;"	v
+currentY	applications/sceneGraphTangram.cpp	/^GLfloat currentX, currentY;$/;"	v
+data	matrix.h	/^            std::array<float,16> data;$/;"	m	class:math::Matrix4	access:public
+data	matrix.h	/^            std::array<float,4> data;$/;"	m	class:math::Matrix2	access:public
+data	matrix.h	/^            std::array<float,9> data;$/;"	m	class:math::Matrix3	access:public
+data	quaternion.h	/^                std::array<float,4> data;$/;"	m	union:math::Quaternion::__anon3	access:public
+data	vector.h	/^                std::array<float,2> data;$/;"	m	union:math::Vector2::__anon10	access:public
+data	vector.h	/^                std::array<float,3> data;$/;"	m	union:math::Vector3::__anon8	access:public
+deltaTime	applications/3dtangram.cpp	/^GLfloat deltaTime = 0.0f;$/;"	v
+deltaTime	applications/meshLoader.cpp	/^GLfloat deltaTime = 0.0f;$/;"	v
+deltaTime	applications/objectRotation.cpp	/^GLfloat deltaTime = 0.0f;$/;"	v
+deltaTime	applications/sceneGraphTangram.cpp	/^GLfloat deltaTime = 0.0f;$/;"	v
+desiredUp	applications/objectRotation.cpp	/^Vector3 desiredUp = Vector3(0.0f,1.0f,0.0f);$/;"	v
+destroyBufferObjects	5-OBJ_loader.cpp	/^void destroyBufferObjects()$/;"	f	signature:()
+destroyBufferObjects	applications/3dtangram.cpp	/^void destroyBufferObjects()$/;"	f	signature:()
+destroyBufferObjects	applications/hello3dWorld.cpp	/^void destroyBufferObjects()$/;"	f	signature:()
+destroyBufferObjects	applications/meshLoader.cpp	/^void destroyBufferObjects()$/;"	f	signature:()
+destroyBufferObjects	applications/objectRotation.cpp	/^void destroyBufferObjects()$/;"	f	signature:()
+destroyBufferObjects	applications/sceneGraphTangram.cpp	/^void destroyBufferObjects()$/;"	f	signature:()
+destroyBufferObjects	applications/tangram.cpp	/^void destroyBufferObjects()$/;"	f	signature:()
+destroyShaderProgram	5-OBJ_loader.cpp	/^void destroyShaderProgram()$/;"	f	signature:()
+destroyShaderProgram	applications/3dtangram.cpp	/^void destroyShaderProgram()$/;"	f	signature:()
+destroyShaderProgram	applications/hello3dWorld.cpp	/^void destroyShaderProgram()$/;"	f	signature:()
+destroyShaderProgram	applications/meshLoader.cpp	/^void destroyShaderProgram()$/;"	f	signature:()
+destroyShaderProgram	applications/objectRotation.cpp	/^void destroyShaderProgram()$/;"	f	signature:()
+destroyShaderProgram	applications/sceneGraphTangram.cpp	/^void destroyShaderProgram()$/;"	f	signature:()
+destroyShaderProgram	applications/tangram.cpp	/^void destroyShaderProgram()$/;"	f	signature:()
+determinant	matrix.h	/^            float determinant(){$/;"	f	class:math::Matrix2	access:public	signature:()
+determinant	matrix.h	/^            float determinant(){$/;"	f	class:math::Matrix3	access:public	signature:()
+display	5-OBJ_loader.cpp	/^void display()$/;"	f	signature:()
+display	8-SceneManager.cpp	/^void display()$/;"	f	signature:()
+display	applications/3dtangram.cpp	/^void display()$/;"	f	signature:()
+display	applications/hello3dWorld.cpp	/^void display()$/;"	f	signature:()
+display	applications/meshLoader.cpp	/^void display()$/;"	f	signature:()
+display	applications/objectRotation.cpp	/^void display()$/;"	f	signature:()
+display	applications/sceneGraphTangram.cpp	/^void display()$/;"	f	signature:()
+display	applications/tangram.cpp	/^void display()$/;"	f	signature:()
+distance	applications/sceneGraphTangram.cpp	/^float distance = 15;$/;"	v
+distanceStep	applications/sceneGraphTangram.cpp	/^float distanceStep = 1.5f;$/;"	v
+dot	vector.h	/^            friend float dot (Vector2 u, Vector2 v);$/;"	p	class:math::Vector2	access:friend	signature:(Vector2 u, Vector2 v)
+dot	vector.h	/^            friend float dot (Vector3 u, Vector3 v);$/;"	p	class:math::Vector3	access:friend	signature:(Vector3 u, Vector3 v)
+dot	vector.h	/^            friend float dot (Vector4 u, Vector4 v);$/;"	p	class:math::Vector4	access:friend	signature:(Vector4 u, Vector4 v)
+dot	vector.h	/^    float dot (Vector2 u, Vector2 v){$/;"	f	namespace:math	signature:(Vector2 u, Vector2 v)
+dot	vector.h	/^    float dot (Vector3 u, Vector3 v){$/;"	f	namespace:math	signature:(Vector3 u, Vector3 v)
+dot	vector.h	/^    float dot (Vector4 u, Vector4 v){$/;"	f	namespace:math	signature:(Vector4 u, Vector4 v)
+draw	mesh.h	/^            void draw() {$/;"	f	class:engine::Mesh	access:public	signature:()
+draw	scene.h	/^            void draw()$/;"	f	class:engine::SceneGraph	access:public	signature:()
+draw	scene.h	/^            void draw()$/;"	f	class:engine::SceneNode	access:public	signature:()
+drawScene	5-OBJ_loader.cpp	/^void drawScene()$/;"	f	signature:()
+drawScene	8-SceneManager.cpp	/^void drawScene()$/;"	f	signature:()
+drawScene	applications/3dtangram.cpp	/^void drawScene()$/;"	f	signature:()
+drawScene	applications/hello3dWorld.cpp	/^void drawScene()$/;"	f	signature:()
+drawScene	applications/meshLoader.cpp	/^void drawScene()$/;"	f	signature:()
+drawScene	applications/objectRotation.cpp	/^void drawScene()$/;"	f	signature:()
+drawScene	applications/sceneGraphTangram.cpp	/^void drawScene()$/;"	f	signature:()
+drawScene	applications/tangram.cpp	/^void drawScene()$/;"	f	signature:()
+drawSceneGraph	8-SceneManager.cpp	/^void drawSceneGraph()$/;"	f	signature:()
+drawSceneGraph	applications/sceneGraphTangram.cpp	/^void drawSceneGraph() {$/;"	f	signature:()
+engine	managers.h	/^namespace engine {$/;"	n
+engine	mesh.h	/^namespace engine {$/;"	n
+engine	objectloader.h	/^namespace engine {$/;"	n
+engine	scene.h	/^namespace engine {$/;"	n
+engine::DataType	mesh.h	/^    enum DataType{$/;"	g	namespace:engine
+engine::IUpdatable	managers.h	/^    class IUpdatable {$/;"	c	namespace:engine
+engine::IUpdatable::IUpdatable	managers.h	/^            IUpdatable() {}$/;"	f	class:engine::IUpdatable	access:public	signature:()
+engine::IUpdatable::update	managers.h	/^            virtual void update() = 0;$/;"	p	class:engine::IUpdatable	access:public	signature:()
+engine::KeyBuffer	managers.h	/^    class KeyBuffer {$/;"	c	namespace:engine
+engine::KeyBuffer::KeyBuffer	managers.h	/^            KeyBuffer() {$/;"	f	class:engine::KeyBuffer	access:protected	signature:()
+engine::KeyBuffer::instance	managers.h	/^            static KeyBuffer* instance() {$/;"	f	class:engine::KeyBuffer	access:public	signature:()
+engine::KeyBuffer::isKeyDown	managers.h	/^            bool isKeyDown(unsigned char key) {$/;"	f	class:engine::KeyBuffer	access:public	signature:(unsigned char key)
+engine::KeyBuffer::isSpecialKeyDown	managers.h	/^            bool isSpecialKeyDown(int key) {$/;"	f	class:engine::KeyBuffer	access:public	signature:(int key)
+engine::KeyBuffer::keys	managers.h	/^            bool keys[256];$/;"	m	class:engine::KeyBuffer	access:private
+engine::KeyBuffer::pressKey	managers.h	/^            void pressKey(unsigned char key) {$/;"	f	class:engine::KeyBuffer	access:public	signature:(unsigned char key)
+engine::KeyBuffer::pressSpecialKey	managers.h	/^            void pressSpecialKey(int key) {$/;"	f	class:engine::KeyBuffer	access:public	signature:(int key)
+engine::KeyBuffer::releaseKey	managers.h	/^            void releaseKey(unsigned char key) {$/;"	f	class:engine::KeyBuffer	access:public	signature:(unsigned char key)
+engine::KeyBuffer::releaseSpecialKey	managers.h	/^            void releaseSpecialKey(int key) {$/;"	f	class:engine::KeyBuffer	access:public	signature:(int key)
+engine::KeyBuffer::specialKeys	managers.h	/^            bool specialKeys[256];$/;"	m	class:engine::KeyBuffer	access:private
+engine::Mesh	mesh.h	/^    class Mesh {$/;"	c	namespace:engine
+engine::Mesh::Mesh	mesh.h	/^            Mesh(std::string& filename) {$/;"	f	class:engine::Mesh	access:public	signature:(std::string& filename)
+engine::Mesh::create	mesh.h	/^            void create() {$/;"	f	class:engine::Mesh	access:public	signature:()
+engine::Mesh::draw	mesh.h	/^            void draw() {$/;"	f	class:engine::Mesh	access:public	signature:()
+engine::Mesh::freeMeshData	mesh.h	/^            void freeMeshData() {$/;"	f	class:engine::Mesh	access:private	signature:()
+engine::Mesh::loadMeshData	mesh.h	/^            void loadMeshData(std::string& filename) {$/;"	f	class:engine::Mesh	access:private	signature:(std::string& filename)
+engine::Mesh::normalData	mesh.h	/^            std::vector<Vector3> vertexData, normalData;$/;"	m	class:engine::Mesh	access:private
+engine::Mesh::normalIdx	mesh.h	/^            std::vector<unsigned int> vertexIdx, texcoordIdx, normalIdx;$/;"	m	class:engine::Mesh	access:private
+engine::Mesh::normals	mesh.h	/^            std::vector<vec3> vertices, normals;$/;"	m	class:engine::Mesh	access:private
+engine::Mesh::normalsLoaded	mesh.h	/^            bool texcoordsLoaded, normalsLoaded; $/;"	m	class:engine::Mesh	access:private
+engine::Mesh::parseFace	mesh.h	/^            void parseFace(std::stringstream& sin) {$/;"	f	class:engine::Mesh	access:private	signature:(std::stringstream& sin)
+engine::Mesh::parseLine	mesh.h	/^            void parseLine(std::stringstream& sin){$/;"	f	class:engine::Mesh	access:private	signature:(std::stringstream& sin)
+engine::Mesh::parseNormal	mesh.h	/^            void parseNormal(std::stringstream& sin) {$/;"	f	class:engine::Mesh	access:private	signature:(std::stringstream& sin)
+engine::Mesh::parseTexcoord	mesh.h	/^            void parseTexcoord(std::stringstream& sin) {$/;"	f	class:engine::Mesh	access:private	signature:(std::stringstream& sin)
+engine::Mesh::parseVertex	mesh.h	/^            void parseVertex(std::stringstream& sin) {$/;"	f	class:engine::Mesh	access:private	signature:(std::stringstream& sin)
+engine::Mesh::print	mesh.h	/^            void print(){$/;"	f	class:engine::Mesh	access:public	signature:()
+engine::Mesh::processMeshData	mesh.h	/^            void processMeshData(){$/;"	f	class:engine::Mesh	access:private	signature:()
+engine::Mesh::texcoordData	mesh.h	/^            std::vector<Vector2> texcoordData;$/;"	m	class:engine::Mesh	access:private
+engine::Mesh::texcoordIdx	mesh.h	/^            std::vector<unsigned int> vertexIdx, texcoordIdx, normalIdx;$/;"	m	class:engine::Mesh	access:private
+engine::Mesh::texcoords	mesh.h	/^            std::vector<vec2> texcoords;$/;"	m	class:engine::Mesh	access:private
+engine::Mesh::texcoordsLoaded	mesh.h	/^            bool texcoordsLoaded, normalsLoaded; $/;"	m	class:engine::Mesh	access:private
+engine::Mesh::vaoId	mesh.h	/^            GLuint vaoId;$/;"	m	class:engine::Mesh	access:private
+engine::Mesh::vboNormals	mesh.h	/^            GLuint vboVertices, vboTexcoords, vboNormals;$/;"	m	class:engine::Mesh	access:private
+engine::Mesh::vboTexcoords	mesh.h	/^            GLuint vboVertices, vboTexcoords, vboNormals;$/;"	m	class:engine::Mesh	access:private
+engine::Mesh::vboVertices	mesh.h	/^            GLuint vboVertices, vboTexcoords, vboNormals;$/;"	m	class:engine::Mesh	access:private
+engine::Mesh::vec2	mesh.h	/^        typedef std::array<float,2> vec2;$/;"	t	class:engine::Mesh	access:private
+engine::Mesh::vec3	mesh.h	/^        typedef std::array<float,3> vec3;$/;"	t	class:engine::Mesh	access:private
+engine::Mesh::vertexData	mesh.h	/^            std::vector<Vector3> vertexData, normalData;$/;"	m	class:engine::Mesh	access:private
+engine::Mesh::vertexIdx	mesh.h	/^            std::vector<unsigned int> vertexIdx, texcoordIdx, normalIdx;$/;"	m	class:engine::Mesh	access:private
+engine::Mesh::vertices	mesh.h	/^            std::vector<vec3> vertices, normals;$/;"	m	class:engine::Mesh	access:private
+engine::Mesh::~Mesh	mesh.h	/^            ~Mesh() {$/;"	f	class:engine::Mesh	access:public	signature:()
+engine::MeshManager	managers.h	/^    class MeshManager {$/;"	c	namespace:engine
+engine::MeshManager::Map	managers.h	/^            typedef std::unordered_map<std::string,Mesh*> Map;$/;"	t	class:engine::MeshManager	access:private
+engine::MeshManager::MeshManager	managers.h	/^            MeshManager() {}$/;"	f	class:engine::MeshManager	access:protected	signature:()
+engine::MeshManager::add	managers.h	/^            void add(std::string name, Mesh* mesh){$/;"	f	class:engine::MeshManager	access:public	signature:(std::string name, Mesh* mesh)
+engine::MeshManager::get	managers.h	/^            Mesh* get(std::string name)$/;"	f	class:engine::MeshManager	access:public	signature:(std::string name)
+engine::MeshManager::instance	managers.h	/^            static MeshManager* instance() {$/;"	f	class:engine::MeshManager	access:public	signature:()
+engine::MeshManager::map	managers.h	/^            Map map;$/;"	m	class:engine::MeshManager	access:private
+engine::NORMALS	mesh.h	/^        NORMALS = 2$/;"	e	enum:engine::DataType
+engine::ObjectLoader	objectloader.h	/^    class ObjectLoader {$/;"	c	namespace:engine
+engine::ObjectLoader::ObjectLoader	objectloader.h	/^           ObjectLoader() {}$/;"	f	class:engine::ObjectLoader	access:public	signature:()
+engine::ObjectLoader::loadMeshData	objectloader.h	/^           void loadMeshData(std::string& filename) {$/;"	f	class:engine::ObjectLoader	access:public	signature:(std::string& filename)
+engine::ObjectLoader::normalData	objectloader.h	/^           std::vector<Vector3> vertexData, normalData;$/;"	m	class:engine::ObjectLoader	access:public
+engine::ObjectLoader::normalIdx	objectloader.h	/^           std::vector<unsigned int> vertexIdx, texcoordIdx, normalIdx;$/;"	m	class:engine::ObjectLoader	access:public
+engine::ObjectLoader::normals	objectloader.h	/^           std::vector<float*> vertices, normals;$/;"	m	class:engine::ObjectLoader	access:public
+engine::ObjectLoader::normalsLoaded	objectloader.h	/^           bool texcoordsLoaded, normalsLoaded; $/;"	m	class:engine::ObjectLoader	access:public
+engine::ObjectLoader::parseFace	objectloader.h	/^           void parseFace(std::stringstream& sin) {$/;"	f	class:engine::ObjectLoader	access:public	signature:(std::stringstream& sin)
+engine::ObjectLoader::parseLine	objectloader.h	/^           void parseLine(std::stringstream& sin){$/;"	f	class:engine::ObjectLoader	access:public	signature:(std::stringstream& sin)
+engine::ObjectLoader::parseNormal	objectloader.h	/^           void parseNormal(std::stringstream& sin) {$/;"	f	class:engine::ObjectLoader	access:public	signature:(std::stringstream& sin)
+engine::ObjectLoader::parseTexcoord	objectloader.h	/^           void parseTexcoord(std::stringstream& sin) {$/;"	f	class:engine::ObjectLoader	access:public	signature:(std::stringstream& sin)
+engine::ObjectLoader::parseVertex	objectloader.h	/^           void parseVertex(std::stringstream& sin) {$/;"	f	class:engine::ObjectLoader	access:public	signature:(std::stringstream& sin)
+engine::ObjectLoader::processMeshData	objectloader.h	/^            void processMeshData(){$/;"	f	class:engine::ObjectLoader	access:public	signature:()
+engine::ObjectLoader::texcoordData	objectloader.h	/^           std::vector<Vector2> texcoordData;$/;"	m	class:engine::ObjectLoader	access:public
+engine::ObjectLoader::texcoordIdx	objectloader.h	/^           std::vector<unsigned int> vertexIdx, texcoordIdx, normalIdx;$/;"	m	class:engine::ObjectLoader	access:public
+engine::ObjectLoader::texcoords	objectloader.h	/^           std::vector<float*> texcoords;$/;"	m	class:engine::ObjectLoader	access:public
+engine::ObjectLoader::texcoordsLoaded	objectloader.h	/^           bool texcoordsLoaded, normalsLoaded; $/;"	m	class:engine::ObjectLoader	access:public
+engine::ObjectLoader::vertexData	objectloader.h	/^           std::vector<Vector3> vertexData, normalData;$/;"	m	class:engine::ObjectLoader	access:public
+engine::ObjectLoader::vertexIdx	objectloader.h	/^           std::vector<unsigned int> vertexIdx, texcoordIdx, normalIdx;$/;"	m	class:engine::ObjectLoader	access:public
+engine::ObjectLoader::vertices	objectloader.h	/^           std::vector<float*> vertices, normals;$/;"	m	class:engine::ObjectLoader	access:public
+engine::ObjectLoader::~ObjectLoader	objectloader.h	/^            ~ObjectLoader() {$/;"	f	class:engine::ObjectLoader	access:public	signature:()
+engine::RenderException	scene.h	/^    class RenderException : public std::runtime_error {$/;"	c	namespace:engine	inherits:std::runtime_error
+engine::RenderException::RenderException	scene.h	/^            RenderException( const std::string & msg ) :$/;"	f	class:engine::RenderException	access:public	signature:( const std::string & msg )
+engine::SceneGraph	scene.h	/^    class SceneGraph {$/;"	c	namespace:engine
+engine::SceneGraph::SceneGraph	scene.h	/^            SceneGraph() {$/;"	f	class:engine::SceneGraph	access:public	signature:()
+engine::SceneGraph::camera	scene.h	/^            ICamera* camera;$/;"	m	class:engine::SceneGraph	access:private
+engine::SceneGraph::createNode	scene.h	/^            SceneNode* createNode(std::string tag = "") {$/;"	f	class:engine::SceneGraph	access:public	signature:(std::string tag = Ó)
+engine::SceneGraph::draw	scene.h	/^            void draw()$/;"	f	class:engine::SceneGraph	access:public	signature:()
+engine::SceneGraph::getCamera	scene.h	/^            ICamera* getCamera() {$/;"	f	class:engine::SceneGraph	access:public	signature:()
+engine::SceneGraph::getRoot	scene.h	/^            SceneNode* getRoot() {$/;"	f	class:engine::SceneGraph	access:public	signature:()
+engine::SceneGraph::root	scene.h	/^            SceneNode* root;$/;"	m	class:engine::SceneGraph	access:private
+engine::SceneGraph::setCamera	scene.h	/^            void setCamera(ICamera* _camera){$/;"	f	class:engine::SceneGraph	access:public	signature:(ICamera* _camera)
+engine::SceneGraphException	scene.h	/^    class SceneGraphException : public std::runtime_error {$/;"	c	namespace:engine	inherits:std::runtime_error
+engine::SceneGraphException::SceneGraphException	scene.h	/^            SceneGraphException( const std::string & msg ) :$/;"	f	class:engine::SceneGraphException	access:public	signature:( const std::string & msg )
+engine::SceneGraphManager	managers.h	/^    class SceneGraphManager {$/;"	c	namespace:engine
+engine::SceneGraphManager::Map	managers.h	/^            typedef std::unordered_map<std::string,SceneGraph*> Map;$/;"	t	class:engine::SceneGraphManager	access:private
+engine::SceneGraphManager::SceneGraphManager	managers.h	/^            SceneGraphManager() {}$/;"	f	class:engine::SceneGraphManager	access:protected	signature:()
+engine::SceneGraphManager::add	managers.h	/^            void add(std::string name, SceneGraph* program){$/;"	f	class:engine::SceneGraphManager	access:public	signature:(std::string name, SceneGraph* program)
+engine::SceneGraphManager::get	managers.h	/^            SceneGraph* get(std::string name)$/;"	f	class:engine::SceneGraphManager	access:public	signature:(std::string name)
+engine::SceneGraphManager::instance	managers.h	/^            static SceneGraphManager* instance() {$/;"	f	class:engine::SceneGraphManager	access:public	signature:()
+engine::SceneGraphManager::map	managers.h	/^            Map map;$/;"	m	class:engine::SceneGraphManager	access:private
+engine::SceneNode	scene.h	/^    class SceneNode {$/;"	c	namespace:engine
+engine::SceneNode::SceneNode	scene.h	/^            SceneNode(std::string _tag = "") {$/;"	f	class:engine::SceneNode	access:public	signature:(std::string _tag = Ó)
+engine::SceneNode::appluMatrix	scene.h	/^            void appluMatrix(math::Matrix4 matrix) {$/;"	f	class:engine::SceneNode	access:public	signature:(math::Matrix4 matrix)
+engine::SceneNode::applyMatrixToChildren	scene.h	/^            void applyMatrixToChildren(Matrix4 matrix) {$/;"	f	class:engine::SceneNode	access:public	signature:(Matrix4 matrix)
+engine::SceneNode::children	scene.h	/^            std::vector<SceneNode*> children;$/;"	m	class:engine::SceneNode	access:public
+engine::SceneNode::createNode	scene.h	/^            SceneNode* createNode(std::string tag = "") {$/;"	f	class:engine::SceneNode	access:public	signature:(std::string tag = Ó)
+engine::SceneNode::draw	scene.h	/^            void draw()$/;"	f	class:engine::SceneNode	access:public	signature:()
+engine::SceneNode::getModelMatrix	scene.h	/^            math::Matrix4 getModelMatrix(){$/;"	f	class:engine::SceneNode	access:public	signature:()
+engine::SceneNode::getProgramFromParent	scene.h	/^            ShaderProgram* getProgramFromParent() {$/;"	f	class:engine::SceneNode	access:private	signature:()
+engine::SceneNode::getTag	scene.h	/^            std::string getTag() {$/;"	f	class:engine::SceneNode	access:public	signature:()
+engine::SceneNode::isRoot	scene.h	/^            bool isRoot;$/;"	m	class:engine::SceneNode	access:public
+engine::SceneNode::mesh	scene.h	/^            Mesh* mesh;$/;"	m	class:engine::SceneNode	access:public
+engine::SceneNode::modelMatrix	scene.h	/^            math::Matrix4 modelMatrix;$/;"	m	class:engine::SceneNode	access:public
+engine::SceneNode::parent	scene.h	/^            SceneNode* parent;$/;"	m	class:engine::SceneNode	access:private
+engine::SceneNode::setMesh	scene.h	/^            void setMesh(Mesh* _mesh) {$/;"	f	class:engine::SceneNode	access:public	signature:(Mesh* _mesh)
+engine::SceneNode::setModelMatrix	scene.h	/^            void setModelMatrix(math::Matrix4 matrix) {$/;"	f	class:engine::SceneNode	access:public	signature:(math::Matrix4 matrix)
+engine::SceneNode::setParent	scene.h	/^            void setParent(SceneNode* _parent) {$/;"	f	class:engine::SceneNode	access:public	signature:(SceneNode* _parent)
+engine::SceneNode::setShaderProgram	scene.h	/^            void setShaderProgram(ShaderProgram* _program) {$/;"	f	class:engine::SceneNode	access:public	signature:(ShaderProgram* _program)
+engine::SceneNode::setTag	scene.h	/^            void setTag(std::string _tag) {$/;"	f	class:engine::SceneNode	access:public	signature:(std::string _tag)
+engine::SceneNode::shaderProgram	scene.h	/^            ShaderProgram* shaderProgram;$/;"	m	class:engine::SceneNode	access:public
+engine::SceneNode::tag	scene.h	/^            std::string tag;$/;"	m	class:engine::SceneNode	access:private
+engine::ShaderProgramManager	managers.h	/^    class ShaderProgramManager {$/;"	c	namespace:engine
+engine::ShaderProgramManager::Map	managers.h	/^            typedef std::unordered_map<std::string,ShaderProgram*> Map;$/;"	t	class:engine::ShaderProgramManager	access:private
+engine::ShaderProgramManager::ShaderProgramManager	managers.h	/^            ShaderProgramManager() {}$/;"	f	class:engine::ShaderProgramManager	access:protected	signature:()
+engine::ShaderProgramManager::add	managers.h	/^            void add(std::string name, ShaderProgram* program){$/;"	f	class:engine::ShaderProgramManager	access:public	signature:(std::string name, ShaderProgram* program)
+engine::ShaderProgramManager::get	managers.h	/^            ShaderProgram* get(std::string name)$/;"	f	class:engine::ShaderProgramManager	access:public	signature:(std::string name)
+engine::ShaderProgramManager::instance	managers.h	/^            static ShaderProgramManager* instance() {$/;"	f	class:engine::ShaderProgramManager	access:public	signature:()
+engine::ShaderProgramManager::map	managers.h	/^            Map map;$/;"	m	class:engine::ShaderProgramManager	access:private
+engine::Simulation	managers.h	/^    class Simulation {$/;"	c	namespace:engine
+engine::Simulation::Simulation	managers.h	/^            Simulation() {}$/;"	f	class:engine::Simulation	access:protected	signature:()
+engine::Simulation::add	managers.h	/^            void add(IUpdatable* updater){$/;"	f	class:engine::Simulation	access:public	signature:(IUpdatable* updater)
+engine::Simulation::instance	managers.h	/^            static Simulation* instance() {$/;"	f	class:engine::Simulation	access:public	signature:()
+engine::Simulation::update	managers.h	/^            void update() {$/;"	f	class:engine::Simulation	access:public	signature:()
+engine::Simulation::updaters	managers.h	/^            std::vector<IUpdatable*> updaters;$/;"	m	class:engine::Simulation	access:private
+engine::TEXCOORDS	mesh.h	/^        TEXCOORDS = 1,$/;"	e	enum:engine::DataType
+engine::VERTICES	mesh.h	/^        VERTICES = 0,$/;"	e	enum:engine::DataType
+firstTimeMouse	applications/3dtangram.cpp	/^bool firstTimeMouse = true;$/;"	v
+firstTimeMouse	applications/meshLoader.cpp	/^bool firstTimeMouse = true;$/;"	v
+firstTimeMouse	applications/objectRotation.cpp	/^bool firstTimeMouse = true;$/;"	v
+floatThreshold	mathf.h	/^    float floatThreshold = 1.0e-10;$/;"	m	namespace:math
+freeMeshData	5-OBJ_loader.cpp	/^void freeMeshData()$/;"	f	signature:()
+freeMeshData	mesh.h	/^            void freeMeshData() {$/;"	f	class:engine::Mesh	access:private	signature:()
+front	camera.h	/^        Vector3 front;$/;"	m	class:Camera	access:public
+get	managers.h	/^            Mesh* get(std::string name)$/;"	f	class:engine::MeshManager	access:public	signature:(std::string name)
+get	managers.h	/^            SceneGraph* get(std::string name)$/;"	f	class:engine::SceneGraphManager	access:public	signature:(std::string name)
+get	managers.h	/^            ShaderProgram* get(std::string name)$/;"	f	class:engine::ShaderProgramManager	access:public	signature:(std::string name)
+getCamVector	applications/objectRotation.cpp	/^Vector3 getCamVector(GLfloat x, GLfloat y) {$/;"	f	signature:(GLfloat x, GLfloat y)
+getCamera	scene.h	/^            ICamera* getCamera() {$/;"	f	class:engine::SceneGraph	access:public	signature:()
+getData	matrix.h	/^            float* getData(){$/;"	f	class:math::Matrix4	access:public	signature:()
+getData	vector.h	/^            float* getData(){$/;"	f	class:math::Vector2	access:public	signature:()
+getData	vector.h	/^            float* getData(){$/;"	f	class:math::Vector3	access:public	signature:()
+getElement	matrix.h	/^            float getElement(int i,int j) const {$/;"	f	class:math::Matrix2	access:public	signature:(int i,int j) const
+getElement	matrix.h	/^            float getElement(int i,int j) const {$/;"	f	class:math::Matrix3	access:public	signature:(int i,int j) const
+getElement	matrix.h	/^            float getElement(int i,int j) const {$/;"	f	class:math::Matrix4	access:public	signature:(int i,int j) const
+getModelMatrix	scene.h	/^            math::Matrix4 getModelMatrix(){$/;"	f	class:engine::SceneNode	access:public	signature:()
+getPosition	matrix.h	/^            int getPosition(int i,int j) const {return (i + j * width);}$/;"	f	class:math::Matrix2	access:private	signature:(int i,int j) const
+getPosition	matrix.h	/^            int getPosition(int i,int j) const {return (i + j * width);}$/;"	f	class:math::Matrix3	access:private	signature:(int i,int j) const
+getPosition	matrix.h	/^            int getPosition(int i,int j) const {return (i + j * width);}$/;"	f	class:math::Matrix4	access:private	signature:(int i,int j) const
+getProgramFromParent	scene.h	/^            ShaderProgram* getProgramFromParent() {$/;"	f	class:engine::SceneNode	access:private	signature:()
+getProgramID	shaderprogram.h	/^        int getProgramID(){$/;"	f	class:ShaderProgram	access:public	signature:()
+getProjection	applications/3dtangram.cpp	/^void getProjection(){$/;"	f	signature:()
+getRoot	scene.h	/^            SceneNode* getRoot() {$/;"	f	class:engine::SceneGraph	access:public	signature:()
+getTag	scene.h	/^            std::string getTag() {$/;"	f	class:engine::SceneNode	access:public	signature:()
+getUniformLocation	shaderprogram.h	/^        GLint getUniformLocation(const char* name){$/;"	f	class:ShaderProgram	access:private	signature:(const char* name)
+getViewMatrix	camera.h	/^        Matrix4 getViewMatrix(){$/;"	f	class:Camera	access:public	signature:()
+gimbalLock	applications/objectRotation.cpp	/^bool gimbalLock = true;$/;"	v
+ground	applications/sceneGraphTangram.cpp	/^SceneNode *ground, *bigTriangle1, *bigTriangle2, *mediumTriangle, *smallTriangle1, *smallTriangle2, *square1, *paralelogram;$/;"	v
+groundRot	applications/sceneGraphTangram.cpp	/^float groundRot = 0.0f;$/;"	v
+groundX	applications/sceneGraphTangram.cpp	/^float groundY, groundZ, groundX = 0.0f;$/;"	v
+groundY	applications/sceneGraphTangram.cpp	/^float groundY, groundZ, groundX = 0.0f;$/;"	v
+groundZ	applications/sceneGraphTangram.cpp	/^float groundY, groundZ, groundX = 0.0f;$/;"	v
+height	matrix.h	/^            int height = 2;$/;"	m	class:math::Matrix2	access:private
+height	matrix.h	/^            int height = 3;$/;"	m	class:math::Matrix3	access:private
+height	matrix.h	/^            int height = 4;$/;"	m	class:math::Matrix4	access:private
+id	applications/objectRotation.cpp	/^Matrix4 id = math::Create4DIdentity();$/;"	v
+idle	5-OBJ_loader.cpp	/^void idle()$/;"	f	signature:()
+idle	8-SceneManager.cpp	/^void idle()$/;"	f	signature:()
+idle	applications/3dtangram.cpp	/^void idle()$/;"	f	signature:()
+idle	applications/hello3dWorld.cpp	/^void idle()$/;"	f	signature:()
+idle	applications/meshLoader.cpp	/^void idle()$/;"	f	signature:()
+idle	applications/objectRotation.cpp	/^void idle()$/;"	f	signature:()
+idle	applications/sceneGraphTangram.cpp	/^void idle()$/;"	f	signature:()
+idle	applications/tangram.cpp	/^void idle()$/;"	f	signature:()
+init	5-OBJ_loader.cpp	/^void init(int argc, char* argv[])$/;"	f	signature:(int argc, char* argv[])
+init	8-SceneManager.cpp	/^void init(int argc, char* argv[])$/;"	f	signature:(int argc, char* argv[])
+init	applications/3dtangram.cpp	/^void init(int argc, char* argv[])$/;"	f	signature:(int argc, char* argv[])
+init	applications/hello3dWorld.cpp	/^void init(int argc, char* argv[])$/;"	f	signature:(int argc, char* argv[])
+init	applications/meshLoader.cpp	/^void init(int argc, char* argv[])$/;"	f	signature:(int argc, char* argv[])
+init	applications/objectRotation.cpp	/^void init(int argc, char* argv[])$/;"	f	signature:(int argc, char* argv[])
+init	applications/sceneGraphTangram.cpp	/^void init(int argc, char* argv[])$/;"	f	signature:(int argc, char* argv[])
+init	applications/tangram.cpp	/^void init(int argc, char* argv[])$/;"	f	signature:(int argc, char* argv[])
+initializeDictionaries	applications/sceneGraphTangram.cpp	/^void initializeDictionaries(){$/;"	f	signature:()
+instance	managers.h	/^            static KeyBuffer* instance() {$/;"	f	class:engine::KeyBuffer	access:public	signature:()
+instance	managers.h	/^            static MeshManager* instance() {$/;"	f	class:engine::MeshManager	access:public	signature:()
+instance	managers.h	/^            static SceneGraphManager* instance() {$/;"	f	class:engine::SceneGraphManager	access:public	signature:()
+instance	managers.h	/^            static ShaderProgramManager* instance() {$/;"	f	class:engine::ShaderProgramManager	access:public	signature:()
+instance	managers.h	/^            static Simulation* instance() {$/;"	f	class:engine::Simulation	access:public	signature:()
+interpolationFactor	applications/sceneGraphTangram.cpp	/^float interpolationFactor = 1.0f \/ animationDuration;$/;"	v
+interpolationSwitch	applications/sceneGraphTangram.cpp	/^bool  interpolationSwitch = false;$/;"	v
+inverse	quaternion.h	/^            Quaternion inverse() { return conjugate() * (1.0f \/ quadrance());}$/;"	f	class:math::Quaternion	access:public	signature:()
+inverted	matrix.h	/^            Matrix2 inverted(){$/;"	f	class:math::Matrix2	access:public	signature:()
+inverted	matrix.h	/^            Matrix3 inverted(){$/;"	f	class:math::Matrix3	access:public	signature:()
+isKeyDown	managers.h	/^            bool isKeyDown(unsigned char key) {$/;"	f	class:engine::KeyBuffer	access:public	signature:(unsigned char key)
+isLinked	shaderprogram.h	/^        bool isLinked(){$/;"	f	class:ShaderProgram	access:public	signature:()
+isOpenGLError	5-OBJ_loader.cpp	/^bool isOpenGLError() {$/;"	f	signature:()
+isOpenGLError	applications/3dtangram.cpp	/^bool isOpenGLError() {$/;"	f	signature:()
+isOpenGLError	applications/hello3dWorld.cpp	/^bool isOpenGLError() {$/;"	f	signature:()
+isOpenGLError	applications/meshLoader.cpp	/^bool isOpenGLError() {$/;"	f	signature:()
+isOpenGLError	applications/objectRotation.cpp	/^bool isOpenGLError() {$/;"	f	signature:()
+isOpenGLError	applications/sceneGraphTangram.cpp	/^bool isOpenGLError() {$/;"	f	signature:()
+isOpenGLError	applications/tangram.cpp	/^bool isOpenGLError() {$/;"	f	signature:()
+isRoot	scene.h	/^            bool isRoot;$/;"	m	class:engine::SceneNode	access:public
+isSpecialKeyDown	managers.h	/^            bool isSpecialKeyDown(int key) {$/;"	f	class:engine::KeyBuffer	access:public	signature:(int key)
+keyStates	applications/3dtangram.cpp	/^bool* keyStates = new bool[256];$/;"	v
+keyStates	applications/meshLoader.cpp	/^bool* keyStates = new bool[256];$/;"	v
+keyStates	applications/objectRotation.cpp	/^bool* keyStates = new bool[256];$/;"	v
+keyboardPress	applications/3dtangram.cpp	/^void keyboardPress(unsigned char key, int x, int y) {$/;"	f	signature:(unsigned char key, int x, int y)
+keyboardPress	applications/meshLoader.cpp	/^void keyboardPress(unsigned char key, int x, int y) {$/;"	f	signature:(unsigned char key, int x, int y)
+keyboardPress	applications/objectRotation.cpp	/^void keyboardPress(unsigned char key, int x, int y) {$/;"	f	signature:(unsigned char key, int x, int y)
+keyboardPress	applications/sceneGraphTangram.cpp	/^void keyboardPress(unsigned char key, int x, int y) {$/;"	f	signature:(unsigned char key, int x, int y)
+keyboardPressSpecial	applications/sceneGraphTangram.cpp	/^void keyboardPressSpecial(int key, int x, int y){$/;"	f	signature:(int key, int x, int y)
+keyboardUp	applications/3dtangram.cpp	/^void keyboardUp(unsigned char key, int x, int y) {$/;"	f	signature:(unsigned char key, int x, int y)
+keyboardUp	applications/meshLoader.cpp	/^void keyboardUp(unsigned char key, int x, int y) {$/;"	f	signature:(unsigned char key, int x, int y)
+keyboardUp	applications/sceneGraphTangram.cpp	/^void keyboardUp(unsigned char key, int x, int y) {$/;"	f	signature:(unsigned char key, int x, int y)
+keyboardUpSpecial	applications/sceneGraphTangram.cpp	/^void keyboardUpSpecial(int key, int x, int y) {$/;"	f	signature:(int key, int x, int y)
+keyboard_down	8-SceneManager.cpp	/^void keyboard_down(unsigned char key, int x, int y)$/;"	f	signature:(unsigned char key, int x, int y)
+keyboard_up	8-SceneManager.cpp	/^void keyboard_up(unsigned char key, int x, int y)$/;"	f	signature:(unsigned char key, int x, int y)
+keys	managers.h	/^            bool keys[256];$/;"	m	class:engine::KeyBuffer	access:private
+lastX	applications/3dtangram.cpp	/^GLfloat lastX = (GLfloat)(WinX \/ 2);$/;"	v
+lastX	applications/meshLoader.cpp	/^GLfloat lastX = (GLfloat)(WinX \/ 2);$/;"	v
+lastX	applications/objectRotation.cpp	/^GLfloat lastX = 0.0f;$/;"	v
+lastX	applications/sceneGraphTangram.cpp	/^GLfloat lastX = (GLfloat)(WinX \/ 2);$/;"	v
+lastY	applications/3dtangram.cpp	/^GLfloat lastY = (GLfloat)(WinY \/ 2);$/;"	v
+lastY	applications/meshLoader.cpp	/^GLfloat lastY = (GLfloat)(WinY \/ 2);$/;"	v
+lastY	applications/objectRotation.cpp	/^GLfloat lastY = 0.0f;$/;"	v
+lastY	applications/sceneGraphTangram.cpp	/^GLfloat lastY = (GLfloat)(WinY \/ 2);$/;"	v
+leftMouseButtonPressed	applications/3dtangram.cpp	/^bool leftMouseButtonPressed = false;$/;"	v
+leftMouseButtonPressed	applications/meshLoader.cpp	/^bool leftMouseButtonPressed = false;$/;"	v
+leftMouseButtonPressed	applications/objectRotation.cpp	/^bool leftMouseButtonPressed = false;$/;"	v
+leftMouseButtonPressed	applications/sceneGraphTangram.cpp	/^bool leftMouseButtonPressed = false;$/;"	v
+lerp	quaternion.h	/^            friend Quaternion lerp(Quaternion q0, Quaternion q1, float k);$/;"	p	class:math::Quaternion	access:friend	signature:(Quaternion q0, Quaternion q1, float k)
+lerp	quaternion.h	/^    Quaternion lerp(Quaternion q0, Quaternion q1, float k){$/;"	f	namespace:math	signature:(Quaternion q0, Quaternion q1, float k)
+lerp	vector.h	/^            friend Vector3 lerp(Vector3 v, Vector3 u, float t);$/;"	p	class:math::Vector3	access:friend	signature:(Vector3 v, Vector3 u, float t)
+lerp	vector.h	/^    Vector3 lerp(Vector3 v, Vector3 u, float t) {$/;"	f	namespace:math	signature:(Vector3 v, Vector3 u, float t)
+link	shaderprogram.h	/^        void link() throw(ShaderProgramException){$/;"	f	class:ShaderProgram	access:public	signature:()
+linked	shaderprogram.h	/^        bool linked;$/;"	m	class:ShaderProgram	access:private
+loadMeshData	5-OBJ_loader.cpp	/^void loadMeshData(std::string& filename)$/;"	f	signature:(std::string& filename)
+loadMeshData	mesh.h	/^            void loadMeshData(std::string& filename) {$/;"	f	class:engine::Mesh	access:private	signature:(std::string& filename)
+loadMeshData	objectloader.h	/^           void loadMeshData(std::string& filename) {$/;"	f	class:engine::ObjectLoader	access:public	signature:(std::string& filename)
+logString	shaderprogram.h	/^        std::string logString;$/;"	m	class:ShaderProgram	access:private
+lookAt	camera.h	/^        Matrix4 lookAt(Vector3 eye, Vector3 center, Vector3 up){$/;"	f	class:Camera	access:public	signature:(Vector3 eye, Vector3 center, Vector3 up)
+lowerarmA	8-SceneManager.cpp	/^SceneNode *machine, *lowerarmA, *upperarmA, *pincerAL, *pincerAR;$/;"	v
+machine	8-SceneManager.cpp	/^SceneNode *machine, *lowerarmA, *upperarmA, *pincerAL, *pincerAR;$/;"	v
+main	5-OBJ_loader.cpp	/^int main(int argc, char* argv[])$/;"	f	signature:(int argc, char* argv[])
+main	8-SceneManager.cpp	/^int main(int argc, char* argv[])$/;"	f	signature:(int argc, char* argv[])
+main	applications/3dtangram.cpp	/^int main(int argc, char* argv[])$/;"	f	signature:(int argc, char* argv[])
+main	applications/hello3dWorld.cpp	/^int main(int argc, char* argv[])$/;"	f	signature:(int argc, char* argv[])
+main	applications/meshLoader.cpp	/^int main(int argc, char* argv[])$/;"	f	signature:(int argc, char* argv[])
+main	applications/objectRotation.cpp	/^int main(int argc, char* argv[])$/;"	f	signature:(int argc, char* argv[])
+main	applications/sceneGraphTangram.cpp	/^int main(int argc, char* argv[])$/;"	f	signature:(int argc, char* argv[])
+main	applications/tangram.cpp	/^int main(int argc, char* argv[])$/;"	f	signature:(int argc, char* argv[])
+map	managers.h	/^            Map map;$/;"	m	class:engine::MeshManager	access:private
+map	managers.h	/^            Map map;$/;"	m	class:engine::SceneGraphManager	access:private
+map	managers.h	/^            Map map;$/;"	m	class:engine::ShaderProgramManager	access:private
+math	mathf.h	/^namespace math {$/;"	n
+math	matrix.h	/^namespace math {$/;"	n
+math	matrixfactory.h	/^namespace math{$/;"	n
+math	quaternion.h	/^namespace math {$/;"	n
+math	vector.h	/^namespace math {$/;"	n
+math::CONVERT_2D_TO_3D_MATRIX	matrixfactory.h	/^    Matrix3 CONVERT_2D_TO_3D_MATRIX(Matrix2 m){$/;"	f	namespace:math	signature:(Matrix2 m)
+math::CONVERT_3D_TO_2D_MATRIX	matrixfactory.h	/^    Matrix2 CONVERT_3D_TO_2D_MATRIX(Matrix3 m){$/;"	f	namespace:math	signature:(Matrix3 m)
+math::CONVERT_3D_TO_4D_MATRIX	matrixfactory.h	/^    Matrix4 CONVERT_3D_TO_4D_MATRIX(Matrix3 m){$/;"	f	namespace:math	signature:(Matrix3 m)
+math::CONVERT_4D_TO_3D_MATRIX	matrixfactory.h	/^    Matrix3 CONVERT_4D_TO_3D_MATRIX(Matrix4 m){$/;"	f	namespace:math	signature:(Matrix4 m)
+math::Create2DIdentity	matrixfactory.h	/^    Matrix2 Create2DIdentity(){$/;"	f	namespace:math	signature:()
+math::Create2DRotation	matrixfactory.h	/^    Matrix2 Create2DRotation(float angle){$/;"	f	namespace:math	signature:(float angle)
+math::Create2DScalingMatrix	matrixfactory.h	/^    Matrix2 Create2DScalingMatrix(float XFactor, float YFactor){$/;"	f	namespace:math	signature:(float XFactor, float YFactor)
+math::Create3DDualMatrix	matrixfactory.h	/^    Matrix3 Create3DDualMatrix(Vector3 a){$/;"	f	namespace:math	signature:(Vector3 a)
+math::Create3DIdentity	matrixfactory.h	/^    Matrix3 Create3DIdentity(){$/;"	f	namespace:math	signature:()
+math::Create3DScalingMatrix	matrixfactory.h	/^    Matrix3 Create3DScalingMatrix(float XFactor, float YFactor, float ZFactor){$/;"	f	namespace:math	signature:(float XFactor, float YFactor, float ZFactor)
+math::Create3DTranslation	matrixfactory.h	/^    Matrix3 Create3DTranslation(float XTranslation, float YTranslation){$/;"	f	namespace:math	signature:(float XTranslation, float YTranslation)
+math::Create3DXRotation	matrixfactory.h	/^    Matrix3 Create3DXRotation(float angle){$/;"	f	namespace:math	signature:(float angle)
+math::Create3DYRotation	matrixfactory.h	/^    Matrix3 Create3DYRotation(float angle){$/;"	f	namespace:math	signature:(float angle)
+math::Create3DZRotation	matrixfactory.h	/^    Matrix3 Create3DZRotation(float angle){$/;"	f	namespace:math	signature:(float angle)
+math::Create4DIdentity	matrixfactory.h	/^    Matrix4 Create4DIdentity(){$/;"	f	namespace:math	signature:()
+math::Create4DTranslation	matrixfactory.h	/^    Matrix4 Create4DTranslation(float XTranslation, float YTranslation, float ZTranslation){$/;"	f	namespace:math	signature:(float XTranslation, float YTranslation, float ZTranslation)
+math::CreateAxisRotation	matrixfactory.h	/^    Matrix3 CreateAxisRotation(float angle,Vector3 axis){$/;"	f	namespace:math	signature:(float angle,Vector3 axis)
+math::CreateTransformMatrix	matrixfactory.h	/^    Matrix4 CreateTransformMatrix(float xTranslation,float yTranslation,float zTranslation,float angle, float scalingFactor){$/;"	f	namespace:math	signature:(float xTranslation,float yTranslation,float zTranslation,float angle, float scalingFactor)
+math::Matrix2	matrix.h	/^    class Matrix2{$/;"	c	namespace:math
+math::Matrix2::Matrix2	matrix.h	/^            Matrix2(){$/;"	f	class:math::Matrix2	access:public	signature:()
+math::Matrix2::Matrix2	matrix.h	/^            Matrix2(const Matrix2 &m){$/;"	f	class:math::Matrix2	access:public	signature:(const Matrix2 &m)
+math::Matrix2::Matrix2	matrix.h	/^            Matrix2(float a00, float a01,$/;"	f	class:math::Matrix2	access:public	signature:(float a00, float a01, float a10, float a11)
+math::Matrix2::Matrix2	matrix.h	/^            Matrix2(float values[4]){$/;"	f	class:math::Matrix2	access:public	signature:(float values[4])
+math::Matrix2::Matrix2	matrix.h	/^            Matrix2(std::vector<float> values){$/;"	f	class:math::Matrix2	access:public	signature:(std::vector<float> values)
+math::Matrix2::column	matrix.h	/^            std::vector<float> column(int col){$/;"	f	class:math::Matrix2	access:public	signature:(int col)
+math::Matrix2::copy	matrix.h	/^            Matrix2 copy(){$/;"	f	class:math::Matrix2	access:public	signature:()
+math::Matrix2::data	matrix.h	/^            std::array<float,4> data;$/;"	m	class:math::Matrix2	access:public
+math::Matrix2::determinant	matrix.h	/^            float determinant(){$/;"	f	class:math::Matrix2	access:public	signature:()
+math::Matrix2::getElement	matrix.h	/^            float getElement(int i,int j) const {$/;"	f	class:math::Matrix2	access:public	signature:(int i,int j) const
+math::Matrix2::getPosition	matrix.h	/^            int getPosition(int i,int j) const {return (i + j * width);}$/;"	f	class:math::Matrix2	access:private	signature:(int i,int j) const
+math::Matrix2::height	matrix.h	/^            int height = 2;$/;"	m	class:math::Matrix2	access:private
+math::Matrix2::inverted	matrix.h	/^            Matrix2 inverted(){$/;"	f	class:math::Matrix2	access:public	signature:()
+math::Matrix2::operator !=	matrix.h	/^            bool operator != (const Matrix2 &m){$/;"	f	class:math::Matrix2	access:public	signature:(const Matrix2 &m)
+math::Matrix2::operator *	matrix.h	/^            Matrix2 operator * (Matrix2 m){$/;"	f	class:math::Matrix2	access:public	signature:(Matrix2 m)
+math::Matrix2::operator *	matrix.h	/^            Matrix2 operator * (float k) {$/;"	f	class:math::Matrix2	access:public	signature:(float k)
+math::Matrix2::operator *	matrix.h	/^            Vector2 operator * (Vector2 v){$/;"	f	class:math::Matrix2	access:public	signature:(Vector2 v)
+math::Matrix2::operator *	matrix.h	/^            friend Matrix2 operator * (float k, const Matrix2 &m1) {$/;"	f	class:math::Matrix2	access:friend	signature:(float k, const Matrix2 &m1)
+math::Matrix2::operator +	matrix.h	/^            Matrix2 operator + (Matrix2 m2) {$/;"	f	class:math::Matrix2	access:public	signature:(Matrix2 m2)
+math::Matrix2::operator +	matrix.h	/^            Matrix2 operator + (float k) {$/;"	f	class:math::Matrix2	access:public	signature:(float k)
+math::Matrix2::operator -	matrix.h	/^            Matrix2 operator - (Matrix2 m2) {$/;"	f	class:math::Matrix2	access:public	signature:(Matrix2 m2)
+math::Matrix2::operator -	matrix.h	/^            Matrix2 operator - (float k) {$/;"	f	class:math::Matrix2	access:public	signature:(float k)
+math::Matrix2::operator /	matrix.h	/^            Matrix2 operator \/ (float k) {$/;"	f	class:math::Matrix2	access:public	signature:(float k)
+math::Matrix2::operator =	matrix.h	/^            Matrix2 operator = (Matrix2 m){$/;"	f	class:math::Matrix2	access:public	signature:(Matrix2 m)
+math::Matrix2::operator ==	matrix.h	/^            bool operator == (const Matrix2 &m){$/;"	f	class:math::Matrix2	access:public	signature:(const Matrix2 &m)
+math::Matrix2::print	matrix.h	/^            void print(){$/;"	f	class:math::Matrix2	access:public	signature:()
+math::Matrix2::row	matrix.h	/^            std::vector<float> row(int r){$/;"	f	class:math::Matrix2	access:public	signature:(int r)
+math::Matrix2::setElement	matrix.h	/^            void setElement(int i,int j,float value){$/;"	f	class:math::Matrix2	access:public	signature:(int i,int j,float value)
+math::Matrix2::setElement	matrix.h	/^            void setElement(int index, float value){$/;"	f	class:math::Matrix2	access:public	signature:(int index, float value)
+math::Matrix2::translated	matrix.h	/^            Matrix2 translated(){$/;"	f	class:math::Matrix2	access:public	signature:()
+math::Matrix2::width	matrix.h	/^            int width = 2;$/;"	m	class:math::Matrix2	access:private
+math::Matrix3	matrix.h	/^    class Matrix3{$/;"	c	namespace:math
+math::Matrix3::Matrix3	matrix.h	/^            Matrix3(){$/;"	f	class:math::Matrix3	access:public	signature:()
+math::Matrix3::Matrix3	matrix.h	/^            Matrix3(const Matrix3 &m){$/;"	f	class:math::Matrix3	access:public	signature:(const Matrix3 &m)
+math::Matrix3::Matrix3	matrix.h	/^            Matrix3(float a00, float a01, float a02,$/;"	f	class:math::Matrix3	access:public	signature:(float a00, float a01, float a02, float a10, float a11, float a12, float a20, float a21, float a22)
+math::Matrix3::Matrix3	matrix.h	/^            Matrix3(float values[9]){$/;"	f	class:math::Matrix3	access:public	signature:(float values[9])
+math::Matrix3::Matrix3	matrix.h	/^            Matrix3(std::vector<float> values){$/;"	f	class:math::Matrix3	access:public	signature:(std::vector<float> values)
+math::Matrix3::clean	matrix.h	/^            void clean(){$/;"	f	class:math::Matrix3	access:public	signature:()
+math::Matrix3::column	matrix.h	/^            std::vector<float> column(int col){$/;"	f	class:math::Matrix3	access:public	signature:(int col)
+math::Matrix3::copy	matrix.h	/^            Matrix3 copy(){$/;"	f	class:math::Matrix3	access:public	signature:()
+math::Matrix3::data	matrix.h	/^            std::array<float,9> data;$/;"	m	class:math::Matrix3	access:public
+math::Matrix3::determinant	matrix.h	/^            float determinant(){$/;"	f	class:math::Matrix3	access:public	signature:()
+math::Matrix3::getElement	matrix.h	/^            float getElement(int i,int j) const {$/;"	f	class:math::Matrix3	access:public	signature:(int i,int j) const
+math::Matrix3::getPosition	matrix.h	/^            int getPosition(int i,int j) const {return (i + j * width);}$/;"	f	class:math::Matrix3	access:private	signature:(int i,int j) const
+math::Matrix3::height	matrix.h	/^            int height = 3;$/;"	m	class:math::Matrix3	access:private
+math::Matrix3::inverted	matrix.h	/^            Matrix3 inverted(){$/;"	f	class:math::Matrix3	access:public	signature:()
+math::Matrix3::operator !=	matrix.h	/^            bool operator != (const Matrix3 &m){$/;"	f	class:math::Matrix3	access:public	signature:(const Matrix3 &m)
+math::Matrix3::operator *	matrix.h	/^            Matrix3 operator * (Matrix3 m){$/;"	f	class:math::Matrix3	access:public	signature:(Matrix3 m)
+math::Matrix3::operator *	matrix.h	/^            Matrix3 operator * (float k) {$/;"	f	class:math::Matrix3	access:public	signature:(float k)
+math::Matrix3::operator *	matrix.h	/^            Vector3 operator * (Vector3 v){$/;"	f	class:math::Matrix3	access:public	signature:(Vector3 v)
+math::Matrix3::operator *	matrix.h	/^            friend Matrix3 operator * (float k, const Matrix3 &m1) {$/;"	f	class:math::Matrix3	access:friend	signature:(float k, const Matrix3 &m1)
+math::Matrix3::operator +	matrix.h	/^            Matrix3 operator + (Matrix3 m2) {$/;"	f	class:math::Matrix3	access:public	signature:(Matrix3 m2)
+math::Matrix3::operator +	matrix.h	/^            Matrix3 operator + (float k) {$/;"	f	class:math::Matrix3	access:public	signature:(float k)
+math::Matrix3::operator -	matrix.h	/^            Matrix3 operator - (Matrix3 m2) {$/;"	f	class:math::Matrix3	access:public	signature:(Matrix3 m2)
+math::Matrix3::operator -	matrix.h	/^            Matrix3 operator - (float k) {$/;"	f	class:math::Matrix3	access:public	signature:(float k)
+math::Matrix3::operator /	matrix.h	/^            Matrix3 operator \/ (float k) {$/;"	f	class:math::Matrix3	access:public	signature:(float k)
+math::Matrix3::operator =	matrix.h	/^            Matrix3 operator = (Matrix3 m){$/;"	f	class:math::Matrix3	access:public	signature:(Matrix3 m)
+math::Matrix3::operator ==	matrix.h	/^            bool operator == (const Matrix3 &m){$/;"	f	class:math::Matrix3	access:public	signature:(const Matrix3 &m)
+math::Matrix3::print	matrix.h	/^            void print(){$/;"	f	class:math::Matrix3	access:public	signature:()
+math::Matrix3::row	matrix.h	/^            std::vector<float> row(int r){$/;"	f	class:math::Matrix3	access:public	signature:(int r)
+math::Matrix3::setElement	matrix.h	/^            void setElement(int i,int j,float value){$/;"	f	class:math::Matrix3	access:public	signature:(int i,int j,float value)
+math::Matrix3::setElement	matrix.h	/^            void setElement(int index, float value){$/;"	f	class:math::Matrix3	access:public	signature:(int index, float value)
+math::Matrix3::translated	matrix.h	/^            Matrix3 translated(){$/;"	f	class:math::Matrix3	access:public	signature:()
+math::Matrix3::width	matrix.h	/^            int width  = 3;$/;"	m	class:math::Matrix3	access:private
+math::Matrix4	matrix.h	/^    class Matrix4{$/;"	c	namespace:math
+math::Matrix4::Matrix4	matrix.h	/^            Matrix4(){$/;"	f	class:math::Matrix4	access:public	signature:()
+math::Matrix4::Matrix4	matrix.h	/^            Matrix4(const Matrix4 &m){$/;"	f	class:math::Matrix4	access:public	signature:(const Matrix4 &m)
+math::Matrix4::Matrix4	matrix.h	/^            Matrix4(float a00, float a01, float a02, float a03,$/;"	f	class:math::Matrix4	access:public	signature:(float a00, float a01, float a02, float a03, float a10, float a11, float a12, float a13, float a20, float a21, float a22, float a23, float a30, float a31, float a32, float a33)
+math::Matrix4::Matrix4	matrix.h	/^            Matrix4(float values[16]){$/;"	f	class:math::Matrix4	access:public	signature:(float values[16])
+math::Matrix4::Matrix4	matrix.h	/^            Matrix4(std::vector<float> values){$/;"	f	class:math::Matrix4	access:public	signature:(std::vector<float> values)
+math::Matrix4::clean	matrix.h	/^            void clean(){$/;"	f	class:math::Matrix4	access:public	signature:()
+math::Matrix4::column	matrix.h	/^            std::vector<float> column(int col){$/;"	f	class:math::Matrix4	access:public	signature:(int col)
+math::Matrix4::copy	matrix.h	/^            Matrix4 copy(){$/;"	f	class:math::Matrix4	access:public	signature:()
+math::Matrix4::data	matrix.h	/^            std::array<float,16> data;$/;"	m	class:math::Matrix4	access:public
+math::Matrix4::getData	matrix.h	/^            float* getData(){$/;"	f	class:math::Matrix4	access:public	signature:()
+math::Matrix4::getElement	matrix.h	/^            float getElement(int i,int j) const {$/;"	f	class:math::Matrix4	access:public	signature:(int i,int j) const
+math::Matrix4::getPosition	matrix.h	/^            int getPosition(int i,int j) const {return (i + j * width);}$/;"	f	class:math::Matrix4	access:private	signature:(int i,int j) const
+math::Matrix4::height	matrix.h	/^            int height = 4;$/;"	m	class:math::Matrix4	access:private
+math::Matrix4::operator !=	matrix.h	/^            bool operator != (const Matrix4 &m){$/;"	f	class:math::Matrix4	access:public	signature:(const Matrix4 &m)
+math::Matrix4::operator *	matrix.h	/^            Matrix4 operator * (Matrix4 m){$/;"	f	class:math::Matrix4	access:public	signature:(Matrix4 m)
+math::Matrix4::operator *	matrix.h	/^            Matrix4 operator * (float k) {$/;"	f	class:math::Matrix4	access:public	signature:(float k)
+math::Matrix4::operator *	matrix.h	/^            Vector4 operator * (Vector4 v){$/;"	f	class:math::Matrix4	access:public	signature:(Vector4 v)
+math::Matrix4::operator *	matrix.h	/^            friend Matrix4 operator * (float k, const Matrix4 &m1) {$/;"	f	class:math::Matrix4	access:friend	signature:(float k, const Matrix4 &m1)
+math::Matrix4::operator +	matrix.h	/^            Matrix4 operator + (Matrix4 m2) {$/;"	f	class:math::Matrix4	access:public	signature:(Matrix4 m2)
+math::Matrix4::operator +	matrix.h	/^            Matrix4 operator + (float k) {$/;"	f	class:math::Matrix4	access:public	signature:(float k)
+math::Matrix4::operator -	matrix.h	/^            Matrix4 operator - (Matrix4 m2) {$/;"	f	class:math::Matrix4	access:public	signature:(Matrix4 m2)
+math::Matrix4::operator -	matrix.h	/^            Matrix4 operator - (float k) {$/;"	f	class:math::Matrix4	access:public	signature:(float k)
+math::Matrix4::operator /	matrix.h	/^            Matrix4 operator \/ (float k) {$/;"	f	class:math::Matrix4	access:public	signature:(float k)
+math::Matrix4::operator =	matrix.h	/^            Matrix4 operator = (Matrix4 m){$/;"	f	class:math::Matrix4	access:public	signature:(Matrix4 m)
+math::Matrix4::operator ==	matrix.h	/^            bool operator == (const Matrix4 &m){$/;"	f	class:math::Matrix4	access:public	signature:(const Matrix4 &m)
+math::Matrix4::print	matrix.h	/^            void print(){$/;"	f	class:math::Matrix4	access:public	signature:()
+math::Matrix4::row	matrix.h	/^            std::vector<float> row(int r){$/;"	f	class:math::Matrix4	access:public	signature:(int r)
+math::Matrix4::setElement	matrix.h	/^            void setElement(int i,int j,float value){$/;"	f	class:math::Matrix4	access:public	signature:(int i,int j,float value)
+math::Matrix4::setElement	matrix.h	/^            void setElement(int index, float value){$/;"	f	class:math::Matrix4	access:public	signature:(int index, float value)
+math::Matrix4::translated	matrix.h	/^            Matrix4 translated(){$/;"	f	class:math::Matrix4	access:public	signature:()
+math::Matrix4::width	matrix.h	/^            int width  = 4;$/;"	m	class:math::Matrix4	access:private
+math::Ortho	matrixfactory.h	/^    Matrix4 Ortho(float left, float right, float bottom, float top, float near, float far){$/;"	f	namespace:math	signature:(float left, float right, float bottom, float top, float near, float far)
+math::Perspective	matrixfactory.h	/^    Matrix4 Perspective(float fovy, float aspect, float zNear, float zFar) {$/;"	f	namespace:math	signature:(float fovy, float aspect, float zNear, float zFar)
+math::Quaternion	quaternion.h	/^    class Quaternion{$/;"	c	namespace:math
+math::Quaternion::Quaternion	quaternion.h	/^            Quaternion(float _t = 0.0f, float _x = 0.0f, float _y = 0.0f, float _z = 0.0f){$/;"	f	class:math::Quaternion	access:public	signature:(float _t = 0.0f, float _x = 0.0f, float _y = 0.0f, float _z = 0.0f)
+math::Quaternion::Quaternion	quaternion.h	/^            Quaternion(float theta, Vector4 axis){$/;"	f	class:math::Quaternion	access:public	signature:(float theta, Vector4 axis)
+math::Quaternion::__anon3::__anon4::t	quaternion.h	/^                    float t, x, y, z;$/;"	m	struct:math::Quaternion::__anon3::__anon4	access:public
+math::Quaternion::__anon3::__anon4::x	quaternion.h	/^                    float t, x, y, z;$/;"	m	struct:math::Quaternion::__anon3::__anon4	access:public
+math::Quaternion::__anon3::__anon4::y	quaternion.h	/^                    float t, x, y, z;$/;"	m	struct:math::Quaternion::__anon3::__anon4	access:public
+math::Quaternion::__anon3::__anon4::z	quaternion.h	/^                    float t, x, y, z;$/;"	m	struct:math::Quaternion::__anon3::__anon4	access:public
+math::Quaternion::__anon3::data	quaternion.h	/^                std::array<float,4> data;$/;"	m	union:math::Quaternion::__anon3	access:public
+math::Quaternion::axis	quaternion.h	/^            Vector4 axis() {$/;"	f	class:math::Quaternion	access:public	signature:()
+math::Quaternion::clean	quaternion.h	/^            void clean () {$/;"	f	class:math::Quaternion	access:public	signature:()
+math::Quaternion::conjugate	quaternion.h	/^            Quaternion conjugate() {return Quaternion(t, -x, -y, -z);}$/;"	f	class:math::Quaternion	access:public	signature:()
+math::Quaternion::inverse	quaternion.h	/^            Quaternion inverse() { return conjugate() * (1.0f \/ quadrance());}$/;"	f	class:math::Quaternion	access:public	signature:()
+math::Quaternion::lerp	quaternion.h	/^            friend Quaternion lerp(Quaternion q0, Quaternion q1, float k);$/;"	p	class:math::Quaternion	access:friend	signature:(Quaternion q0, Quaternion q1, float k)
+math::Quaternion::norm	quaternion.h	/^            float norm() {return sqrt(quadrance());}$/;"	f	class:math::Quaternion	access:public	signature:()
+math::Quaternion::normalize	quaternion.h	/^            friend Quaternion normalize(Quaternion q);$/;"	p	class:math::Quaternion	access:friend	signature:(Quaternion q)
+math::Quaternion::normalize	quaternion.h	/^            void normalize() {$/;"	f	class:math::Quaternion	access:public	signature:()
+math::Quaternion::operator *	quaternion.h	/^            Quaternion operator* (Quaternion q) {$/;"	f	class:math::Quaternion	access:public	signature:(Quaternion q)
+math::Quaternion::operator *	quaternion.h	/^            Quaternion operator* (float k) {$/;"	f	class:math::Quaternion	access:public	signature:(float k)
+math::Quaternion::operator +	quaternion.h	/^            Quaternion operator+ (Quaternion q) {$/;"	f	class:math::Quaternion	access:public	signature:(Quaternion q)
+math::Quaternion::operator <<	quaternion.h	/^            friend std::ostream& operator << (std::ostream& os, Quaternion q) {$/;"	f	class:math::Quaternion	access:friend	signature:(std::ostream& os, Quaternion q)
+math::Quaternion::operator =	quaternion.h	/^            Quaternion& operator= (Quaternion q) {$/;"	f	class:math::Quaternion	access:public	signature:(Quaternion q)
+math::Quaternion::operator ==	quaternion.h	/^            bool operator== (Quaternion q) {$/;"	f	class:math::Quaternion	access:public	signature:(Quaternion q)
+math::Quaternion::printAngleAxis	quaternion.h	/^            void printAngleAxis(){$/;"	f	class:math::Quaternion	access:public	signature:()
+math::Quaternion::qThreshold	quaternion.h	/^            const float qThreshold = 1.0e-5f;$/;"	m	class:math::Quaternion	access:private
+math::Quaternion::quadrance	quaternion.h	/^            float quadrance() {return t * t + x * x + y * y + z * z;}$/;"	f	class:math::Quaternion	access:public	signature:()
+math::Quaternion::slerp	quaternion.h	/^            friend Quaternion slerp(Quaternion q0, Quaternion q1, float k);$/;"	p	class:math::Quaternion	access:friend	signature:(Quaternion q0, Quaternion q1, float k)
+math::Quaternion::theta	quaternion.h	/^            float theta() { $/;"	f	class:math::Quaternion	access:public	signature:()
+math::Quaternion::toMatrix	quaternion.h	/^            Matrix4 toMatrix() {$/;"	f	class:math::Quaternion	access:public	signature:()
+math::Vector2	vector.h	/^    class Vector2{$/;"	c	namespace:math
+math::Vector2::Vector2	vector.h	/^            Vector2(const Vector2 &v){$/;"	f	class:math::Vector2	access:public	signature:(const Vector2 &v)
+math::Vector2::Vector2	vector.h	/^            Vector2(float x1 = 0.0f, float y1 = 0.0f){$/;"	f	class:math::Vector2	access:public	signature:(float x1 = 0.0f, float y1 = 0.0f)
+math::Vector2::__anon10::__anon11::x	vector.h	/^                    float x, y;$/;"	m	struct:math::Vector2::__anon10::__anon11	access:public
+math::Vector2::__anon10::__anon11::y	vector.h	/^                    float x, y;$/;"	m	struct:math::Vector2::__anon10::__anon11	access:public
+math::Vector2::__anon10::data	vector.h	/^                std::array<float,2> data;$/;"	m	union:math::Vector2::__anon10	access:public
+math::Vector2::clean	vector.h	/^            void clean(){$/;"	f	class:math::Vector2	access:public	signature:()
+math::Vector2::copy	vector.h	/^            Vector2 copy(){$/;"	f	class:math::Vector2	access:public	signature:()
+math::Vector2::dot	vector.h	/^            friend float dot (Vector2 u, Vector2 v);$/;"	p	class:math::Vector2	access:friend	signature:(Vector2 u, Vector2 v)
+math::Vector2::getData	vector.h	/^            float* getData(){$/;"	f	class:math::Vector2	access:public	signature:()
+math::Vector2::norm	vector.h	/^            float norm(){$/;"	f	class:math::Vector2	access:public	signature:()
+math::Vector2::normalize	vector.h	/^            friend Vector2 normalize(Vector2 v);$/;"	p	class:math::Vector2	access:friend	signature:(Vector2 v)
+math::Vector2::normalized	vector.h	/^            Vector2 normalized(){$/;"	f	class:math::Vector2	access:public	signature:()
+math::Vector2::operator !=	vector.h	/^            bool operator != (const Vector2 &u){$/;"	f	class:math::Vector2	access:public	signature:(const Vector2 &u)
+math::Vector2::operator *	vector.h	/^            Vector2 operator * (float k){$/;"	f	class:math::Vector2	access:public	signature:(float k)
+math::Vector2::operator *	vector.h	/^            friend Vector2 operator * (Vector2 v, Matrix2 m);$/;"	p	class:math::Vector2	access:friend	signature:(Vector2 v, Matrix2 m)
+math::Vector2::operator *=	vector.h	/^            void operator *= (float k){$/;"	f	class:math::Vector2	access:public	signature:(float k)
+math::Vector2::operator +	vector.h	/^            Vector2 operator + (Vector2 v){$/;"	f	class:math::Vector2	access:public	signature:(Vector2 v)
+math::Vector2::operator +	vector.h	/^            Vector2 operator + (float k){$/;"	f	class:math::Vector2	access:public	signature:(float k)
+math::Vector2::operator +=	vector.h	/^            void operator += (Vector2 v){$/;"	f	class:math::Vector2	access:public	signature:(Vector2 v)
+math::Vector2::operator +=	vector.h	/^            void operator += (float k){$/;"	f	class:math::Vector2	access:public	signature:(float k)
+math::Vector2::operator -	vector.h	/^            Vector2 operator - (Vector2 v){$/;"	f	class:math::Vector2	access:public	signature:(Vector2 v)
+math::Vector2::operator -	vector.h	/^            Vector2 operator - (float k){$/;"	f	class:math::Vector2	access:public	signature:(float k)
+math::Vector2::operator -=	vector.h	/^            void operator -= (Vector2 v){$/;"	f	class:math::Vector2	access:public	signature:(Vector2 v)
+math::Vector2::operator -=	vector.h	/^            void operator -= (float k){$/;"	f	class:math::Vector2	access:public	signature:(float k)
+math::Vector2::operator /	vector.h	/^            Vector2 operator \/ (float k){$/;"	f	class:math::Vector2	access:public	signature:(float k)
+math::Vector2::operator /=	vector.h	/^            void operator \/= (float k){$/;"	f	class:math::Vector2	access:public	signature:(float k)
+math::Vector2::operator <<	vector.h	/^            friend std::ostream& operator << (std::ostream& os,Vector2 v){$/;"	f	class:math::Vector2	access:friend	signature:(std::ostream& os,Vector2 v)
+math::Vector2::operator =	vector.h	/^            Vector2 operator = (Vector2 v){$/;"	f	class:math::Vector2	access:public	signature:(Vector2 v)
+math::Vector2::operator ==	vector.h	/^            bool operator == (const Vector2 &u){$/;"	f	class:math::Vector2	access:public	signature:(const Vector2 &u)
+math::Vector2::print	vector.h	/^            void print(){$/;"	f	class:math::Vector2	access:public	signature:()
+math::Vector2::quadrance	vector.h	/^            float quadrance(){$/;"	f	class:math::Vector2	access:public	signature:()
+math::Vector3	vector.h	/^    class Vector3{$/;"	c	namespace:math
+math::Vector3::Vector3	vector.h	/^            Vector3(const Vector3 &v){$/;"	f	class:math::Vector3	access:public	signature:(const Vector3 &v)
+math::Vector3::Vector3	vector.h	/^            Vector3(float x1 = 0.0f, float y1 = 0.0f, float z1 = 0.0f){$/;"	f	class:math::Vector3	access:public	signature:(float x1 = 0.0f, float y1 = 0.0f, float z1 = 0.0f)
+math::Vector3::__anon8::__anon9::x	vector.h	/^                    float x, y, z;$/;"	m	struct:math::Vector3::__anon8::__anon9	access:public
+math::Vector3::__anon8::__anon9::y	vector.h	/^                    float x, y, z;$/;"	m	struct:math::Vector3::__anon8::__anon9	access:public
+math::Vector3::__anon8::__anon9::z	vector.h	/^                    float x, y, z;$/;"	m	struct:math::Vector3::__anon8::__anon9	access:public
+math::Vector3::__anon8::data	vector.h	/^                std::array<float,3> data;$/;"	m	union:math::Vector3::__anon8	access:public
+math::Vector3::clean	vector.h	/^            void clean(){$/;"	f	class:math::Vector3	access:public	signature:()
+math::Vector3::copy	vector.h	/^            Vector3 copy(){$/;"	f	class:math::Vector3	access:public	signature:()
+math::Vector3::cross	vector.h	/^            friend Vector3 cross (Vector3 u, Vector3 v);$/;"	p	class:math::Vector3	access:friend	signature:(Vector3 u, Vector3 v)
+math::Vector3::dot	vector.h	/^            friend float dot (Vector3 u, Vector3 v);$/;"	p	class:math::Vector3	access:friend	signature:(Vector3 u, Vector3 v)
+math::Vector3::getData	vector.h	/^            float* getData(){$/;"	f	class:math::Vector3	access:public	signature:()
+math::Vector3::lerp	vector.h	/^            friend Vector3 lerp(Vector3 v, Vector3 u, float t);$/;"	p	class:math::Vector3	access:friend	signature:(Vector3 v, Vector3 u, float t)
+math::Vector3::norm	vector.h	/^            float norm(){$/;"	f	class:math::Vector3	access:public	signature:()
+math::Vector3::normalize	vector.h	/^            friend Vector3 normalize(Vector3 v);$/;"	p	class:math::Vector3	access:friend	signature:(Vector3 v)
+math::Vector3::normalized	vector.h	/^            Vector3 normalized(){$/;"	f	class:math::Vector3	access:public	signature:()
+math::Vector3::operator !=	vector.h	/^            bool operator != (const Vector3 &u){$/;"	f	class:math::Vector3	access:public	signature:(const Vector3 &u)
+math::Vector3::operator *	vector.h	/^            Vector3 operator * (float k){$/;"	f	class:math::Vector3	access:public	signature:(float k)
+math::Vector3::operator *	vector.h	/^            friend Vector3 operator * (Vector3 v, Matrix3 m);$/;"	p	class:math::Vector3	access:friend	signature:(Vector3 v, Matrix3 m)
+math::Vector3::operator *=	vector.h	/^            void operator *= (float k){$/;"	f	class:math::Vector3	access:public	signature:(float k)
+math::Vector3::operator +	vector.h	/^            Vector3 operator + (Vector3 v){$/;"	f	class:math::Vector3	access:public	signature:(Vector3 v)
+math::Vector3::operator +	vector.h	/^            Vector3 operator + (float k){$/;"	f	class:math::Vector3	access:public	signature:(float k)
+math::Vector3::operator +=	vector.h	/^            void operator += (Vector3 v){$/;"	f	class:math::Vector3	access:public	signature:(Vector3 v)
+math::Vector3::operator +=	vector.h	/^            void operator += (float k){$/;"	f	class:math::Vector3	access:public	signature:(float k)
+math::Vector3::operator -	vector.h	/^            Vector3 operator - () {$/;"	f	class:math::Vector3	access:public	signature:()
+math::Vector3::operator -	vector.h	/^            Vector3 operator - (Vector3 v){$/;"	f	class:math::Vector3	access:public	signature:(Vector3 v)
+math::Vector3::operator -	vector.h	/^            Vector3 operator - (float k){$/;"	f	class:math::Vector3	access:public	signature:(float k)
+math::Vector3::operator -=	vector.h	/^            void operator -= (Vector3 v){$/;"	f	class:math::Vector3	access:public	signature:(Vector3 v)
+math::Vector3::operator -=	vector.h	/^            void operator -= (float k){$/;"	f	class:math::Vector3	access:public	signature:(float k)
+math::Vector3::operator /	vector.h	/^            Vector3 operator \/ (float k){$/;"	f	class:math::Vector3	access:public	signature:(float k)
+math::Vector3::operator /=	vector.h	/^            void operator \/= (float k){$/;"	f	class:math::Vector3	access:public	signature:(float k)
+math::Vector3::operator <<	vector.h	/^            friend std::ostream& operator << (std::ostream& os,Vector3 v){$/;"	f	class:math::Vector3	access:friend	signature:(std::ostream& os,Vector3 v)
+math::Vector3::operator =	vector.h	/^            Vector3 operator = (Vector3 v){$/;"	f	class:math::Vector3	access:public	signature:(Vector3 v)
+math::Vector3::operator ==	vector.h	/^            bool operator == (const Vector3 &u){$/;"	f	class:math::Vector3	access:public	signature:(const Vector3 &u)
+math::Vector3::print	vector.h	/^            void print(){$/;"	f	class:math::Vector3	access:public	signature:()
+math::Vector3::quadrance	vector.h	/^            float quadrance(){$/;"	f	class:math::Vector3	access:public	signature:()
+math::Vector4	vector.h	/^    class Vector4{$/;"	c	namespace:math
+math::Vector4::Vector4	vector.h	/^            Vector4(const Vector3 &v){$/;"	f	class:math::Vector4	access:public	signature:(const Vector3 &v)
+math::Vector4::Vector4	vector.h	/^            Vector4(const Vector4 &v){$/;"	f	class:math::Vector4	access:public	signature:(const Vector4 &v)
+math::Vector4::Vector4	vector.h	/^            Vector4(float x1 = 0.0f, float y1 = 0.0f, float z1 = 0.0f, float w1 = 0.0f){$/;"	f	class:math::Vector4	access:public	signature:(float x1 = 0.0f, float y1 = 0.0f, float z1 = 0.0f, float w1 = 0.0f)
+math::Vector4::clean	vector.h	/^            void clean(){$/;"	f	class:math::Vector4	access:public	signature:()
+math::Vector4::copy	vector.h	/^            Vector4 copy(){$/;"	f	class:math::Vector4	access:public	signature:()
+math::Vector4::dot	vector.h	/^            friend float dot (Vector4 u, Vector4 v);$/;"	p	class:math::Vector4	access:friend	signature:(Vector4 u, Vector4 v)
+math::Vector4::norm	vector.h	/^            float norm(){$/;"	f	class:math::Vector4	access:public	signature:()
+math::Vector4::normalize	vector.h	/^            friend Vector4 normalize(Vector4 u);$/;"	p	class:math::Vector4	access:friend	signature:(Vector4 u)
+math::Vector4::normalized	vector.h	/^            Vector4 normalized(){$/;"	f	class:math::Vector4	access:public	signature:()
+math::Vector4::operator !=	vector.h	/^            bool operator != (const Vector4 &u){$/;"	f	class:math::Vector4	access:public	signature:(const Vector4 &u)
+math::Vector4::operator *	vector.h	/^            Vector4 operator * (float k){$/;"	f	class:math::Vector4	access:public	signature:(float k)
+math::Vector4::operator *	vector.h	/^            friend Vector4 operator * (Vector4 v, Matrix4 m);$/;"	p	class:math::Vector4	access:friend	signature:(Vector4 v, Matrix4 m)
+math::Vector4::operator *=	vector.h	/^            void operator *= (float k){$/;"	f	class:math::Vector4	access:public	signature:(float k)
+math::Vector4::operator +	vector.h	/^            Vector4 operator + (Vector4 v){$/;"	f	class:math::Vector4	access:public	signature:(Vector4 v)
+math::Vector4::operator +	vector.h	/^            Vector4 operator + (float k){$/;"	f	class:math::Vector4	access:public	signature:(float k)
+math::Vector4::operator +=	vector.h	/^            void operator += (Vector4 v){$/;"	f	class:math::Vector4	access:public	signature:(Vector4 v)
+math::Vector4::operator +=	vector.h	/^            void operator += (float k){$/;"	f	class:math::Vector4	access:public	signature:(float k)
+math::Vector4::operator -	vector.h	/^            Vector4 operator - (Vector4 v){$/;"	f	class:math::Vector4	access:public	signature:(Vector4 v)
+math::Vector4::operator -	vector.h	/^            Vector4 operator - (float k){$/;"	f	class:math::Vector4	access:public	signature:(float k)
+math::Vector4::operator -=	vector.h	/^            void operator -= (Vector4 v){$/;"	f	class:math::Vector4	access:public	signature:(Vector4 v)
+math::Vector4::operator -=	vector.h	/^            void operator -= (float k){$/;"	f	class:math::Vector4	access:public	signature:(float k)
+math::Vector4::operator /	vector.h	/^            Vector4 operator \/ (float k){$/;"	f	class:math::Vector4	access:public	signature:(float k)
+math::Vector4::operator /=	vector.h	/^            void operator \/= (float k){$/;"	f	class:math::Vector4	access:public	signature:(float k)
+math::Vector4::operator <<	vector.h	/^            friend std::ostream& operator << (std::ostream& os,Vector4 v){$/;"	f	class:math::Vector4	access:friend	signature:(std::ostream& os,Vector4 v)
+math::Vector4::operator =	vector.h	/^            Vector4 operator = (Vector4 v){$/;"	f	class:math::Vector4	access:public	signature:(Vector4 v)
+math::Vector4::operator ==	vector.h	/^            bool operator == (const Vector4 &u){$/;"	f	class:math::Vector4	access:public	signature:(const Vector4 &u)
+math::Vector4::print	vector.h	/^            void print(){$/;"	f	class:math::Vector4	access:public	signature:()
+math::Vector4::quadrance	vector.h	/^            float quadrance(){$/;"	f	class:math::Vector4	access:public	signature:()
+math::Vector4::w	vector.h	/^            float x, y, z, w;$/;"	m	class:math::Vector4	access:public
+math::Vector4::x	vector.h	/^            float x, y, z, w;$/;"	m	class:math::Vector4	access:public
+math::Vector4::y	vector.h	/^            float x, y, z, w;$/;"	m	class:math::Vector4	access:public
+math::Vector4::z	vector.h	/^            float x, y, z, w;$/;"	m	class:math::Vector4	access:public
+math::compareEqual	mathf.h	/^    inline float compareEqual(float x, float y) {$/;"	f	namespace:math	signature:(float x, float y)
+math::cotangent	mathf.h	/^    inline float cotangent(float value){$/;"	f	namespace:math	signature:(float value)
+math::cross	vector.h	/^    Vector3 cross (Vector3 u, Vector3 v){$/;"	f	namespace:math	signature:(Vector3 u, Vector3 v)
+math::dot	vector.h	/^    float dot (Vector2 u, Vector2 v){$/;"	f	namespace:math	signature:(Vector2 u, Vector2 v)
+math::dot	vector.h	/^    float dot (Vector3 u, Vector3 v){$/;"	f	namespace:math	signature:(Vector3 u, Vector3 v)
+math::dot	vector.h	/^    float dot (Vector4 u, Vector4 v){$/;"	f	namespace:math	signature:(Vector4 u, Vector4 v)
+math::floatThreshold	mathf.h	/^    float floatThreshold = 1.0e-10;$/;"	m	namespace:math
+math::lerp	quaternion.h	/^    Quaternion lerp(Quaternion q0, Quaternion q1, float k){$/;"	f	namespace:math	signature:(Quaternion q0, Quaternion q1, float k)
+math::lerp	vector.h	/^    Vector3 lerp(Vector3 v, Vector3 u, float t) {$/;"	f	namespace:math	signature:(Vector3 v, Vector3 u, float t)
+math::normalize	quaternion.h	/^    Quaternion normalize(Quaternion q){$/;"	f	namespace:math	signature:(Quaternion q)
+math::normalize	vector.h	/^    Vector2 normalize(Vector2 v){$/;"	f	namespace:math	signature:(Vector2 v)
+math::normalize	vector.h	/^    Vector3 normalize(Vector3 v){$/;"	f	namespace:math	signature:(Vector3 v)
+math::normalize	vector.h	/^    Vector4 normalize(Vector4 u){$/;"	f	namespace:math	signature:(Vector4 u)
+math::operator *	matrixfactory.h	/^    Vector2 operator * (Vector2 v, Matrix2 m){$/;"	f	namespace:math	signature:(Vector2 v, Matrix2 m)
+math::operator *	matrixfactory.h	/^    Vector3 operator * (Vector3 v, Matrix3 m){$/;"	f	namespace:math	signature:(Vector3 v, Matrix3 m)
+math::operator *	matrixfactory.h	/^    Vector4 operator * (Vector4 v, Matrix4 m){$/;"	f	namespace:math	signature:(Vector4 v, Matrix4 m)
+math::rotate	matrixfactory.h	/^    Matrix4 rotate(float angle, Vector3 axis) {$/;"	f	namespace:math	signature:(float angle, Vector3 axis)
+math::scale	matrixfactory.h	/^    Matrix4 scale(Vector3 v) {$/;"	f	namespace:math	signature:(Vector3 v)
+math::slerp	quaternion.h	/^    Quaternion slerp(Quaternion q0, Quaternion q1, float k){$/;"	f	namespace:math	signature:(Quaternion q0, Quaternion q1, float k)
+math::toDegrees	mathf.h	/^    inline float toDegrees(float radians){$/;"	f	namespace:math	signature:(float radians)
+math::toRadians	mathf.h	/^    inline float toRadians(float degrees){$/;"	f	namespace:math	signature:(float degrees)
+math::translate	matrixfactory.h	/^    Matrix4 translate(Vector3 v) {$/;"	f	namespace:math	signature:(Vector3 v)
+math::x_axis	matrixfactory.h	/^    const Vector3 x_axis = Vector3(1.0f,0.0f,0.0f);$/;"	m	namespace:math
+math::y_axis	matrixfactory.h	/^    const Vector3 y_axis = Vector3(0.0f,1.0f,0.0f);$/;"	m	namespace:math
+math::z_axis	matrixfactory.h	/^    const Vector3 z_axis = Vector3(0.0f,0.0f,1.0f);$/;"	m	namespace:math
+matricesVbo	camera.h	/^        GLuint matricesVbo;$/;"	m	class:ICamera	access:protected
+maxRotationSpeed	applications/sceneGraphTangram.cpp	/^float maxRotationSpeed = 3.0f;$/;"	v
+maxSpeed	applications/sceneGraphTangram.cpp	/^float maxSpeed = 1.0f;$/;"	v
+mediumTriangle	applications/sceneGraphTangram.cpp	/^SceneNode *ground, *bigTriangle1, *bigTriangle2, *mediumTriangle, *smallTriangle1, *smallTriangle2, *square1, *paralelogram;$/;"	v
+mesh	scene.h	/^            Mesh* mesh;$/;"	m	class:engine::SceneNode	access:public
+modelMatrix	applications/objectRotation.cpp	/^Matrix4 modelMatrix = id * G_rotation * scale;$/;"	v
+modelMatrix	scene.h	/^            math::Matrix4 modelMatrix;$/;"	m	class:engine::SceneNode	access:public
+mouse	8-SceneManager.cpp	/^void mouse(int button, int state, int x, int y)$/;"	f	signature:(int button, int state, int x, int y)
+mouseMotion	8-SceneManager.cpp	/^void mouseMotion(int x, int y)$/;"	f	signature:(int x, int y)
+mouseMovement	applications/3dtangram.cpp	/^void mouseMovement(int x, int y){$/;"	f	signature:(int x, int y)
+mouseMovement	applications/meshLoader.cpp	/^void mouseMovement(int x, int y){$/;"	f	signature:(int x, int y)
+mouseMovement	applications/objectRotation.cpp	/^void mouseMovement(int x, int y){$/;"	f	signature:(int x, int y)
+mouseMovement	applications/sceneGraphTangram.cpp	/^void mouseMovement(int x, int y){$/;"	f	signature:(int x, int y)
+mousePress	applications/3dtangram.cpp	/^void mousePress(int button, int state, int x, int y) {$/;"	f	signature:(int button, int state, int x, int y)
+mousePress	applications/meshLoader.cpp	/^void mousePress(int button, int state, int x, int y) {$/;"	f	signature:(int button, int state, int x, int y)
+mousePress	applications/objectRotation.cpp	/^void mousePress(int button, int state, int x, int y) {$/;"	f	signature:(int button, int state, int x, int y)
+mousePress	applications/sceneGraphTangram.cpp	/^void mousePress(int button, int state, int x, int y) {$/;"	f	signature:(int button, int state, int x, int y)
+mouseSensitivity	applications/objectRotation.cpp	/^float mouseSensitivity = 1.0f;$/;"	v
+mouseSensitivity	camera.h	/^        GLfloat mouseSensitivity;$/;"	m	class:Camera	access:public
+mouseWheel	8-SceneManager.cpp	/^void mouseWheel(int button, int dir, int x, int y)$/;"	f	signature:(int button, int dir, int x, int y)
+movementSpeed	camera.h	/^        GLfloat movementSpeed;$/;"	m	class:Camera	access:public
+norm	quaternion.h	/^            float norm() {return sqrt(quadrance());}$/;"	f	class:math::Quaternion	access:public	signature:()
+norm	vector.h	/^            float norm(){$/;"	f	class:math::Vector2	access:public	signature:()
+norm	vector.h	/^            float norm(){$/;"	f	class:math::Vector3	access:public	signature:()
+norm	vector.h	/^            float norm(){$/;"	f	class:math::Vector4	access:public	signature:()
+normalData	5-OBJ_loader.cpp	/^std::vector <Normal> Normals, normalData;$/;"	v
+normalData	mesh.h	/^            std::vector<Vector3> vertexData, normalData;$/;"	m	class:engine::Mesh	access:private
+normalData	objectloader.h	/^           std::vector<Vector3> vertexData, normalData;$/;"	m	class:engine::ObjectLoader	access:public
+normalIdx	5-OBJ_loader.cpp	/^std::vector <unsigned int> vertexIdx, texcoordIdx, normalIdx;$/;"	v
+normalIdx	mesh.h	/^            std::vector<unsigned int> vertexIdx, texcoordIdx, normalIdx;$/;"	m	class:engine::Mesh	access:private
+normalIdx	objectloader.h	/^           std::vector<unsigned int> vertexIdx, texcoordIdx, normalIdx;$/;"	m	class:engine::ObjectLoader	access:public
+normalize	quaternion.h	/^            friend Quaternion normalize(Quaternion q);$/;"	p	class:math::Quaternion	access:friend	signature:(Quaternion q)
+normalize	quaternion.h	/^            void normalize() {$/;"	f	class:math::Quaternion	access:public	signature:()
+normalize	quaternion.h	/^    Quaternion normalize(Quaternion q){$/;"	f	namespace:math	signature:(Quaternion q)
+normalize	vector.h	/^            friend Vector2 normalize(Vector2 v);$/;"	p	class:math::Vector2	access:friend	signature:(Vector2 v)
+normalize	vector.h	/^            friend Vector3 normalize(Vector3 v);$/;"	p	class:math::Vector3	access:friend	signature:(Vector3 v)
+normalize	vector.h	/^            friend Vector4 normalize(Vector4 u);$/;"	p	class:math::Vector4	access:friend	signature:(Vector4 u)
+normalize	vector.h	/^    Vector2 normalize(Vector2 v){$/;"	f	namespace:math	signature:(Vector2 v)
+normalize	vector.h	/^    Vector3 normalize(Vector3 v){$/;"	f	namespace:math	signature:(Vector3 v)
+normalize	vector.h	/^    Vector4 normalize(Vector4 u){$/;"	f	namespace:math	signature:(Vector4 u)
+normalized	vector.h	/^            Vector2 normalized(){$/;"	f	class:math::Vector2	access:public	signature:()
+normalized	vector.h	/^            Vector3 normalized(){$/;"	f	class:math::Vector3	access:public	signature:()
+normalized	vector.h	/^            Vector4 normalized(){$/;"	f	class:math::Vector4	access:public	signature:()
+normals	mesh.h	/^            std::vector<vec3> vertices, normals;$/;"	m	class:engine::Mesh	access:private
+normals	objectloader.h	/^           std::vector<float*> vertices, normals;$/;"	m	class:engine::ObjectLoader	access:public
+normalsLoaded	mesh.h	/^            bool texcoordsLoaded, normalsLoaded; $/;"	m	class:engine::Mesh	access:private
+normalsLoaded	objectloader.h	/^           bool texcoordsLoaded, normalsLoaded; $/;"	m	class:engine::ObjectLoader	access:public
+nx	5-OBJ_loader.cpp	/^	GLfloat nx, ny, nz;$/;"	m	struct:__anon7	file:	access:public
+ny	5-OBJ_loader.cpp	/^	GLfloat nx, ny, nz;$/;"	m	struct:__anon7	file:	access:public
+nz	5-OBJ_loader.cpp	/^	GLfloat nx, ny, nz;$/;"	m	struct:__anon7	file:	access:public
+oldTime	applications/3dtangram.cpp	/^GLfloat oldTime = 0.0f;$/;"	v
+oldTime	applications/meshLoader.cpp	/^GLfloat oldTime = 0.0f;$/;"	v
+oldTime	applications/objectRotation.cpp	/^GLfloat oldTime = 0.0f;$/;"	v
+oldTime	applications/sceneGraphTangram.cpp	/^GLfloat oldTime = 0.0f;$/;"	v
+operator !=	matrix.h	/^            bool operator != (const Matrix2 &m){$/;"	f	class:math::Matrix2	access:public	signature:(const Matrix2 &m)
+operator !=	matrix.h	/^            bool operator != (const Matrix3 &m){$/;"	f	class:math::Matrix3	access:public	signature:(const Matrix3 &m)
+operator !=	matrix.h	/^            bool operator != (const Matrix4 &m){$/;"	f	class:math::Matrix4	access:public	signature:(const Matrix4 &m)
+operator !=	vector.h	/^            bool operator != (const Vector2 &u){$/;"	f	class:math::Vector2	access:public	signature:(const Vector2 &u)
+operator !=	vector.h	/^            bool operator != (const Vector3 &u){$/;"	f	class:math::Vector3	access:public	signature:(const Vector3 &u)
+operator !=	vector.h	/^            bool operator != (const Vector4 &u){$/;"	f	class:math::Vector4	access:public	signature:(const Vector4 &u)
+operator *	matrix.h	/^            Matrix2 operator * (Matrix2 m){$/;"	f	class:math::Matrix2	access:public	signature:(Matrix2 m)
+operator *	matrix.h	/^            Matrix2 operator * (float k) {$/;"	f	class:math::Matrix2	access:public	signature:(float k)
+operator *	matrix.h	/^            Matrix3 operator * (Matrix3 m){$/;"	f	class:math::Matrix3	access:public	signature:(Matrix3 m)
+operator *	matrix.h	/^            Matrix3 operator * (float k) {$/;"	f	class:math::Matrix3	access:public	signature:(float k)
+operator *	matrix.h	/^            Matrix4 operator * (Matrix4 m){$/;"	f	class:math::Matrix4	access:public	signature:(Matrix4 m)
+operator *	matrix.h	/^            Matrix4 operator * (float k) {$/;"	f	class:math::Matrix4	access:public	signature:(float k)
+operator *	matrix.h	/^            Vector2 operator * (Vector2 v){$/;"	f	class:math::Matrix2	access:public	signature:(Vector2 v)
+operator *	matrix.h	/^            Vector3 operator * (Vector3 v){$/;"	f	class:math::Matrix3	access:public	signature:(Vector3 v)
+operator *	matrix.h	/^            Vector4 operator * (Vector4 v){$/;"	f	class:math::Matrix4	access:public	signature:(Vector4 v)
+operator *	matrix.h	/^            friend Matrix2 operator * (float k, const Matrix2 &m1) {$/;"	f	class:math::Matrix2	access:friend	signature:(float k, const Matrix2 &m1)
+operator *	matrix.h	/^            friend Matrix3 operator * (float k, const Matrix3 &m1) {$/;"	f	class:math::Matrix3	access:friend	signature:(float k, const Matrix3 &m1)
+operator *	matrix.h	/^            friend Matrix4 operator * (float k, const Matrix4 &m1) {$/;"	f	class:math::Matrix4	access:friend	signature:(float k, const Matrix4 &m1)
+operator *	matrixfactory.h	/^    Vector2 operator * (Vector2 v, Matrix2 m){$/;"	f	namespace:math	signature:(Vector2 v, Matrix2 m)
+operator *	matrixfactory.h	/^    Vector3 operator * (Vector3 v, Matrix3 m){$/;"	f	namespace:math	signature:(Vector3 v, Matrix3 m)
+operator *	matrixfactory.h	/^    Vector4 operator * (Vector4 v, Matrix4 m){$/;"	f	namespace:math	signature:(Vector4 v, Matrix4 m)
+operator *	quaternion.h	/^            Quaternion operator* (Quaternion q) {$/;"	f	class:math::Quaternion	access:public	signature:(Quaternion q)
+operator *	quaternion.h	/^            Quaternion operator* (float k) {$/;"	f	class:math::Quaternion	access:public	signature:(float k)
+operator *	vector.h	/^            Vector2 operator * (float k){$/;"	f	class:math::Vector2	access:public	signature:(float k)
+operator *	vector.h	/^            Vector3 operator * (float k){$/;"	f	class:math::Vector3	access:public	signature:(float k)
+operator *	vector.h	/^            Vector4 operator * (float k){$/;"	f	class:math::Vector4	access:public	signature:(float k)
+operator *	vector.h	/^            friend Vector2 operator * (Vector2 v, Matrix2 m);$/;"	p	class:math::Vector2	access:friend	signature:(Vector2 v, Matrix2 m)
+operator *	vector.h	/^            friend Vector3 operator * (Vector3 v, Matrix3 m);$/;"	p	class:math::Vector3	access:friend	signature:(Vector3 v, Matrix3 m)
+operator *	vector.h	/^            friend Vector4 operator * (Vector4 v, Matrix4 m);$/;"	p	class:math::Vector4	access:friend	signature:(Vector4 v, Matrix4 m)
+operator *=	vector.h	/^            void operator *= (float k){$/;"	f	class:math::Vector2	access:public	signature:(float k)
+operator *=	vector.h	/^            void operator *= (float k){$/;"	f	class:math::Vector3	access:public	signature:(float k)
+operator *=	vector.h	/^            void operator *= (float k){$/;"	f	class:math::Vector4	access:public	signature:(float k)
+operator +	matrix.h	/^            Matrix2 operator + (Matrix2 m2) {$/;"	f	class:math::Matrix2	access:public	signature:(Matrix2 m2)
+operator +	matrix.h	/^            Matrix2 operator + (float k) {$/;"	f	class:math::Matrix2	access:public	signature:(float k)
+operator +	matrix.h	/^            Matrix3 operator + (Matrix3 m2) {$/;"	f	class:math::Matrix3	access:public	signature:(Matrix3 m2)
+operator +	matrix.h	/^            Matrix3 operator + (float k) {$/;"	f	class:math::Matrix3	access:public	signature:(float k)
+operator +	matrix.h	/^            Matrix4 operator + (Matrix4 m2) {$/;"	f	class:math::Matrix4	access:public	signature:(Matrix4 m2)
+operator +	matrix.h	/^            Matrix4 operator + (float k) {$/;"	f	class:math::Matrix4	access:public	signature:(float k)
+operator +	quaternion.h	/^            Quaternion operator+ (Quaternion q) {$/;"	f	class:math::Quaternion	access:public	signature:(Quaternion q)
+operator +	vector.h	/^            Vector2 operator + (Vector2 v){$/;"	f	class:math::Vector2	access:public	signature:(Vector2 v)
+operator +	vector.h	/^            Vector2 operator + (float k){$/;"	f	class:math::Vector2	access:public	signature:(float k)
+operator +	vector.h	/^            Vector3 operator + (Vector3 v){$/;"	f	class:math::Vector3	access:public	signature:(Vector3 v)
+operator +	vector.h	/^            Vector3 operator + (float k){$/;"	f	class:math::Vector3	access:public	signature:(float k)
+operator +	vector.h	/^            Vector4 operator + (Vector4 v){$/;"	f	class:math::Vector4	access:public	signature:(Vector4 v)
+operator +	vector.h	/^            Vector4 operator + (float k){$/;"	f	class:math::Vector4	access:public	signature:(float k)
+operator +=	vector.h	/^            void operator += (Vector2 v){$/;"	f	class:math::Vector2	access:public	signature:(Vector2 v)
+operator +=	vector.h	/^            void operator += (Vector3 v){$/;"	f	class:math::Vector3	access:public	signature:(Vector3 v)
+operator +=	vector.h	/^            void operator += (Vector4 v){$/;"	f	class:math::Vector4	access:public	signature:(Vector4 v)
+operator +=	vector.h	/^            void operator += (float k){$/;"	f	class:math::Vector2	access:public	signature:(float k)
+operator +=	vector.h	/^            void operator += (float k){$/;"	f	class:math::Vector3	access:public	signature:(float k)
+operator +=	vector.h	/^            void operator += (float k){$/;"	f	class:math::Vector4	access:public	signature:(float k)
+operator -	matrix.h	/^            Matrix2 operator - (Matrix2 m2) {$/;"	f	class:math::Matrix2	access:public	signature:(Matrix2 m2)
+operator -	matrix.h	/^            Matrix2 operator - (float k) {$/;"	f	class:math::Matrix2	access:public	signature:(float k)
+operator -	matrix.h	/^            Matrix3 operator - (Matrix3 m2) {$/;"	f	class:math::Matrix3	access:public	signature:(Matrix3 m2)
+operator -	matrix.h	/^            Matrix3 operator - (float k) {$/;"	f	class:math::Matrix3	access:public	signature:(float k)
+operator -	matrix.h	/^            Matrix4 operator - (Matrix4 m2) {$/;"	f	class:math::Matrix4	access:public	signature:(Matrix4 m2)
+operator -	matrix.h	/^            Matrix4 operator - (float k) {$/;"	f	class:math::Matrix4	access:public	signature:(float k)
+operator -	vector.h	/^            Vector2 operator - (Vector2 v){$/;"	f	class:math::Vector2	access:public	signature:(Vector2 v)
+operator -	vector.h	/^            Vector2 operator - (float k){$/;"	f	class:math::Vector2	access:public	signature:(float k)
+operator -	vector.h	/^            Vector3 operator - () {$/;"	f	class:math::Vector3	access:public	signature:()
+operator -	vector.h	/^            Vector3 operator - (Vector3 v){$/;"	f	class:math::Vector3	access:public	signature:(Vector3 v)
+operator -	vector.h	/^            Vector3 operator - (float k){$/;"	f	class:math::Vector3	access:public	signature:(float k)
+operator -	vector.h	/^            Vector4 operator - (Vector4 v){$/;"	f	class:math::Vector4	access:public	signature:(Vector4 v)
+operator -	vector.h	/^            Vector4 operator - (float k){$/;"	f	class:math::Vector4	access:public	signature:(float k)
+operator -=	vector.h	/^            void operator -= (Vector2 v){$/;"	f	class:math::Vector2	access:public	signature:(Vector2 v)
+operator -=	vector.h	/^            void operator -= (Vector3 v){$/;"	f	class:math::Vector3	access:public	signature:(Vector3 v)
+operator -=	vector.h	/^            void operator -= (Vector4 v){$/;"	f	class:math::Vector4	access:public	signature:(Vector4 v)
+operator -=	vector.h	/^            void operator -= (float k){$/;"	f	class:math::Vector2	access:public	signature:(float k)
+operator -=	vector.h	/^            void operator -= (float k){$/;"	f	class:math::Vector3	access:public	signature:(float k)
+operator -=	vector.h	/^            void operator -= (float k){$/;"	f	class:math::Vector4	access:public	signature:(float k)
+operator /	matrix.h	/^            Matrix2 operator \/ (float k) {$/;"	f	class:math::Matrix2	access:public	signature:(float k)
+operator /	matrix.h	/^            Matrix3 operator \/ (float k) {$/;"	f	class:math::Matrix3	access:public	signature:(float k)
+operator /	matrix.h	/^            Matrix4 operator \/ (float k) {$/;"	f	class:math::Matrix4	access:public	signature:(float k)
+operator /	vector.h	/^            Vector2 operator \/ (float k){$/;"	f	class:math::Vector2	access:public	signature:(float k)
+operator /	vector.h	/^            Vector3 operator \/ (float k){$/;"	f	class:math::Vector3	access:public	signature:(float k)
+operator /	vector.h	/^            Vector4 operator \/ (float k){$/;"	f	class:math::Vector4	access:public	signature:(float k)
+operator /=	vector.h	/^            void operator \/= (float k){$/;"	f	class:math::Vector2	access:public	signature:(float k)
+operator /=	vector.h	/^            void operator \/= (float k){$/;"	f	class:math::Vector3	access:public	signature:(float k)
+operator /=	vector.h	/^            void operator \/= (float k){$/;"	f	class:math::Vector4	access:public	signature:(float k)
+operator <<	quaternion.h	/^            friend std::ostream& operator << (std::ostream& os, Quaternion q) {$/;"	f	class:math::Quaternion	access:friend	signature:(std::ostream& os, Quaternion q)
+operator <<	vector.h	/^            friend std::ostream& operator << (std::ostream& os,Vector2 v){$/;"	f	class:math::Vector2	access:friend	signature:(std::ostream& os,Vector2 v)
+operator <<	vector.h	/^            friend std::ostream& operator << (std::ostream& os,Vector3 v){$/;"	f	class:math::Vector3	access:friend	signature:(std::ostream& os,Vector3 v)
+operator <<	vector.h	/^            friend std::ostream& operator << (std::ostream& os,Vector4 v){$/;"	f	class:math::Vector4	access:friend	signature:(std::ostream& os,Vector4 v)
+operator =	matrix.h	/^            Matrix2 operator = (Matrix2 m){$/;"	f	class:math::Matrix2	access:public	signature:(Matrix2 m)
+operator =	matrix.h	/^            Matrix3 operator = (Matrix3 m){$/;"	f	class:math::Matrix3	access:public	signature:(Matrix3 m)
+operator =	matrix.h	/^            Matrix4 operator = (Matrix4 m){$/;"	f	class:math::Matrix4	access:public	signature:(Matrix4 m)
+operator =	quaternion.h	/^            Quaternion& operator= (Quaternion q) {$/;"	f	class:math::Quaternion	access:public	signature:(Quaternion q)
+operator =	vector.h	/^            Vector2 operator = (Vector2 v){$/;"	f	class:math::Vector2	access:public	signature:(Vector2 v)
+operator =	vector.h	/^            Vector3 operator = (Vector3 v){$/;"	f	class:math::Vector3	access:public	signature:(Vector3 v)
+operator =	vector.h	/^            Vector4 operator = (Vector4 v){$/;"	f	class:math::Vector4	access:public	signature:(Vector4 v)
+operator ==	matrix.h	/^            bool operator == (const Matrix2 &m){$/;"	f	class:math::Matrix2	access:public	signature:(const Matrix2 &m)
+operator ==	matrix.h	/^            bool operator == (const Matrix3 &m){$/;"	f	class:math::Matrix3	access:public	signature:(const Matrix3 &m)
+operator ==	matrix.h	/^            bool operator == (const Matrix4 &m){$/;"	f	class:math::Matrix4	access:public	signature:(const Matrix4 &m)
+operator ==	quaternion.h	/^            bool operator== (Quaternion q) {$/;"	f	class:math::Quaternion	access:public	signature:(Quaternion q)
+operator ==	vector.h	/^            bool operator == (const Vector2 &u){$/;"	f	class:math::Vector2	access:public	signature:(const Vector2 &u)
+operator ==	vector.h	/^            bool operator == (const Vector3 &u){$/;"	f	class:math::Vector3	access:public	signature:(const Vector3 &u)
+operator ==	vector.h	/^            bool operator == (const Vector4 &u){$/;"	f	class:math::Vector4	access:public	signature:(const Vector4 &u)
+ortho	applications/3dtangram.cpp	/^Matrix4 ortho = math::Ortho(-2.0f, 2.0f, -2.0f, 2.0f, 1.0f, 10.0f);$/;"	v
+ortho	applications/meshLoader.cpp	/^Matrix4 ortho = math::Ortho(-2.0f, 2.0f, -2.0f, 2.0f, 1.0f, 10.0f);$/;"	v
+ortho	applications/objectRotation.cpp	/^Matrix4 ortho = math::Ortho(-2.0f, 2.0f, -2.0f, 2.0f, 1.0f, 10.0f);$/;"	v
+ortho	applications/sceneGraphTangram.cpp	/^Matrix4 ortho = math::Ortho(-2.0f, 2.0f, -2.0f, 2.0f, 1.0f, 10.0f);$/;"	v
+paralel	applications/3dtangram.cpp	/^const GLfloat paralel[] =$/;"	v
+paralel	applications/meshLoader.cpp	/^Mesh paralel = Mesh(tamParalel);$/;"	v
+paralel	applications/objectRotation.cpp	/^const GLfloat paralel[] =$/;"	v
+paralel	applications/tangram.cpp	/^const GLfloat paralel[] =$/;"	v
+paralelIndices	applications/tangram.cpp	/^const GLuint paralelIndices[] =$/;"	v
+paralelVboId	applications/3dtangram.cpp	/^GLuint paralelVboId[2];$/;"	v
+paralelVboId	applications/meshLoader.cpp	/^GLuint paralelVboId[2];$/;"	v
+paralelVboId	applications/objectRotation.cpp	/^GLuint paralelVboId[2];$/;"	v
+paralelVboId	applications/tangram.cpp	/^GLuint paralelVboId[2];$/;"	v
+paralelogram	applications/sceneGraphTangram.cpp	/^SceneNode *ground, *bigTriangle1, *bigTriangle2, *mediumTriangle, *smallTriangle1, *smallTriangle2, *square1, *paralelogram;$/;"	v
+parent	scene.h	/^            SceneNode* parent;$/;"	m	class:engine::SceneNode	access:private
+parseFace	5-OBJ_loader.cpp	/^void parseFace(std::stringstream& sin)$/;"	f	signature:(std::stringstream& sin)
+parseFace	mesh.h	/^            void parseFace(std::stringstream& sin) {$/;"	f	class:engine::Mesh	access:private	signature:(std::stringstream& sin)
+parseFace	objectloader.h	/^           void parseFace(std::stringstream& sin) {$/;"	f	class:engine::ObjectLoader	access:public	signature:(std::stringstream& sin)
+parseLine	5-OBJ_loader.cpp	/^void parseLine(std::stringstream& sin)$/;"	f	signature:(std::stringstream& sin)
+parseLine	mesh.h	/^            void parseLine(std::stringstream& sin){$/;"	f	class:engine::Mesh	access:private	signature:(std::stringstream& sin)
+parseLine	objectloader.h	/^           void parseLine(std::stringstream& sin){$/;"	f	class:engine::ObjectLoader	access:public	signature:(std::stringstream& sin)
+parseNormal	5-OBJ_loader.cpp	/^void parseNormal(std::stringstream& sin)$/;"	f	signature:(std::stringstream& sin)
+parseNormal	mesh.h	/^            void parseNormal(std::stringstream& sin) {$/;"	f	class:engine::Mesh	access:private	signature:(std::stringstream& sin)
+parseNormal	objectloader.h	/^           void parseNormal(std::stringstream& sin) {$/;"	f	class:engine::ObjectLoader	access:public	signature:(std::stringstream& sin)
+parseTexcoord	5-OBJ_loader.cpp	/^void parseTexcoord(std::stringstream& sin)$/;"	f	signature:(std::stringstream& sin)
+parseTexcoord	mesh.h	/^            void parseTexcoord(std::stringstream& sin) {$/;"	f	class:engine::Mesh	access:private	signature:(std::stringstream& sin)
+parseTexcoord	objectloader.h	/^           void parseTexcoord(std::stringstream& sin) {$/;"	f	class:engine::ObjectLoader	access:public	signature:(std::stringstream& sin)
+parseVertex	5-OBJ_loader.cpp	/^void parseVertex(std::stringstream& sin)$/;"	f	signature:(std::stringstream& sin)
+parseVertex	mesh.h	/^            void parseVertex(std::stringstream& sin) {$/;"	f	class:engine::Mesh	access:private	signature:(std::stringstream& sin)
+parseVertex	objectloader.h	/^           void parseVertex(std::stringstream& sin) {$/;"	f	class:engine::ObjectLoader	access:public	signature:(std::stringstream& sin)
+perspectiveMode	applications/3dtangram.cpp	/^bool perspectiveMode = true;$/;"	v
+perspectiveMode	applications/meshLoader.cpp	/^bool perspectiveMode = true;$/;"	v
+perspectiveMode	applications/objectRotation.cpp	/^bool perspectiveMode = true;$/;"	v
+pincerAL	8-SceneManager.cpp	/^SceneNode *machine, *lowerarmA, *upperarmA, *pincerAL, *pincerAR;$/;"	v
+pincerAR	8-SceneManager.cpp	/^SceneNode *machine, *lowerarmA, *upperarmA, *pincerAL, *pincerAR;$/;"	v
+pitch	camera.h	/^        GLfloat pitch;$/;"	m	class:Camera	access:public
+position	camera.h	/^        Vector3 position;$/;"	m	class:Camera	access:public
+pressKey	managers.h	/^            void pressKey(unsigned char key) {$/;"	f	class:engine::KeyBuffer	access:public	signature:(unsigned char key)
+pressSpecialKey	managers.h	/^            void pressSpecialKey(int key) {$/;"	f	class:engine::KeyBuffer	access:public	signature:(int key)
+print	matrix.h	/^            void print(){$/;"	f	class:math::Matrix2	access:public	signature:()
+print	matrix.h	/^            void print(){$/;"	f	class:math::Matrix3	access:public	signature:()
+print	matrix.h	/^            void print(){$/;"	f	class:math::Matrix4	access:public	signature:()
+print	mesh.h	/^            void print(){$/;"	f	class:engine::Mesh	access:public	signature:()
+print	vector.h	/^            void print(){$/;"	f	class:math::Vector2	access:public	signature:()
+print	vector.h	/^            void print(){$/;"	f	class:math::Vector3	access:public	signature:()
+print	vector.h	/^            void print(){$/;"	f	class:math::Vector4	access:public	signature:()
+printAngleAxis	quaternion.h	/^            void printAngleAxis(){$/;"	f	class:math::Quaternion	access:public	signature:()
+processMeshData	5-OBJ_loader.cpp	/^void processMeshData()$/;"	f	signature:()
+processMeshData	mesh.h	/^            void processMeshData(){$/;"	f	class:engine::Mesh	access:private	signature:()
+processMeshData	objectloader.h	/^            void processMeshData(){$/;"	f	class:engine::ObjectLoader	access:public	signature:()
+program	applications/3dtangram.cpp	/^ShaderProgram program = ShaderProgram();$/;"	v
+program	applications/meshLoader.cpp	/^ShaderProgram program = ShaderProgram();$/;"	v
+program	applications/objectRotation.cpp	/^ShaderProgram program = ShaderProgram();$/;"	v
+program	applications/tangram.cpp	/^ShaderProgram program = ShaderProgram();$/;"	v
+programID	shaderprogram.h	/^        GLuint programID;$/;"	m	class:ShaderProgram	access:private
+projectionMatrix	applications/3dtangram.cpp	/^GLfloat* projectionMatrix;$/;"	v
+projectionMatrix	applications/meshLoader.cpp	/^GLfloat* projectionMatrix;$/;"	v
+projectionMatrix	applications/objectRotation.cpp	/^GLfloat* projectionMatrix;$/;"	v
+projectionMatrix	applications/sceneGraphTangram.cpp	/^GLfloat* projectionMatrix;$/;"	v
+q	8-SceneManager.cpp	/^qtrn q;$/;"	v
+qThreshold	quaternion.h	/^            const float qThreshold = 1.0e-5f;$/;"	m	class:math::Quaternion	access:private
+quadrance	quaternion.h	/^            float quadrance() {return t * t + x * x + y * y + z * z;}$/;"	f	class:math::Quaternion	access:public	signature:()
+quadrance	vector.h	/^            float quadrance(){$/;"	f	class:math::Vector2	access:public	signature:()
+quadrance	vector.h	/^            float quadrance(){$/;"	f	class:math::Vector3	access:public	signature:()
+quadrance	vector.h	/^            float quadrance(){$/;"	f	class:math::Vector4	access:public	signature:()
+read	5-OBJ_loader.cpp	/^const std::string read(const std::string& filename) $/;"	f	signature:(const std::string& filename)
+releaseKey	managers.h	/^            void releaseKey(unsigned char key) {$/;"	f	class:engine::KeyBuffer	access:public	signature:(unsigned char key)
+releaseSpecialKey	managers.h	/^            void releaseSpecialKey(int key) {$/;"	f	class:engine::KeyBuffer	access:public	signature:(int key)
+reshape	5-OBJ_loader.cpp	/^void reshape(int w, int h)$/;"	f	signature:(int w, int h)
+reshape	8-SceneManager.cpp	/^void reshape(int w, int h)$/;"	f	signature:(int w, int h)
+reshape	applications/3dtangram.cpp	/^void reshape(int w, int h)$/;"	f	signature:(int w, int h)
+reshape	applications/hello3dWorld.cpp	/^void reshape(int w, int h)$/;"	f	signature:(int w, int h)
+reshape	applications/meshLoader.cpp	/^void reshape(int w, int h)$/;"	f	signature:(int w, int h)
+reshape	applications/objectRotation.cpp	/^void reshape(int w, int h)$/;"	f	signature:(int w, int h)
+reshape	applications/sceneGraphTangram.cpp	/^void reshape(int w, int h)$/;"	f	signature:(int w, int h)
+reshape	applications/tangram.cpp	/^void reshape(int w, int h)$/;"	f	signature:(int w, int h)
+right	camera.h	/^        Vector3 right;$/;"	m	class:Camera	access:public
+root	applications/sceneGraphTangram.cpp	/^SceneNode* root;$/;"	v
+root	scene.h	/^            SceneNode* root;$/;"	m	class:engine::SceneGraph	access:private
+rotate	matrixfactory.h	/^    Matrix4 rotate(float angle, Vector3 axis) {$/;"	f	namespace:math	signature:(float angle, Vector3 axis)
+rotationAngle	applications/objectRotation.cpp	/^float rotationAngle = 0.0f;$/;"	v
+rotationBetweenVectors	applications/objectRotation.cpp	/^Quaternion rotationBetweenVectors(Vector3 start, Vector3 dest){$/;"	f	signature:(Vector3 start, Vector3 dest)
+rotationMatrix	applications/objectRotation.cpp	/^Matrix4 rotationMatrix = G_rotX * G_rotY;$/;"	v
+row	matrix.h	/^            std::vector<float> row(int r){$/;"	f	class:math::Matrix2	access:public	signature:(int r)
+row	matrix.h	/^            std::vector<float> row(int r){$/;"	f	class:math::Matrix3	access:public	signature:(int r)
+row	matrix.h	/^            std::vector<float> row(int r){$/;"	f	class:math::Matrix4	access:public	signature:(int r)
+scale	applications/objectRotation.cpp	/^Matrix4 scale = math::CONVERT_3D_TO_4D_MATRIX(math::Create3DScalingMatrix(1.0f,1.0f,1.0f));$/;"	v
+scale	matrixfactory.h	/^    Matrix4 scale(Vector3 v) {$/;"	f	namespace:math	signature:(Vector3 v)
+setCamera	scene.h	/^            void setCamera(ICamera* _camera){$/;"	f	class:engine::SceneGraph	access:public	signature:(ICamera* _camera)
+setElement	matrix.h	/^            void setElement(int i,int j,float value){$/;"	f	class:math::Matrix2	access:public	signature:(int i,int j,float value)
+setElement	matrix.h	/^            void setElement(int i,int j,float value){$/;"	f	class:math::Matrix3	access:public	signature:(int i,int j,float value)
+setElement	matrix.h	/^            void setElement(int i,int j,float value){$/;"	f	class:math::Matrix4	access:public	signature:(int i,int j,float value)
+setElement	matrix.h	/^            void setElement(int index, float value){$/;"	f	class:math::Matrix2	access:public	signature:(int index, float value)
+setElement	matrix.h	/^            void setElement(int index, float value){$/;"	f	class:math::Matrix3	access:public	signature:(int index, float value)
+setElement	matrix.h	/^            void setElement(int index, float value){$/;"	f	class:math::Matrix4	access:public	signature:(int index, float value)
+setMesh	scene.h	/^            void setMesh(Mesh* _mesh) {$/;"	f	class:engine::SceneNode	access:public	signature:(Mesh* _mesh)
+setModelMatrix	scene.h	/^            void setModelMatrix(math::Matrix4 matrix) {$/;"	f	class:engine::SceneNode	access:public	signature:(math::Matrix4 matrix)
+setParent	scene.h	/^            void setParent(SceneNode* _parent) {$/;"	f	class:engine::SceneNode	access:public	signature:(SceneNode* _parent)
+setProjectionMatrix	camera.h	/^        virtual void setProjectionMatrix(Matrix4 projectionMatrix) = 0;$/;"	p	class:ICamera	access:public	signature:(Matrix4 projectionMatrix)
+setProjectionMatrix	camera.h	/^        virtual void setProjectionMatrix(Matrix4 projectionMatrix) {$/;"	f	class:ArcballCamera	access:public	signature:(Matrix4 projectionMatrix)
+setShaderProgram	scene.h	/^            void setShaderProgram(ShaderProgram* _program) {$/;"	f	class:engine::SceneNode	access:public	signature:(ShaderProgram* _program)
+setTag	scene.h	/^            void setTag(std::string _tag) {$/;"	f	class:engine::SceneNode	access:public	signature:(std::string _tag)
+setUniform	shaderprogram.h	/^        void setUniform(const char* name, GLfloat* m){$/;"	f	class:ShaderProgram	access:public	signature:(const char* name, GLfloat* m)
+setUniform	shaderprogram.h	/^        void setUniform(const char* name, float x, float y, float z, float w){$/;"	f	class:ShaderProgram	access:public	signature:(const char* name, float x, float y, float z, float w)
+setViewMatrix	camera.h	/^        virtual void setViewMatrix(Matrix4 viewMatrix) = 0;$/;"	p	class:ICamera	access:public	signature:(Matrix4 viewMatrix)
+setViewMatrix	camera.h	/^        virtual void setViewMatrix(Matrix4 viewMatrix) {$/;"	f	class:ArcballCamera	access:public	signature:(Matrix4 viewMatrix)
+setViewProjectionMatrix	8-SceneManager.cpp	/^void setViewProjectionMatrix()$/;"	f	signature:()
+setViewProjectionMatrix	applications/sceneGraphTangram.cpp	/^void setViewProjectionMatrix() {$/;"	f	signature:()
+setupCallbacks	5-OBJ_loader.cpp	/^void setupCallbacks() $/;"	f	signature:()
+setupCallbacks	8-SceneManager.cpp	/^void setupCallbacks() $/;"	f	signature:()
+setupCallbacks	applications/3dtangram.cpp	/^void setupCallbacks() $/;"	f	signature:()
+setupCallbacks	applications/hello3dWorld.cpp	/^void setupCallbacks() $/;"	f	signature:()
+setupCallbacks	applications/meshLoader.cpp	/^void setupCallbacks() $/;"	f	signature:()
+setupCallbacks	applications/objectRotation.cpp	/^void setupCallbacks() $/;"	f	signature:()
+setupCallbacks	applications/sceneGraphTangram.cpp	/^void setupCallbacks() $/;"	f	signature:()
+setupCallbacks	applications/tangram.cpp	/^void setupCallbacks() $/;"	f	signature:()
+setupGLEW	5-OBJ_loader.cpp	/^void setupGLEW() {$/;"	f	signature:()
+setupGLEW	8-SceneManager.cpp	/^void setupGLEW() {$/;"	f	signature:()
+setupGLEW	applications/3dtangram.cpp	/^void setupGLEW() $/;"	f	signature:()
+setupGLEW	applications/hello3dWorld.cpp	/^void setupGLEW() {$/;"	f	signature:()
+setupGLEW	applications/meshLoader.cpp	/^void setupGLEW() $/;"	f	signature:()
+setupGLEW	applications/objectRotation.cpp	/^void setupGLEW() $/;"	f	signature:()
+setupGLEW	applications/sceneGraphTangram.cpp	/^void setupGLEW() $/;"	f	signature:()
+setupGLEW	applications/tangram.cpp	/^void setupGLEW() $/;"	f	signature:()
+setupGLUT	5-OBJ_loader.cpp	/^void setupGLUT(int argc, char* argv[])$/;"	f	signature:(int argc, char* argv[])
+setupGLUT	8-SceneManager.cpp	/^void setupGLUT(int argc, char* argv[])$/;"	f	signature:(int argc, char* argv[])
+setupGLUT	applications/3dtangram.cpp	/^void setupGLUT(int argc, char* argv[])$/;"	f	signature:(int argc, char* argv[])
+setupGLUT	applications/hello3dWorld.cpp	/^void setupGLUT(int argc, char* argv[])$/;"	f	signature:(int argc, char* argv[])
+setupGLUT	applications/meshLoader.cpp	/^void setupGLUT(int argc, char* argv[])$/;"	f	signature:(int argc, char* argv[])
+setupGLUT	applications/objectRotation.cpp	/^void setupGLUT(int argc, char* argv[])$/;"	f	signature:(int argc, char* argv[])
+setupGLUT	applications/sceneGraphTangram.cpp	/^void setupGLUT(int argc, char* argv[])$/;"	f	signature:(int argc, char* argv[])
+setupGLUT	applications/tangram.cpp	/^void setupGLUT(int argc, char* argv[])$/;"	f	signature:(int argc, char* argv[])
+setupOpenGL	5-OBJ_loader.cpp	/^void setupOpenGL() {$/;"	f	signature:()
+setupOpenGL	8-SceneManager.cpp	/^void setupOpenGL() {$/;"	f	signature:()
+setupOpenGL	applications/3dtangram.cpp	/^void setupOpenGL()$/;"	f	signature:()
+setupOpenGL	applications/hello3dWorld.cpp	/^void setupOpenGL() {$/;"	f	signature:()
+setupOpenGL	applications/meshLoader.cpp	/^void setupOpenGL()$/;"	f	signature:()
+setupOpenGL	applications/objectRotation.cpp	/^void setupOpenGL()$/;"	f	signature:()
+setupOpenGL	applications/sceneGraphTangram.cpp	/^void setupOpenGL()$/;"	f	signature:()
+setupOpenGL	applications/tangram.cpp	/^void setupOpenGL()$/;"	f	signature:()
+shaderProgram	scene.h	/^            ShaderProgram* shaderProgram;$/;"	m	class:engine::SceneNode	access:public
+slerp	quaternion.h	/^            friend Quaternion slerp(Quaternion q0, Quaternion q1, float k);$/;"	p	class:math::Quaternion	access:friend	signature:(Quaternion q0, Quaternion q1, float k)
+slerp	quaternion.h	/^    Quaternion slerp(Quaternion q0, Quaternion q1, float k){$/;"	f	namespace:math	signature:(Quaternion q0, Quaternion q1, float k)
+smallTriangle1	applications/sceneGraphTangram.cpp	/^SceneNode *ground, *bigTriangle1, *bigTriangle2, *mediumTriangle, *smallTriangle1, *smallTriangle2, *square1, *paralelogram;$/;"	v
+smallTriangle2	applications/sceneGraphTangram.cpp	/^SceneNode *ground, *bigTriangle1, *bigTriangle2, *mediumTriangle, *smallTriangle1, *smallTriangle2, *square1, *paralelogram;$/;"	v
+specialKeys	managers.h	/^            bool specialKeys[256];$/;"	m	class:engine::KeyBuffer	access:private
+square	applications/3dtangram.cpp	/^const GLfloat square[] =$/;"	v
+square	applications/meshLoader.cpp	/^Mesh square = Mesh(tamSquare);$/;"	v
+square	applications/tangram.cpp	/^const GLfloat square[] =$/;"	v
+square1	applications/sceneGraphTangram.cpp	/^SceneNode *ground, *bigTriangle1, *bigTriangle2, *mediumTriangle, *smallTriangle1, *smallTriangle2, *square1, *paralelogram;$/;"	v
+squareIndices	applications/tangram.cpp	/^const GLuint squareIndices[] =$/;"	v
+squareVboId	applications/3dtangram.cpp	/^GLuint squareVboId[2];$/;"	v
+squareVboId	applications/meshLoader.cpp	/^GLuint squareVboId[2];$/;"	v
+squareVboId	applications/objectRotation.cpp	/^GLuint squareVboId[2];$/;"	v
+squareVboId	applications/tangram.cpp	/^GLuint squareVboId[2];$/;"	v
+squirrelPositions	applications/sceneGraphTangram.cpp	/^std::unordered_map<std::string,Vector3> squirrelPositions, boxPositions;$/;"	v
+squirrelRotations	applications/sceneGraphTangram.cpp	/^std::unordered_map<std::string,Quaternion> squirrelRotations, boxRotations;$/;"	v
+suzanne	applications/meshLoader.cpp	/^Mesh suzanne = Mesh(object);$/;"	v
+suzanneModel	applications/meshLoader.cpp	/^Matrix4 suzanneModel = math::CreateTransformMatrix( -0.50f,-0.2f,-2.5f,0.0f,1.0f);$/;"	v
+suzanneNode	applications/sceneGraphTangram.cpp	/^SceneNode* suzanneNode;$/;"	v
+t	quaternion.h	/^                    float t, x, y, z;$/;"	m	struct:math::Quaternion::__anon3::__anon4	access:public
+tag	scene.h	/^            std::string tag;$/;"	m	class:engine::SceneNode	access:private
+texcoordData	5-OBJ_loader.cpp	/^std::vector <Texcoord> Texcoords, texcoordData;$/;"	v
+texcoordData	mesh.h	/^            std::vector<Vector2> texcoordData;$/;"	m	class:engine::Mesh	access:private
+texcoordData	objectloader.h	/^           std::vector<Vector2> texcoordData;$/;"	m	class:engine::ObjectLoader	access:public
+texcoordIdx	5-OBJ_loader.cpp	/^std::vector <unsigned int> vertexIdx, texcoordIdx, normalIdx;$/;"	v
+texcoordIdx	mesh.h	/^            std::vector<unsigned int> vertexIdx, texcoordIdx, normalIdx;$/;"	m	class:engine::Mesh	access:private
+texcoordIdx	objectloader.h	/^           std::vector<unsigned int> vertexIdx, texcoordIdx, normalIdx;$/;"	m	class:engine::ObjectLoader	access:public
+texcoords	mesh.h	/^            std::vector<vec2> texcoords;$/;"	m	class:engine::Mesh	access:private
+texcoords	objectloader.h	/^           std::vector<float*> texcoords;$/;"	m	class:engine::ObjectLoader	access:public
+texcoordsLoaded	mesh.h	/^            bool texcoordsLoaded, normalsLoaded; $/;"	m	class:engine::Mesh	access:private
+texcoordsLoaded	objectloader.h	/^           bool texcoordsLoaded, normalsLoaded; $/;"	m	class:engine::ObjectLoader	access:public
+theta	quaternion.h	/^            float theta() { $/;"	f	class:math::Quaternion	access:public	signature:()
+timer	5-OBJ_loader.cpp	/^void timer(int value)$/;"	f	signature:(int value)
+timer	applications/3dtangram.cpp	/^void timer(int value)$/;"	f	signature:(int value)
+timer	applications/hello3dWorld.cpp	/^void timer(int value)$/;"	f	signature:(int value)
+timer	applications/meshLoader.cpp	/^void timer(int value)$/;"	f	signature:(int value)
+timer	applications/objectRotation.cpp	/^void timer(int value)$/;"	f	signature:(int value)
+timer	applications/sceneGraphTangram.cpp	/^void timer(int value)$/;"	f	signature:(int value)
+timer	applications/tangram.cpp	/^void timer(int value)$/;"	f	signature:(int value)
+toDegrees	mathf.h	/^    inline float toDegrees(float radians){$/;"	f	namespace:math	signature:(float radians)
+toMatrix	quaternion.h	/^            Matrix4 toMatrix() {$/;"	f	class:math::Quaternion	access:public	signature:()
+toRadians	mathf.h	/^    inline float toRadians(float degrees){$/;"	f	namespace:math	signature:(float degrees)
+translate	matrixfactory.h	/^    Matrix4 translate(Vector3 v) {$/;"	f	namespace:math	signature:(Vector3 v)
+translated	matrix.h	/^            Matrix2 translated(){$/;"	f	class:math::Matrix2	access:public	signature:()
+translated	matrix.h	/^            Matrix3 translated(){$/;"	f	class:math::Matrix3	access:public	signature:()
+translated	matrix.h	/^            Matrix4 translated(){$/;"	f	class:math::Matrix4	access:public	signature:()
+translationMatrix	applications/objectRotation.cpp	/^Matrix4 translationMatrix = math::Create4DTranslation(0.0,0.0f,-6.0f);$/;"	v
+triangle	applications/3dtangram.cpp	/^const GLfloat triangle[] = $/;"	v
+triangle	applications/meshLoader.cpp	/^Mesh triangle = Mesh(tamTriangle);$/;"	v
+triangle	applications/objectRotation.cpp	/^const GLfloat triangle[] = $/;"	v
+triangle	applications/tangram.cpp	/^const GLfloat triangle[] = $/;"	v
+triangleIndices	applications/tangram.cpp	/^const GLuint triangleIndices[] =$/;"	v
+u	5-OBJ_loader.cpp	/^	GLfloat u, v;$/;"	m	struct:__anon6	file:	access:public
+uniformIDs	shaderprogram.h	/^        std::unordered_map<std::string,GLint> uniformIDs;$/;"	m	class:ShaderProgram	access:private
+up	camera.h	/^        Vector3 up;$/;"	m	class:Camera	access:public
+update	8-SceneManager.cpp	/^	void update(unsigned int elapsed) {$/;"	f	class:updater	access:public	signature:(unsigned int elapsed)
+update	managers.h	/^            virtual void update() = 0;$/;"	p	class:engine::IUpdatable	access:public	signature:()
+update	managers.h	/^            void update() {$/;"	f	class:engine::Simulation	access:public	signature:()
+updateCameraVectors	camera.h	/^        void updateCameraVectors(){$/;"	f	class:Camera	access:private	signature:()
+updater	8-SceneManager.cpp	/^class updater : public IUpdatable$/;"	c	file:	inherits:IUpdatable
+updater::update	8-SceneManager.cpp	/^	void update(unsigned int elapsed) {$/;"	f	class:updater	access:public	signature:(unsigned int elapsed)
+updaters	managers.h	/^            std::vector<IUpdatable*> updaters;$/;"	m	class:engine::Simulation	access:private
+upperarmA	8-SceneManager.cpp	/^SceneNode *machine, *lowerarmA, *upperarmA, *pincerAL, *pincerAR;$/;"	v
+use	shaderprogram.h	/^        void use() throw(ShaderProgramException){$/;"	f	class:ShaderProgram	access:public	signature:()
+v	5-OBJ_loader.cpp	/^	GLfloat u, v;$/;"	m	struct:__anon6	file:	access:public
+vaoId	mesh.h	/^            GLuint vaoId;$/;"	m	class:engine::Mesh	access:private
+vboNormals	mesh.h	/^            GLuint vboVertices, vboTexcoords, vboNormals;$/;"	m	class:engine::Mesh	access:private
+vboTexcoords	mesh.h	/^            GLuint vboVertices, vboTexcoords, vboNormals;$/;"	m	class:engine::Mesh	access:private
+vboVertices	mesh.h	/^            GLuint vboVertices, vboTexcoords, vboNormals;$/;"	m	class:engine::Mesh	access:private
+vec2	mesh.h	/^        typedef std::array<float,2> vec2;$/;"	t	class:engine::Mesh	access:private
+vec3	mesh.h	/^        typedef std::array<float,3> vec3;$/;"	t	class:engine::Mesh	access:private
+vertexData	5-OBJ_loader.cpp	/^std::vector <Vertex> Vertices, vertexData;$/;"	v
+vertexData	mesh.h	/^            std::vector<Vector3> vertexData, normalData;$/;"	m	class:engine::Mesh	access:private
+vertexData	objectloader.h	/^           std::vector<Vector3> vertexData, normalData;$/;"	m	class:engine::ObjectLoader	access:public
+vertexIdx	5-OBJ_loader.cpp	/^std::vector <unsigned int> vertexIdx, texcoordIdx, normalIdx;$/;"	v
+vertexIdx	mesh.h	/^            std::vector<unsigned int> vertexIdx, texcoordIdx, normalIdx;$/;"	m	class:engine::Mesh	access:private
+vertexIdx	objectloader.h	/^           std::vector<unsigned int> vertexIdx, texcoordIdx, normalIdx;$/;"	m	class:engine::ObjectLoader	access:public
+vertices	mesh.h	/^            std::vector<vec3> vertices, normals;$/;"	m	class:engine::Mesh	access:private
+vertices	objectloader.h	/^           std::vector<float*> vertices, normals;$/;"	m	class:engine::ObjectLoader	access:public
+viewMatrix	applications/objectRotation.cpp	/^Matrix4 viewMatrix = translationMatrix * rotationMatrix;$/;"	v
+w	vector.h	/^            float x, y, z, w;$/;"	m	class:math::Vector4	access:public
+width	matrix.h	/^            int width  = 3;$/;"	m	class:math::Matrix3	access:private
+width	matrix.h	/^            int width  = 4;$/;"	m	class:math::Matrix4	access:private
+width	matrix.h	/^            int width = 2;$/;"	m	class:math::Matrix2	access:private
+worldUp	camera.h	/^        Vector3 worldUp;$/;"	m	class:Camera	access:public
+x	5-OBJ_loader.cpp	/^	GLfloat x, y, z;$/;"	m	struct:__anon5	file:	access:public
+x	quaternion.h	/^                    float t, x, y, z;$/;"	m	struct:math::Quaternion::__anon3::__anon4	access:public
+x	vector.h	/^                    float x, y, z;$/;"	m	struct:math::Vector3::__anon8::__anon9	access:public
+x	vector.h	/^                    float x, y;$/;"	m	struct:math::Vector2::__anon10::__anon11	access:public
+x	vector.h	/^            float x, y, z, w;$/;"	m	class:math::Vector4	access:public
+x_axis	matrixfactory.h	/^    const Vector3 x_axis = Vector3(1.0f,0.0f,0.0f);$/;"	m	namespace:math
+y	5-OBJ_loader.cpp	/^	GLfloat x, y, z;$/;"	m	struct:__anon5	file:	access:public
+y	quaternion.h	/^                    float t, x, y, z;$/;"	m	struct:math::Quaternion::__anon3::__anon4	access:public
+y	vector.h	/^                    float x, y, z;$/;"	m	struct:math::Vector3::__anon8::__anon9	access:public
+y	vector.h	/^                    float x, y;$/;"	m	struct:math::Vector2::__anon10::__anon11	access:public
+y	vector.h	/^            float x, y, z, w;$/;"	m	class:math::Vector4	access:public
+y_axis	matrixfactory.h	/^    const Vector3 y_axis = Vector3(0.0f,1.0f,0.0f);$/;"	m	namespace:math
+yaw	camera.h	/^        GLfloat yaw;$/;"	m	class:Camera	access:public
+z	5-OBJ_loader.cpp	/^	GLfloat x, y, z;$/;"	m	struct:__anon5	file:	access:public
+z	quaternion.h	/^                    float t, x, y, z;$/;"	m	struct:math::Quaternion::__anon3::__anon4	access:public
+z	vector.h	/^                    float x, y, z;$/;"	m	struct:math::Vector3::__anon8::__anon9	access:public
+z	vector.h	/^            float x, y, z, w;$/;"	m	class:math::Vector4	access:public
+z_axis	matrixfactory.h	/^    const Vector3 z_axis = Vector3(0.0f,0.0f,1.0f);$/;"	m	namespace:math
+zoom	camera.h	/^        GLfloat zoom;$/;"	m	class:Camera	access:public
+~Mesh	mesh.h	/^            ~Mesh() {$/;"	f	class:engine::Mesh	access:public	signature:()
+~ObjectLoader	objectloader.h	/^            ~ObjectLoader() {$/;"	f	class:engine::ObjectLoader	access:public	signature:()
+~ShaderProgram	shaderprogram.h	/^        ~ShaderProgram(){$/;"	f	class:ShaderProgram	access:public	signature:()
