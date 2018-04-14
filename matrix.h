@@ -90,6 +90,8 @@ namespace math {
                         data[index] = m.getElement(i,j);
                     }
                 }
+
+                return *this;
             }
 
             Matrix2 copy(){
@@ -113,6 +115,8 @@ namespace math {
                         trans.setElement(i,j,data[index]);
                     }
                 }
+
+                return trans;
             }
 
             void print(){
@@ -634,26 +638,24 @@ namespace math {
 
     class Matrix4{
         private:
-            int width  = 4;
-            int height = 4;
-            int getPosition(int i,int j) const {return (i + j * width);}
+            int getPosition(int i,int j) const {return (i + j * 4);}
 
         public:
             std::array<float,16> data;
             Matrix4(){
                 int i, j;
-                for(i = 0; i < height; i++){
-                    for(j = 0; j < width; j++){
-                        data[i + j * width] = 0.0;
+                for(i = 0; i < 4; i++){
+                    for(j = 0; j < 4; j++){
+                        data[i + j * 4] = 0.0;
                     }
                 }
             }
 
             Matrix4(const Matrix4 &m){
                 int i, j, index;
-                for(i = 0; i < height; i++){
-                    for(j = 0; j < width; j++){
-                        index = i + j * width;
+                for(i = 0; i < 4; i++){
+                    for(j = 0; j < 4; j++){
+                        index = i + j * 4;
                         data[index] = m.getElement(i,j);
                     }
                 }
@@ -661,20 +663,20 @@ namespace math {
 
             Matrix4(float values[16]){
                 int i, j, index;
-                for(i = 0; i < height; i++){
-                    for(j = 0; j < width; j++){
-                        index = i + j * width;
-                        data[index] = values[j + i * height];
+                for(i = 0; i < 4; i++){
+                    for(j = 0; j < 4; j++){
+                        index = i + j * 4;
+                        data[index] = values[j + i * 4];
                     }
                 }
             }
 
             Matrix4(std::vector<float> values){
                 int i, j, index;
-                for(i = 0; i < height; i++){
-                    for(j = 0; j < width; j++){
-                        index = i + j * width;
-                        data[index] = values[j + i * height];
+                for(i = 0; i < 4; i++){
+                    for(j = 0; j < 4; j++){
+                        index = i + j * 4;
+                        data[index] = values[j + i * 4];
                     }
                 }
             }
@@ -720,8 +722,8 @@ namespace math {
 
             Matrix4 operator = (Matrix4 m){
                 int i,j,index;
-                for (i = 0; i < height; i++) {
-                    for (j = 0; j < width; j++) {
+                for (i = 0; i < 4; i++) {
+                    for (j = 0; j < 4; j++) {
                         index = getPosition(i,j);
                         data[index] = m.getElement(i,j);
                     }
@@ -732,8 +734,8 @@ namespace math {
             Matrix4 copy(){
                 Matrix4 copypasta = Matrix4();
                 int i,j,index;
-                for (i = 0; i < height; i++) {
-                    for (j = 0; j < width; j++) {
+                for (i = 0; i < 4; i++) {
+                    for (j = 0; j < 4; j++) {
                         index = getPosition(i,j);
                         copypasta.setElement(index,data[index]);
                     }
@@ -744,8 +746,8 @@ namespace math {
             Matrix4 translated(){
                 Matrix4 trans = Matrix4();
                 int i,j,index;
-                for (j = 0; j < height; j++) {
-                    for (i = 0; i < width; i++) {
+                for (j = 0; j < 4; j++) {
+                    for (i = 0; i < 4; i++) {
                         index = getPosition(i,j);
                         trans.setElement(i,j,data[index]);
                     }
@@ -757,14 +759,14 @@ namespace math {
                 clean();
                 std::cout << "|";
                 int i,j;
-                for (i = 0; i < height; i++) {
-                    for (j = 0; j < width; j++) {
-                        if(j != width -1)
+                for (i = 0; i < 4; i++) {
+                    for (j = 0; j < 4; j++) {
+                        if(j != 4 -1)
                             std::cout << getElement(i,j) << ", ";
                         else
                             std::cout << getElement(i,j) << "|" << std::endl;
                     }
-                    if(i != height -1)
+                    if(i != 4 -1)
                         std::cout << "|";
                 }
             }
@@ -772,8 +774,8 @@ namespace math {
             Matrix4 operator / (float k) {
                 Matrix4 m = Matrix4();
                 int i, j, index;
-                for (i = 0; i < height; i++) {
-                    for (j = 0; j < width; j++) {
+                for (i = 0; i < 4; i++) {
+                    for (j = 0; j < 4; j++) {
                         index = getPosition(i,j);
                         m.setElement(index,data[index] / k);
                     }
@@ -784,8 +786,8 @@ namespace math {
             Matrix4 operator * (float k) {
                 Matrix4 m = Matrix4();
                 int i, j, index;
-                for (i = 0; i < height; i++) {
-                    for (j = 0; j < width; j++) {
+                for (i = 0; i < 4; i++) {
+                    for (j = 0; j < 4; j++) {
                         index = getPosition(i,j);
                         m.setElement(index,data[index] * k);
                     }
@@ -794,12 +796,10 @@ namespace math {
             }
 
             friend Matrix4 operator * (float k, const Matrix4 &m1) {
-                int height = 4;
-                int width =  4;
                 Matrix4 m = Matrix4();
                 int i, j;
-                for (i = 0; i < height; i++) {
-                    for (j = 0; j < width; j++) {
+                for (i = 0; i < 4; i++) {
+                    for (j = 0; j < 4; j++) {
                         m.setElement(i,j,m1.getElement(i,j) * k);
                     }
                 }
@@ -809,8 +809,8 @@ namespace math {
             Matrix4 operator + (float k) {
                 Matrix4 m = Matrix4();
                 int i, j, index;
-                for (i = 0; i < height; i++) {
-                    for (j = 0; j < width; j++) {
+                for (i = 0; i < 4; i++) {
+                    for (j = 0; j < 4; j++) {
                         index = getPosition(i,j);
                         m.setElement(index,data[index] + k);
                     }
@@ -821,8 +821,8 @@ namespace math {
             Matrix4 operator - (float k) {
                 Matrix4 m = Matrix4();
                 int i, j, index;
-                for (i = 0; i < height; i++) {
-                    for (j = 0; j < width; j++) {
+                for (i = 0; i < 4; i++) {
+                    for (j = 0; j < 4; j++) {
                         index = getPosition(i,j);
                         m.setElement(index,data[index] - k);
                     }
@@ -833,8 +833,8 @@ namespace math {
             Matrix4 operator + (Matrix4 m2) {
                 Matrix4 m = Matrix4();
                 int i, j, index;
-                for (i = 0; i < height; i++) {
-                    for (j = 0; j < width; j++) {
+                for (i = 0; i < 4; i++) {
+                    for (j = 0; j < 4; j++) {
                         index = getPosition(i,j);
                         m.setElement(index,data[index] + m2.getElement(i,j));
                     }
@@ -845,8 +845,8 @@ namespace math {
             Matrix4 operator - (Matrix4 m2) {
                 Matrix4 m = Matrix4();
                 int i, j, index;
-                for (i = 0; i < height; i++) {
-                    for (j = 0; j < width; j++) {
+                for (i = 0; i < 4; i++) {
+                    for (j = 0; j < 4; j++) {
                         index = getPosition(i,j);
                         m.setElement(index,data[index] - m2.getElement(i,j));
                     }
@@ -857,7 +857,7 @@ namespace math {
             std::vector<float> row(int r){
                 std::vector<float> elements;
                 int index, j;
-                for (j = 0; j < width; j++) {
+                for (j = 0; j < 4; j++) {
                     index = getPosition(r,j);
                     elements.insert(elements.end(),data[index]);
                 }
@@ -867,7 +867,7 @@ namespace math {
             std::vector<float> column(int col){
                 std::vector<float> elements;
                 int i, index;
-                for (i = 0; i < height; i++) {
+                for (i = 0; i < 4; i++) {
                     index = getPosition(i,col);
                     elements.insert(elements.end(),data[index]);
                 }
@@ -877,23 +877,18 @@ namespace math {
 
             Matrix4 operator * (Matrix4 m){
                 Matrix4 mul = Matrix4();
-                int i,j,k,index;
+                unsigned int i,j,k;
                 float currentValue = 0.0f;
-                std::vector<float> r, c;
-                std::vector<float>::size_type size_;
-                for (i = 0; i < height; i++) {
-                    for (j = 0; j < width; j++) {
-                        r = row(i);
-                        c = m.column(j);
-                        size_ = c.size();
-                        for (k = 0; k < (int)size_; k++) {
-                            currentValue += r[k] * c[k];
+                for (i = 0; i < 4; i++) {
+                    for (j = 0; j < 4; j++) {
+                        for (k = 0; k < 4; k++) {
+                            currentValue += data[i + k * 4] * m.data[k + j * 4];
                         }
-                        index = getPosition(i,j);
-                        mul.setElement(index,currentValue);
+                        mul.data[i + j * 4] = currentValue;
                         currentValue = 0.0;
                     }
                 }
+
                 return mul;
             }
 
@@ -910,8 +905,8 @@ namespace math {
                 float eps = std::numeric_limits<float>::epsilon();
                 int i,j,index;
                 float diff;
-                for (i = 0; i < height; i++) {
-                    for (j = 0; j < width; j++) {
+                for (i = 0; i < 4; i++) {
+                    for (j = 0; j < 4; j++) {
                         index = getPosition(i,j);
                         diff = data[index] - m.getElement(i,j);
                         if(diff < eps && -diff < eps)
@@ -935,8 +930,8 @@ namespace math {
                 float eps = 1.0e-5f;
                 int i,j,index;
                 float diff;
-                for (i = 0; i < height; i++) {
-                    for (j = 0; j < width; j++) {
+                for (i = 0; i < 4; i++) {
+                    for (j = 0; j < 4; j++) {
                         index = getPosition(i,j);
                         diff = data[index];
                         if(diff < eps && -diff < eps)
