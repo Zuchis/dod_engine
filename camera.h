@@ -44,18 +44,26 @@ class ICamera {
         virtual void setProjectionMatrix(Matrix4 projectionMatrix) = 0;
 };
 
-class ArcballCamera : public ICamera {
+class ArcballCamera {
     public:
-        ArcballCamera(GLuint _UBO_BP)
-            :ICamera(_UBO_BP) {}
+        GLuint UBO_BP;
+        GLuint matricesVbo;
 
-        virtual void setViewMatrix(Matrix4 viewMatrix) {
+        ArcballCamera(GLuint _UBO_BP) {
+            UBO_BP = _UBO_BP;
+            glGenBuffers(1,&matricesVbo);
+            glBindBuffer(GL_UNIFORM_BUFFER,matricesVbo);
+            glBufferData(GL_UNIFORM_BUFFER, sizeof(std::array<float,16>) * 2, 0, GL_STREAM_DRAW);
+            glBindBufferBase(GL_UNIFORM_BUFFER, UBO_BP, matricesVbo);
+        }
+
+        void setViewMatrix(Matrix4 viewMatrix) {
             glBindBuffer(GL_UNIFORM_BUFFER, matricesVbo);
             glBufferSubData(GL_UNIFORM_BUFFER, 0, sizeof(viewMatrix.data), viewMatrix.getData());
             glBindBuffer(GL_UNIFORM_BUFFER, 0);
         }
 
-        virtual void setProjectionMatrix(Matrix4 projectionMatrix) {
+        void setProjectionMatrix(Matrix4 projectionMatrix) {
             glBindBuffer(GL_UNIFORM_BUFFER, matricesVbo);
             float* matrix = projectionMatrix.getData();
             glBufferSubData(GL_UNIFORM_BUFFER, sizeof(projectionMatrix.data), sizeof(projectionMatrix.data), matrix);

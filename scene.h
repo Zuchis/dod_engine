@@ -10,41 +10,18 @@
 
 namespace engine {
 
-    class RenderException : public std::runtime_error {
-        public:
-            RenderException( const std::string & msg ) :
-                std::runtime_error(msg) { }
-    };
-
-    class SceneGraphException : public std::runtime_error {
-        public:
-            SceneGraphException( const std::string & msg ) :
-                std::runtime_error(msg) { }
-    };
-
     class SceneNode {
         private:
             SceneNode* parent;
             std::string tag;
 
-            ShaderProgram* getProgramFromParent() {
-                if(parent == nullptr)
-                    return nullptr;
-
-                if(parent->shaderProgram != nullptr)
-                    return parent->shaderProgram;
-
-                return parent->getProgramFromParent();
-            }
-
         public:
             std::vector<SceneNode*> children;
-            ShaderProgram* shaderProgram;
+            ShaderData shaderData;
             Object* object;
             bool isRoot;
 
             SceneNode(std::string _tag = "") {
-                shaderProgram = nullptr;
                 parent = nullptr;
                 isRoot = false;
                 tag = _tag;
@@ -66,9 +43,6 @@ namespace engine {
                 object->setMesh(_mesh);
             }
 
-            void setShaderProgram(ShaderProgram* _program) {
-                shaderProgram = _program;
-            }
 
             void setParent(SceneNode* _parent) {
                 parent = _parent;
@@ -105,33 +79,25 @@ namespace engine {
                 return tag;
             }
 
-            void draw()
-                throw (RenderException) {
-                    if (object == nullptr) {
-                        throw RenderException("No Object set for the node " + tag);
-                    }
-                    if (shaderProgram == nullptr) {
-                        shaderProgram = getProgramFromParent();
-                        if (shaderProgram == nullptr) {
-                            throw RenderException("Could not find any shader program");
-                        }
-                    }
-                    shaderProgram->use();
-                    shaderProgram->setUniform("Matrix",this->getModelMatrix().getData());
-                    object->draw();
-                    if (!children.empty()){
-                        int i;
-                        for (i = 0; i < (int)children.size(); i++) {
-                            children[i]->draw();
-                        }
+            void draw() {
+                glUseProgram(shaderData.programID);
+                glUniformMatrix4fv(shaderData.matrixID, 1, GL_FALSE, this->getModelMatrix().getData());
+
+                object->draw();
+                if (!children.empty()){
+                    int i;
+                    for (i = 0; i < (int)children.size(); i++) {
+                        children[i]->draw();
                     }
                 }
+            }
     };
 
     class SceneGraph {
         private:
             SceneNode* root;
-            ICamera* camera;
+            ArcballCamera* camera;
+            GLint matrixID;
 
         public:
             SceneGraph() {
@@ -143,11 +109,11 @@ namespace engine {
                 return root->createNode(tag);
             }
 
-            void setCamera(ICamera* _camera){
+            void setCamera(ArcballCamera* _camera){
                 camera = _camera;
             }
 
-            ICamera* getCamera() {
+            ArcballCamera* getCamera() {
                 return camera;
             }
 
@@ -155,18 +121,15 @@ namespace engine {
                 return root;
             }
 
-            void draw()
-                throw (RenderException) {
-                    if (!root->children.empty()){
-                        int i;
-                        for (i = 0; i < (int)root->children.size(); i++) {
-                            root->children[i]->draw();
+            void draw() {
+                if (!root->children.empty()){
+                    int i;
+                    for (i = 0; i < (int)root->children.size(); i++) {
+                        root->children[i]->draw();
 
-                        }
-                    } else {
-                        throw RenderException("The graph is empty.");
                     }
                 }
+            }
     };
 
 };

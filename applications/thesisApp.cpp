@@ -16,30 +16,51 @@ float ySup =  20.0f;
 float zInf = -20.0f;
 float zSup =  20.0f;
 
-//int lol;
+const size_t nPrograms = 1;
+const size_t nMeshes =  4;
+const size_t nObjects = 3;
+const size_t totalObjects = nObjects * 4;
+
+const size_t squareID = 0;
+const size_t ballID = 1;
+const size_t parallelID = 2;
+const size_t suzanneID = 3;
+
+vector<Mesh*> meshes;
+vector<ShaderData> programs;
+vector<Object*> objects;
+
+SceneGraph* graph;
 
 void createShaderProgram()
 {
-    ShaderProgram *program = new ShaderProgram();
+    programs.reserve(nPrograms);
 
-    program->compileShaderFromFile("shaders/vertexShaderSceneManagement.vert",ShaderType::VERTEX);
+    GLuint programID = glCreateProgram();
+    GLint matrixID;
 
-    program->compileShaderFromFile("shaders/fragmentShaderSceneManagement.frag",ShaderType::FRAGMENT);
+    compileShaderFromFile(programID, "shaders/vertexShaderSceneManagement.vert",ShaderType::VERTEX);
 
-    program->bindAttribLocation(VERTICES,"in_Position");
-    program->bindAttribLocation(TEXCOORDS,"in_TexCoords");
-    program->bindAttribLocation(NORMALS,"in_Normal");
-    program->addUniformBlock("Camera", UBO_BP);
+    compileShaderFromFile(programID, "shaders/fragmentShaderSceneManagement.frag",ShaderType::FRAGMENT);
 
-    program->link();
+    bindAttribLocation(programID, VERTICES,"in_Position");
+    bindAttribLocation(programID, TEXCOORDS,"in_TexCoords");
+    bindAttribLocation(programID, NORMALS,"in_Normal");
+    addUniformBlock(programID, "Camera", UBO_BP);
 
-    ShaderProgramManager::instance()->add("default",program);
+    link(programID);
+
+    matrixID = getMatrixID(programID);
+
+    programs[0] = ShaderData { .programID = programID, .matrixID = matrixID } ;
 
     //checkOpenGLError("ERROR: Could not create shaders.");
 }
 
 void createMeshes()
 {
+    meshes.reserve(4);
+
     std::string tamSquare("objects/tamSquare.obj");
     std::string sphere("objects/sphere.obj");
     std::string parallelogram("objects/tamParalel.obj");
@@ -55,41 +76,17 @@ void createMeshes()
     parallel->create();
     suzanne->create();
 
-    MeshManager::instance()->add("square",square);
-    MeshManager::instance()->add("sphere",ball);
-    MeshManager::instance()->add("parallel",parallel);
-    MeshManager::instance()->add("suzanne",suzanne);
+    meshes[0] = square;
+    meshes[1] = ball;
+    meshes[2] = parallel;
+    meshes[3] = suzanne;
+
+    meshes[squareID] = square;
+    meshes[ballID] = ball;
+    meshes[parallelID] = parallel;
+    meshes[suzanneID] = suzanne;
 
     checkOpenGLError("ERROR: Could not create VAOs and VBOs.");
-}
-
-void createObjects()
-{
-    Mesh* squareMesh = MeshManager::instance()->get("square");
-    Mesh* ballMesh = MeshManager::instance()->get("sphere");
-    Mesh* parallelMesh = MeshManager::instance()->get("parallel");
-    Mesh* suzanneMesh = MeshManager::instance()->get("suzanne");
-
-    Plane* plane = new Plane("plane");
-    plane->setMesh(squareMesh);
-    plane->speed = Vector3(0.001f, 0.002f, 0.003f);
-
-    Sphere* ball = new Sphere("ball");
-    ball->setMesh(ballMesh);
-    ball->speed = Vector3(0.01f, 0.02f, 0.03f);
-
-    Parallelogram* parallel = new Parallelogram("parallel");
-    parallel->setMesh(parallelMesh);
-    parallel->speed = Vector3(0.005f, 0.01f, 0.015f);
-
-    Suzanne* suzanne = new Suzanne("suzanne");
-    suzanne->setMesh(suzanneMesh);
-    suzanne->speed = Vector3(0.015f, 0.025f, 0.0315f);
-
-    ObjectManager::instance()->add("plane", plane);
-    ObjectManager::instance()->add("ball", ball);
-    ObjectManager::instance()->add("parallel", parallel);
-    ObjectManager::instance()->add("suzanne", suzanne);
 }
 
 float nextRandom(float lo, float hi) {
@@ -107,28 +104,30 @@ vector<SceneNode*> parallelNodes;
 vector<SceneNode*> suzanneNodes;
 
 void createSceneGraph() {
-    int i;
-    int nObjects = 3;
+    size_t i;
     float lo = xInf + 1;
     float hi = xSup - 1;
     float x, y, z;
 
     std::string iter;
 
-    Mesh* squareMesh = MeshManager::instance()->get("square");
-    Mesh* ballMesh = MeshManager::instance()->get("sphere");
-    Mesh* parallelMesh = MeshManager::instance()->get("parallel");
-    Mesh* suzanneMesh = MeshManager::instance()->get("suzanne");
+    Mesh* squareMesh = meshes[squareID];
+    Mesh* ballMesh = meshes[ballID];
+    Mesh* parallelMesh = meshes[parallelID];
+    Mesh* suzanneMesh = meshes[suzanneID];
 
     SceneGraph* scenegraph = new SceneGraph();
-    //camera = new ArcballCamera(UBO_BP);
     scenegraph->setCamera(new ArcballCamera(UBO_BP));
 
     scenegraph->getCamera()->setProjectionMatrix(
         math::Perspective(30.0f, winWidth / winHeight, 0.1f, 1000.0f));
 
     root = scenegraph->getRoot();
-    root->setShaderProgram(ShaderProgramManager::instance()->get("default"));
+    root->shaderData = programs[0];
+
+    objects.reserve(totalObjects);
+
+    size_t objIndex = 0;
 
     for (i = 0; i < nObjects; i++) {
         iter = std::to_string(i);
@@ -146,8 +145,10 @@ void createSceneGraph() {
 
         planeNodes.push_back(scenegraph->createNode("plane"));
         planeNodes[i]->setObject(plane);
+        planeNodes[i]->shaderData = programs[0];
 
-        ObjectManager::instance()->add("plane" + iter, plane);
+        objects[objIndex] = plane;
+        objIndex++;
 
         x = nextRandom(lo, hi);
         y = nextRandom(lo, hi);
@@ -162,8 +163,10 @@ void createSceneGraph() {
 
         sphereNodes.push_back(scenegraph->createNode("ball"));
         sphereNodes[i]->setObject(sphere);
+        sphereNodes[i]->shaderData = programs[0];
 
-        ObjectManager::instance()->add("sphere" + iter, sphere);
+        objects[objIndex] = sphere;
+        objIndex++;
 
         x = nextRandom(lo, hi);
         y = nextRandom(lo, hi);
@@ -178,8 +181,10 @@ void createSceneGraph() {
 
         parallelNodes.push_back(scenegraph->createNode("parallel"));
         parallelNodes[i]->setObject(parallel);
+        parallelNodes[i]->shaderData = programs[0];
 
-        ObjectManager::instance()->add("parallel" + iter, parallel);
+        objects[objIndex] = parallel;
+        objIndex++;
 
         x = nextRandom(lo, hi);
         y = nextRandom(lo, hi);
@@ -194,11 +199,13 @@ void createSceneGraph() {
 
         suzanneNodes.push_back(scenegraph->createNode("parallel"));
         suzanneNodes[i]->setObject(suzanne);
+        suzanneNodes[i]->shaderData = programs[0];
 
-        ObjectManager::instance()->add("suzanne" + iter, suzanne);
+        objects[objIndex] = suzanne;
+        objIndex++;
     }
 
-    SceneGraphManager::instance()->add("default",scenegraph);
+    graph = scenegraph;
 }
 
 //void setViewProjectionMatrix() 
@@ -214,104 +221,20 @@ void createSceneGraph() {
 void setViewProjectionMatrix() {
     Matrix4 translation = math::translate(Vector3(0.0f,0.0f,(cameraDistance * -1)));
     Matrix4 rotation    = rotationQuaternion.toMatrix();
-    SceneGraphManager::instance()->get("default")->getCamera()->setViewMatrix(translation * rotation);
+    graph->getCamera()->setViewMatrix(translation * rotation);
 }
 
 void updateAccelerations() {
-    auto objects = ObjectManager::instance()->getObjects();
-    auto it = objects.begin();
+    size_t i;
     float x, y, z;
     float lo = -0.01f;
     float hi = 0.01f;
-    for(it = objects.begin(); it != objects.end(); it++) {
+    for(i = 0; i < totalObjects; i++) {
         x = nextRandom(lo, hi);
         y = nextRandom(lo, hi);
         z = nextRandom(lo, hi);
-        it->second->acceleration = Vector3(x, y, z);
+        objects[i]->acceleration = Vector3(x, y, z);
     }
-}
-
-void addRandomObject() {
-    static int nRandom = 0;
-    vector<char> options = {'0', '1', '2', '3'};
-    std::random_shuffle(options.begin(), options.end());
-    char chosen = options[0];
-    std::string iter = std::to_string(nRandom);
-    auto scenegraph = SceneGraphManager::instance()->get("default");
-    float x, y, z;
-    float lo = xInf + 1;
-    float hi = xSup - 1;
-
-    x = nextRandom(lo, hi);
-    y = nextRandom(lo, hi);
-    z = nextRandom(lo, hi);
-
-    switch (chosen) {
-        case '0':
-          {
-            Plane* plane = new Plane("plane");
-            plane->setMesh(MeshManager::instance()->get("square"));
-            plane->speed = Vector3(0.001f, 0.002f, 0.003f);
-            plane->setTranslation(Vector3(x, y, z));
-            plane->setRotation(Quaternion(0.0f,Vector3(-1.0f,0.0f,0.0f)));
-            plane->setScale(Vector3(5.0f, 0.5f, 5.0f));
-            ObjectManager::instance()->add("random" + iter, plane);
-            SceneNode* nodePlane = scenegraph->createNode("plane");
-            nodePlane->setObject(plane);
-            planeNodes.push_back(nodePlane);
-            break;
-          }
-
-        case '1':
-          {
-            Sphere* sphere = new Sphere("ball");
-            sphere->setMesh(MeshManager::instance()->get("sphere"));
-            sphere->speed = Vector3(0.01f, 0.02f, 0.03f);
-            sphere->setTranslation(Vector3(x,y,z));
-            sphere->setRotation(Quaternion(0.0f,Vector3(-1.0f,0.0f,0.0f)));
-            sphere->setScale(Vector3(1.0f, 1.0f, 1.0f));
-            ObjectManager::instance()->add("random" + iter, sphere);
-            SceneNode* nodeSphere = scenegraph->createNode("sphere");
-            nodeSphere->setObject(sphere);
-            sphereNodes.push_back(nodeSphere);
-            break;
-          }
-
-        case '2':
-          {
-            Parallelogram* parallel = new Parallelogram("parallel");
-            parallel->setMesh(MeshManager::instance()->get("parallel"));
-            parallel->speed = Vector3(0.01f, 0.02f, 0.03f);
-            parallel->setTranslation(Vector3(x,y,z));
-            parallel->setRotation(Quaternion(0.0f,Vector3(-1.0f,0.0f,0.0f)));
-            parallel->setScale(Vector3(1.0f,1.0f,0.0f));
-            ObjectManager::instance()->add("random" + iter, parallel);
-            SceneNode* nodeParallel = scenegraph->createNode("parallel");
-            nodeParallel->setObject(parallel);
-            parallelNodes.push_back(nodeParallel);
-            break;
-          }
-
-        case '3':
-          {
-            Suzanne* suzanne = new Suzanne("suzanne");
-            suzanne->setMesh(MeshManager::instance()->get("suzanne"));
-            suzanne->speed = Vector3(0.01f, 0.02f, 0.03f);
-            suzanne->setTranslation(Vector3(x,y,z));
-            suzanne->setRotation(Quaternion(0.0f,Vector3(-1.0f,0.0f,0.0f)));
-            suzanne->setScale(Vector3(1.0f,1.0f,0.0f));
-            ObjectManager::instance()->add("random" + iter, suzanne);
-            SceneNode* nodeSuzanne = scenegraph->createNode("suzanne");
-            nodeSuzanne->setObject(suzanne);
-            suzanneNodes.push_back(nodeSuzanne);
-            break;
-          }
-
-        default:
-            std::cout << "WHAT" << std::endl;
-    }
-    
-    nRandom++;
 }
 
 float lastTime = 0;
@@ -326,49 +249,37 @@ void drawScene()
         lastTime = currentTime;
 
         std::cout << "Ta pegando fogo bixo" << std::endl;
-        addRandomObject();
         updateAccelerations();
     }
 
     setViewProjectionMatrix();
-    SceneGraphManager::instance()->get("default")->draw();
+    graph->draw();
 
     glUseProgram(0);
     glBindVertexArray(0);
 }
 
-void computeCameraMovement() 
-{
-    if(KeyBuffer::instance()->isKeyDown('w'))
-        camera->computeKeyboardInputs(FORWARD,deltaTime);
+void updateObjects() {
+    size_t i;
 
-    if(KeyBuffer::instance()->isKeyDown('s'))
-        camera->computeKeyboardInputs(BACKWARD,deltaTime);
-
-    if(KeyBuffer::instance()->isKeyDown('a'))
-        camera->computeKeyboardInputs(LEFT,deltaTime);
-
-    if(KeyBuffer::instance()->isKeyDown('d'))
-        camera->computeKeyboardInputs(RIGHT,deltaTime);
-
-    //if(zoomFactor != 0.0f)
-        //camera->computeMouseScroll(zoomFactor);
-
-    if (deltaX != 0 || deltaY != 0)
-        camera->computeMouseMovement(deltaX, -deltaY);
-    
+    for(i = 0; i < totalObjects; i++) {
+        objects[i]->update();
+    }
 }
 
-void computeInputs() 
-{
-    computeCameraMovement();
+void calculateObjectsCollisionsWithBox(float xInf, float xSup, float yInf, float ySup, float zInf, float zSup) {
+    size_t i;
+
+    for(i = 0; i < totalObjects; i++) {
+        objects[i]->calculateCollisionsWithBox(xInf, xSup, yInf, ySup, zInf, zSup);
+    }
 }
 
 void computePhysics()
 {
-    ObjectManager::instance()->updateObjects();
+    updateObjects();
 
-    ObjectManager::instance()->calculateObjectsCollisionsWithBox(xInf, xSup, yInf, ySup, zInf, zSup);
+    calculateObjectsCollisionsWithBox(xInf, xSup, yInf, ySup, zInf, zSup);
 }
 
 void display()
@@ -376,7 +287,6 @@ void display()
     ++FrameCount;
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     computeTime();
-    //computeInputs();
     computePhysics();
     drawScene();
     glutSwapBuffers();
@@ -390,8 +300,6 @@ void init(int argc, char* argv[])
     createMeshes();
 
     createShaderProgram();
-
-    createObjects();
 
     createSceneGraph();
 }

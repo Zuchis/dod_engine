@@ -27,27 +27,19 @@ class ShaderProgramException : public std::runtime_error {
             std::runtime_error(msg) { }
 };
 
+struct ShaderData {
+    GLuint programID;
+    GLint matrixID;
+};
+
 class ShaderProgram {
     private:
-
         GLuint programID;
-        bool linked;
-        std::string logString;
-        std::unordered_map<std::string,GLint> uniformIDs;
-
-        GLint getUniformLocation(const char* name){
-            std::unordered_map<std::string,GLint>::iterator it;
-            it = uniformIDs.find(name);
-            if(it == uniformIDs.end())
-                uniformIDs[name] = glGetUniformLocation(programID,name);
-
-            return uniformIDs[name];
-        }
+        GLint matrixID;
 
     public:
         ShaderProgram(){
             programID = 0;
-            linked = false;
         }
 
         ~ShaderProgram(){
@@ -135,12 +127,7 @@ class ShaderProgram {
             return programID;
         }
 
-        bool isLinked(){
-            return linked;
-        }
-
         void link() throw(ShaderProgramException){
-            if( linked ) return;
             if( programID <= 0 )
                 throw ShaderProgramException("Program has not been compiled.");
 
@@ -163,35 +150,115 @@ class ShaderProgram {
                 }
 
                 throw ShaderProgramException(std::string("Program link failed:\n") + logString);
-            } else {
-                //uniformLocations.clear();
-                linked = true;
             }
         }
 
-        void use() throw(ShaderProgramException){
-            if(programID <= 0 || (! linked))
-                throw ShaderProgramException("Shader has not been linked");
+        void use() {
             glUseProgram(programID);
         }
 
-
-        void setUniform(const char* name, float x, float y, float z, float w){
-            GLint uniformID = getUniformLocation(name);
-            glUniform4f(uniformID,(GLfloat)x,(GLfloat)y,(GLfloat)z,(GLfloat)w);
+        void setMatrixID() { 
+            this->matrixID = glGetUniformLocation(programID, "Matrix");
         }
 
+        void setModelMatrix(float* m) {
+            glUniformMatrix4fv(matrixID, 1, GL_FALSE, m);
+        }
 
-        void setUniform(const char* name, GLfloat* m){
-            GLint uniformID = getUniformLocation(name);
+        void setUniform(GLint uniformID, float* m) { 
             glUniformMatrix4fv(uniformID,1,GL_FALSE,m);
         }
 
-        void addUniformBlock(const char* name, GLuint location){
+        void addUniformBlock(const char* name, GLuint location) {
             GLint uboId = glGetUniformBlockIndex(this->programID,name);
             glUniformBlockBinding(this->programID, uboId, location);
-
         }
 };
+
+void compileShaderFromFile(GLuint programID, const char* fileName, ShaderType::Type type) {
+    std::ifstream inFile( fileName, std::ios::in );
+    if( !inFile ) {
+        std::cout << std::string("Unable to open: ") + fileName << std::endl;
+        exit(EXIT_FAILURE);
+    }
+
+    std::stringstream code;
+    code << inFile.rdbuf();
+    inFile.close();
+
+    std::string source = code.str();
+    GLuint shaderID = glCreateShader(type);
+
+    const char * c_code = source.c_str();
+    glShaderSource(shaderID, 1, &c_code, NULL );
+
+    glCompileShader(shaderID);
+
+    int result;
+
+    glGetShaderiv(shaderID, GL_COMPILE_STATUS, &result );
+    if( GL_FALSE == result ) {
+        int length = 0;
+        std::string logString;
+        glGetShaderiv(shaderID, GL_INFO_LOG_LENGTH, &length );
+        if( length > 0 ) {
+            char * c_log = new char[length];
+            int written = 0;
+            glGetShaderInfoLog(shaderID, length, &written, c_log);
+            logString = c_log;
+            delete [] c_log;
+        }
+        std::string msg;
+        if( fileName ) {
+            msg = std::string(fileName) + ": shader compliation failed\n";
+        } else {
+            msg = "Shader compilation failed.\n";
+        }
+        msg += logString;
+
+        std::cout << msg << std::endl;
+
+        exit(EXIT_FAILURE);
+    } else {
+        glAttachShader(programID, shaderID);
+    }
+}
+
+void bindAttribLocation(GLuint programID, GLuint location, const char* name){
+    glBindAttribLocation(programID,location,name);
+}
+
+void addUniformBlock(GLuint programID, const char* name, GLuint location) {
+    GLint uboId = glGetUniformBlockIndex(programID,name);
+    glUniformBlockBinding(programID, uboId, location);
+}
+
+void link(GLuint programID) {
+    glLinkProgram(programID);
+
+    int status = 0;
+    glGetProgramiv(programID, GL_LINK_STATUS, &status);
+    if(status == GL_FALSE) {
+        int length = 0;
+        std::string logString;
+
+        glGetProgramiv(programID, GL_INFO_LOG_LENGTH, &length );
+
+        if( length > 0 ) {
+            char * c_log = new char[length];
+            int written = 0;
+            glGetProgramInfoLog(programID, length, &written, c_log);
+            logString = c_log;
+            delete [] c_log;
+        }
+
+        std::cout << std::string("Program link failed:\n") + logString << std::endl;
+        exit(EXIT_FAILURE);
+    }
+}
+
+GLint getMatrixID(GLuint programID) { 
+    return glGetUniformLocation(programID, "Matrix");
+}
 
 #endif

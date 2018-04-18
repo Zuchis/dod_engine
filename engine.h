@@ -6,7 +6,7 @@
 #include "quaternion.h"
 #include "mesh.h"
 #include "shaderprogram.h"
-#include "managers.h"
+#include "scene.h"
 #include "object.h"
 
 using math::Quaternion;
@@ -40,6 +40,11 @@ namespace engine {
     GLuint UBO_BP = 0;
 
     Quaternion rotationQuaternion(1.0f,0.0f,0.0f,0.0f);
+
+    bool keys[256];
+    bool specialKeys[256];
+    bool leftMouseButtonPressed;
+    bool rightMouseButtonPressed;
 
     void setupGLUT(int argc, char* argv[])
     {
@@ -119,33 +124,57 @@ namespace engine {
         glutTimerFunc(1000, timer, 0);
     }
 
+    void pressKey(unsigned char key) {
+        keys[key] = true;
+    }
+
+    void pressSpecialKey(int key) {
+        specialKeys[key] = true;
+    }
+
+    void releaseKey(unsigned char key) {
+        keys[key] = false;
+    }
+
+    void releaseSpecialKey(int key) {
+        specialKeys[key] = false;
+    }
+
+    bool isKeyDown(unsigned char key) {
+        return keys[key];
+    }
+
+    bool isSpecialKeyDown(int key) {
+        return specialKeys[key];
+    }
+
     void keyboardPress(unsigned char key, int x, int y) {
-        KeyBuffer::instance()->pressKey(key);
+        pressKey(key);
     }
 
     void keyboardPressSpecial(int key, int x, int y){
-        KeyBuffer::instance()->pressSpecialKey(key);
+        pressSpecialKey(key);
     }
 
     void keyboardUp(unsigned char key, int x, int y) {
-        KeyBuffer::instance()->releaseKey(key);
+        releaseKey(key);
     }
 
     void keyboardUpSpecial(int key, int x, int y) {
-        KeyBuffer::instance()->releaseSpecialKey(key);
+        releaseSpecialKey(key);
     }
 
     void mousePress(int button, int state, int x, int y) {
         zoomFactor = 0.0f;
 
         if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN){
-            KeyBuffer::leftMouseButtonPressed = true;
+            leftMouseButtonPressed = true;
             lastX = currentX = x;
             lastY = currentY = y;
         }
 
         if (button == GLUT_LEFT_BUTTON && state == GLUT_UP)
-            KeyBuffer::leftMouseButtonPressed = false;
+            leftMouseButtonPressed = false;
 
         if (button == MOUSE_SCROLL_UP) {
             cameraDistance -= cameraDistanceStep;
@@ -180,7 +209,7 @@ namespace engine {
     }
 
     void mouseMovement(int x, int y){
-        if(KeyBuffer::leftMouseButtonPressed){
+        if(leftMouseButtonPressed){
             currentX = x;
             currentY = y;
             computeAngleAxis();
@@ -205,6 +234,11 @@ namespace engine {
         setupGLEW();
         setupOpenGL();
         setupCallbacks();
+
+        std::fill_n(keys,256,false); 
+        std::fill_n(specialKeys,256,false); 
+        leftMouseButtonPressed = false;
+        rightMouseButtonPressed = false;
     }
 
     bool isOpenGLError() {
