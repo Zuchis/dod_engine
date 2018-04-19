@@ -7,8 +7,6 @@ using namespace engine;
 
 using std::vector;
 
-FPSCamera* camera;
-
 float xInf = -20.0f;
 float xSup =  20.0f;
 float yInf = -20.0f;
@@ -26,7 +24,7 @@ const size_t ballID = 1;
 const size_t parallelID = 2;
 const size_t suzanneID = 3;
 
-vector<Mesh*> meshes;
+vector<MeshData> meshes;
 vector<ShaderData> programs;
 vector<Object*> objects;
 
@@ -66,25 +64,15 @@ void createMeshes()
     std::string parallelogram("objects/tamParalel.obj");
     std::string suzanneStr("objects/suzanne.obj");
 
-    Mesh* square = new Mesh(tamSquare);
-    Mesh* ball = new Mesh(sphere);
-    Mesh* parallel = new Mesh(parallelogram);
-    Mesh* suzanne = new Mesh(suzanneStr);
+    MeshCreator square   = MeshCreator(tamSquare);
+    MeshCreator ball     = MeshCreator(sphere);
+    MeshCreator parallel = MeshCreator(parallelogram);
+    MeshCreator suzanne  = MeshCreator(suzanneStr);
 
-    square->create();
-    ball->create();
-    parallel->create();
-    suzanne->create();
-
-    meshes[0] = square;
-    meshes[1] = ball;
-    meshes[2] = parallel;
-    meshes[3] = suzanne;
-
-    meshes[squareID] = square;
-    meshes[ballID] = ball;
-    meshes[parallelID] = parallel;
-    meshes[suzanneID] = suzanne;
+    meshes[squareID] = square.create();
+    meshes[ballID] = ball.create();
+    meshes[parallelID] = parallel.create();
+    meshes[suzanneID] = suzanne.create();
 
     checkOpenGLError("ERROR: Could not create VAOs and VBOs.");
 }
@@ -111,11 +99,6 @@ void createSceneGraph() {
 
     std::string iter;
 
-    Mesh* squareMesh = meshes[squareID];
-    Mesh* ballMesh = meshes[ballID];
-    Mesh* parallelMesh = meshes[parallelID];
-    Mesh* suzanneMesh = meshes[suzanneID];
-
     SceneGraph* scenegraph = new SceneGraph();
     scenegraph->setCamera(new ArcballCamera(UBO_BP));
 
@@ -137,8 +120,11 @@ void createSceneGraph() {
         z = nextRandom(lo, hi);
 
         Plane* plane = new Plane("plane" + iter);
-        plane->setMesh(squareMesh);
+
+        plane->meshData = meshes[squareID];
+
         plane->speed = Vector3(0.001f, 0.002f, 0.003f);
+
         plane->setTranslation(Vector3(x, y, z));
         plane->setRotation(Quaternion(0.0f,Vector3(-1.0f,0.0f,0.0f)));
         plane->setScale(Vector3(5.0f, 0.5f, 5.0f));
@@ -155,8 +141,11 @@ void createSceneGraph() {
         z = nextRandom(lo, hi);
 
         Sphere* sphere = new Sphere("ball" + iter);
-        sphere->setMesh(ballMesh);
+
+        sphere->meshData = meshes[ballID];
+
         sphere->speed = Vector3(0.01f, 0.02f, 0.03f);
+
         sphere->setTranslation(Vector3(x,y,z));
         sphere->setRotation(Quaternion(0.0f,Vector3(-1.0f,0.0f,0.0f)));
         sphere->setScale(Vector3(1.0f, 1.0f, 1.0f));
@@ -173,7 +162,7 @@ void createSceneGraph() {
         z = nextRandom(lo, hi);
 
         Parallelogram* parallel = new Parallelogram("parallel" + iter);
-        parallel->setMesh(parallelMesh);
+        parallel->meshData = meshes[parallelID];
         parallel->speed = Vector3(0.005f, 0.01f, 0.015f);
         parallel->setTranslation(Vector3(x,y,z));
         parallel->setRotation(Quaternion(0.0f,Vector3(-1.0f,0.0f,0.0f)));
@@ -191,7 +180,7 @@ void createSceneGraph() {
         z = nextRandom(lo, hi);
 
         Suzanne* suzanne = new Suzanne("suzanne" + iter);
-        suzanne->setMesh(suzanneMesh);
+        suzanne->meshData = meshes[suzanneID];
         suzanne->speed = Vector3(0.015f, 0.025f, 0.0315f);
         suzanne->setTranslation(Vector3(x,y,z));
         suzanne->setRotation(Quaternion(0.0f,Vector3(-1.0f,0.0f,0.0f)));
@@ -207,16 +196,6 @@ void createSceneGraph() {
 
     graph = scenegraph;
 }
-
-//void setViewProjectionMatrix() 
-//{
-    //Matrix4 viewMatrix = camera->getViewMatrix();
-
-    //camera->setProjectionMatrix(
-        //math::Perspective(math::toRadians(camera->zoom), winWidth / winHeight, 0.1f, 1000.0f));
-
-    //camera->setViewMatrix(viewMatrix);
-//}
 
 void setViewProjectionMatrix() {
     Matrix4 translation = math::translate(Vector3(0.0f,0.0f,(cameraDistance * -1)));
@@ -247,8 +226,6 @@ void drawScene()
     currentTime = timeSinceStart();
     if (currentTime - lastTime > timeForAdding) {
         lastTime = currentTime;
-
-        std::cout << "Ta pegando fogo bixo" << std::endl;
         updateAccelerations();
     }
 

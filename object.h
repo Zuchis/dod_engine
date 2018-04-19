@@ -17,7 +17,7 @@ namespace engine {
             Quaternion rotation;
             Vector3 scale;
 
-            Mesh* mesh;
+            MeshData meshData;
 
             std::string label;
 
@@ -31,26 +31,15 @@ namespace engine {
                 rotation = Quaternion(1.0f,0.0f,0.0f,0.0f);
                 scale = Vector3(1.0f, 1.0f, 1.0f);
 
-                mesh = nullptr;
-
                 label = _label;
 
                 speed = Vector3();
                 acceleration = Vector3();
             }
 
-            void setMesh(Mesh* _mesh) {
-                mesh = _mesh;
-            }
-
             void draw() {
-                if (mesh == nullptr) {
-                    std::cout << "Object " << label << " has no mesh set" << std::endl;
-                    return;
-                }
-
-                glBindVertexArray(mesh->vaoId);
-                glDrawArrays(GL_TRIANGLES,0,(GLsizei)mesh->vertices.size());
+                glBindVertexArray(meshData.vaoId);
+                glDrawArrays(GL_TRIANGLES, 0, meshData.nVertices);
             }
 
             void translateObject(Vector3 t) {

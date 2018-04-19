@@ -1,9 +1,6 @@
 #ifndef SCENE_H
 #define SCENE_H
 
-#include <unordered_map>
-
-#include "mesh.h"
 #include "shaderprogram.h"
 #include "camera.h"
 #include "object.h"
@@ -38,11 +35,6 @@ namespace engine {
             void setObject(Object* _object) {
                 object = _object;
             }
-
-            void setMesh(Mesh* _mesh) {
-                object->setMesh(_mesh);
-            }
-
 
             void setParent(SceneNode* _parent) {
                 parent = _parent;
