@@ -3,9 +3,15 @@
 
 #include <algorithm>
 
+#define MIN_SPEED -2
+#define MAX_SPEED 2
+
 using namespace engine;
 
 using std::vector;
+
+typedef vector<Vector3> vectors;
+typedef vector<Matrix4> matrices;
 
 float xInf = -20.0f;
 float xSup =  20.0f;
@@ -14,25 +20,35 @@ float ySup =  20.0f;
 float zInf = -20.0f;
 float zSup =  20.0f;
 
+float lastTime = 0;
+float currentTime = 0;
+float timeForAdding = 3;
+
 const size_t nPrograms = 1;
 const size_t nMeshes =  4;
 const size_t nObjects = 3;
-const size_t totalObjects = nObjects * 4;
+const size_t totalObjects = (nObjects * 4) + 1;
 
 const size_t squareID = 0;
 const size_t ballID = 1;
 const size_t parallelID = 2;
 const size_t suzanneID = 3;
 
-vector<MeshData> meshes;
-vector<ShaderData> programs;
-vector<Object*> objects;
+vector<MeshData> moldMeshes;
+vector<ShaderData> moldPrograms;
 
-SceneGraph* graph;
+ObjectLabels gLabels;
+NodeTags gTags;
+
+ObjectModels gModels;
+ObjectPhysics gPhysics;
+NodeData gNodes;
+
+ArcballCamera* graphCamera;
 
 void createShaderProgram()
 {
-    programs.reserve(nPrograms);
+    moldPrograms.reserve(nPrograms);
 
     GLuint programID = glCreateProgram();
     GLint matrixID;
@@ -50,14 +66,16 @@ void createShaderProgram()
 
     matrixID = getMatrixID(programID);
 
-    programs[0] = ShaderData { .programID = programID, .matrixID = matrixID } ;
+    moldPrograms[0] = ShaderData { .programID = programID, .matrixID = matrixID } ;
+
+    graphCamera = new ArcballCamera(UBO_BP);
 
     //checkOpenGLError("ERROR: Could not create shaders.");
 }
 
 void createMeshes()
 {
-    meshes.reserve(4);
+    moldMeshes.reserve(4);
 
     std::string tamSquare("objects/tamSquare.obj");
     std::string sphere("objects/sphere.obj");
@@ -69,12 +87,12 @@ void createMeshes()
     MeshCreator parallel = MeshCreator(parallelogram);
     MeshCreator suzanne  = MeshCreator(suzanneStr);
 
-    meshes[squareID] = square.create();
-    meshes[ballID] = ball.create();
-    meshes[parallelID] = parallel.create();
-    meshes[suzanneID] = suzanne.create();
+    moldMeshes[squareID] = square.create();
+    moldMeshes[ballID] = ball.create();
+    moldMeshes[parallelID] = parallel.create();
+    moldMeshes[suzanneID] = suzanne.create();
 
-    checkOpenGLError("ERROR: Could not create VAOs and VBOs.");
+    //checkOpenGLError("ERROR: Could not create VAOs and VBOs.");
 }
 
 float nextRandom(float lo, float hi) {
@@ -84,12 +102,169 @@ float nextRandom(float lo, float hi) {
     return lo + r;
 }
 
-SceneNode* root;
+void reserveModels(size_t size) {
+    gModels.translations = (Vector3*)malloc(sizeof(Vector3) * size);
+    gModels.rotations = (Quaternion*)malloc(sizeof(Quaternion) * size);
+    gModels.scales = (Vector3*)malloc(sizeof(Vector3) * size);
+}
 
-vector<SceneNode*> planeNodes;
-vector<SceneNode*> sphereNodes;
-vector<SceneNode*> parallelNodes;
-vector<SceneNode*> suzanneNodes;
+void reservePhysics(size_t size) {
+    gPhysics.speeds = (Vector3*)malloc(sizeof(Vector3) * size);
+    gPhysics.accelerations = (Vector3*)malloc(sizeof(Vector3) * size);
+}
+
+void reserveNodes(size_t size) {
+    gNodes.parents = (size_t*)malloc(sizeof(size_t) * size);
+    gNodes.locals = (Matrix4*)malloc(sizeof(Matrix4) * size);
+    gNodes.globals = (Matrix4*)malloc(sizeof(Matrix4) * size);
+    gNodes.shaders = (ShaderData*)malloc(sizeof(ShaderData) * size);
+    gNodes.meshes = (MeshData*)malloc(sizeof(MeshData) * size);
+}
+
+void calculateLocals(Vector3* translations, Quaternion* rotations, Vector3* scales, Matrix4* out_locals) {
+    size_t i;
+    for (i = 1; i < totalObjects; i++) {
+       out_locals[i] =  math::translate(translations[i]) *
+                        rotations[i].toMatrix() *
+                        math::scale(scales[i]);
+    }
+}
+
+void calculateGlobals(Matrix4* locals, Matrix4* globals, size_t* parents) {
+    size_t i;
+    for (i = 1; i < totalObjects; i++) {
+       globals[i] = globals[parents[i]] * locals[i];
+    }
+}
+
+void drawNodes(Matrix4* globals, ShaderData* shaders, MeshData* meshes) {
+    size_t i;
+    for (i = 1; i < totalObjects; i++) {
+       glUseProgram(shaders[i].programID);
+       glUniformMatrix4fv(shaders[i].matrixID, 1, GL_FALSE, globals[i].data.data());
+       glBindVertexArray(meshes[i].vaoId);
+       glDrawArrays(GL_TRIANGLES, 0, meshes[i].nVertices);
+    }
+}
+
+void updateAccelerations(Vector3* accelerations) {
+    size_t i;
+    float x, y, z;
+    float lo = -0.01f;
+    float hi = 0.01f;
+    for(i = 1; i < totalObjects; i++) {
+        x = nextRandom(lo, hi);
+        y = nextRandom(lo, hi);
+        z = nextRandom(lo, hi);
+        accelerations[i] = Vector3(x, y, z);
+    }
+}
+
+void updateSpeeds(Vector3* speeds, Vector3* accelerations) {
+    size_t i;
+
+    for (i = 1; i < totalObjects; i++) {
+        math::clampVector(speeds[i] + accelerations[i], (float)MIN_SPEED, (float)MAX_SPEED);
+    }
+}
+
+void updateTranslations(Vector3* translations, Vector3* speeds) {
+    size_t i;
+
+    for (i = 1; i < totalObjects; i++) {
+        translations[i] = translations[i] + speeds[i];
+    }
+}
+
+void updateRotations(Quaternion* rotations, Vector3* speeds) {
+    size_t i;
+
+    for (i = 1; i < totalObjects; i++) {
+        Quaternion rotationQtrnY = Quaternion(speeds[i].x * 100, math::Vector4(0.0f, 1.0f, 0.0f, 1.0f));
+        Quaternion rotationQtrnX = Quaternion(-speeds[i].y * 100, math::Vector4(1.0f, 0.0f, 0.0f, 1.0f));
+
+        rotations[i] = rotationQtrnX * rotationQtrnY * rotations[i];
+    }
+}
+
+void calculateObjectsCollisionsWithBox(Vector3* translations, Vector3* speeds, Vector3* accelerations) {
+    size_t i;
+    float bounceAmount = 0.01f;
+
+    for(i = 1; i < totalObjects; i++) {
+        Vector3& translation = translations[i];
+        Vector3& speed = speeds[i];
+        Vector3& acceleration = accelerations[i];
+
+        if (translation.x < xInf) {
+            speed = Vector3(-speed.x, speed.y, speed.z);
+            acceleration = Vector3(-acceleration.x, acceleration.y , acceleration.z);
+            translation.x = translation.x + bounceAmount;
+            continue;
+        }
+
+        if (translation.x > xSup) {
+            speed = Vector3(-speed.x, speed.y, speed.z);
+            acceleration = Vector3(-acceleration.x, acceleration.y , acceleration.z);
+            translation.x = translation.x - bounceAmount;
+            continue;
+        }
+
+        if (translation.y < yInf) {
+            speed = Vector3(speed.x, -speed.y, speed.z);
+            acceleration = Vector3(acceleration.x, -acceleration.y , acceleration.z);
+            translation.y = translation.y + bounceAmount;
+            continue;
+        }
+
+        if (translation.y > ySup) {
+            speed = Vector3(speed.x, -speed.y, speed.z);
+            acceleration = Vector3(acceleration.x, -acceleration.y , acceleration.z);
+            translation.y = translation.y - bounceAmount;
+            continue;
+        }
+
+        if (translation.z < zInf) {
+            speed = Vector3(speed.x, speed.y, -speed.z);
+            acceleration = Vector3(acceleration.x, acceleration.y , -acceleration.z);
+            translation.z = translation.z + bounceAmount;
+            continue;
+        }
+
+        if (translation.z > zSup) {
+            speed = Vector3(speed.x, speed.y, -speed.z);
+            acceleration = Vector3(acceleration.x, acceleration.y , -acceleration.z);
+            translation.z = translation.z - bounceAmount;
+            continue;
+        }
+    }
+}
+
+void setViewProjectionMatrix() {
+    Matrix4 translation = math::translate(Vector3(0.0f,0.0f,(cameraDistance * -1)));
+    Matrix4 rotation    = rotationQuaternion.toMatrix();
+    graphCamera->setViewMatrix(translation * rotation);
+}
+
+void drawScene()
+{
+    currentTime = timeSinceStart();
+    if (currentTime - lastTime > timeForAdding) {
+        lastTime = currentTime;
+        updateAccelerations(gPhysics.accelerations);
+    }
+
+    setViewProjectionMatrix();
+
+    calculateLocals(gModels.translations, gModels.rotations, gModels.scales, gNodes.locals);
+
+    calculateGlobals(gNodes.locals, gNodes.globals, gNodes.parents);
+
+    drawNodes(gNodes.globals, gNodes.shaders, gNodes.meshes);
+
+    glUseProgram(0);
+    glBindVertexArray(0);
+}
 
 void createSceneGraph() {
     size_t i;
@@ -99,164 +274,138 @@ void createSceneGraph() {
 
     std::string iter;
 
-    SceneGraph* scenegraph = new SceneGraph();
-    scenegraph->setCamera(new ArcballCamera(UBO_BP));
-
-    scenegraph->getCamera()->setProjectionMatrix(
+    graphCamera->setProjectionMatrix(
         math::Perspective(30.0f, winWidth / winHeight, 0.1f, 1000.0f));
 
-    root = scenegraph->getRoot();
-    root->shaderData = programs[0];
+    reserveNodes(totalObjects);
 
-    objects.reserve(totalObjects);
+    reserveModels(totalObjects);
 
-    size_t objIndex = 0;
+    reservePhysics(totalObjects);
+
+    gModels.translations[0] = Vector3();
+    gModels.rotations[0] = Quaternion(0.0f,Vector3(-1.0f,0.0f,0.0f));
+    gModels.scales[0] = Vector3(1.0f, 1.0f, 1.0f);
+
+    gPhysics.speeds[0] = Vector3();
+    gPhysics.accelerations[0] = Vector3();
+
+    gNodes.meshes[0] = moldMeshes[0];
+    gNodes.shaders[0] = moldPrograms[0];
+    gNodes.parents[0] = (size_t)0;
+    gNodes.locals[0] = math::Create4DIdentity();
+    gNodes.globals[0] = math::Create4DIdentity();
+
+    size_t objIndex = 1;
+
+    // PLANES
 
     for (i = 0; i < nObjects; i++) {
-        iter = std::to_string(i);
-
         x = nextRandom(lo, hi);
         y = nextRandom(lo, hi);
         z = nextRandom(lo, hi);
 
-        Plane* plane = new Plane("plane" + iter);
+        gModels.translations[objIndex] = Vector3(x, y, z);
+        gModels.rotations[objIndex] = Quaternion(0.0f,Vector3(-1.0f,0.0f,0.0f));
+        gModels.scales[objIndex] = Vector3(5.0f, 0.5f, 5.0f);
 
-        plane->meshData = meshes[squareID];
+        gPhysics.speeds[objIndex] = Vector3(0.001f, 0.002f, 0.003f);
+        gPhysics.accelerations[objIndex] = Vector3();
 
-        plane->speed = Vector3(0.001f, 0.002f, 0.003f);
+        gNodes.meshes[objIndex] = moldMeshes[squareID];
+        gNodes.shaders[objIndex] = moldPrograms[0];
+        gNodes.parents[objIndex] = (size_t)0;
+        gNodes.locals[objIndex] = math::Create4DIdentity();
+        gNodes.globals[objIndex] = math::Create4DIdentity();
 
-        plane->setTranslation(Vector3(x, y, z));
-        plane->setRotation(Quaternion(0.0f,Vector3(-1.0f,0.0f,0.0f)));
-        plane->setScale(Vector3(5.0f, 0.5f, 5.0f));
-
-        planeNodes.push_back(scenegraph->createNode("plane"));
-        planeNodes[i]->setObject(plane);
-        planeNodes[i]->shaderData = programs[0];
-
-        objects[objIndex] = plane;
-        objIndex++;
-
-        x = nextRandom(lo, hi);
-        y = nextRandom(lo, hi);
-        z = nextRandom(lo, hi);
-
-        Sphere* sphere = new Sphere("ball" + iter);
-
-        sphere->meshData = meshes[ballID];
-
-        sphere->speed = Vector3(0.01f, 0.02f, 0.03f);
-
-        sphere->setTranslation(Vector3(x,y,z));
-        sphere->setRotation(Quaternion(0.0f,Vector3(-1.0f,0.0f,0.0f)));
-        sphere->setScale(Vector3(1.0f, 1.0f, 1.0f));
-
-        sphereNodes.push_back(scenegraph->createNode("ball"));
-        sphereNodes[i]->setObject(sphere);
-        sphereNodes[i]->shaderData = programs[0];
-
-        objects[objIndex] = sphere;
-        objIndex++;
-
-        x = nextRandom(lo, hi);
-        y = nextRandom(lo, hi);
-        z = nextRandom(lo, hi);
-
-        Parallelogram* parallel = new Parallelogram("parallel" + iter);
-        parallel->meshData = meshes[parallelID];
-        parallel->speed = Vector3(0.005f, 0.01f, 0.015f);
-        parallel->setTranslation(Vector3(x,y,z));
-        parallel->setRotation(Quaternion(0.0f,Vector3(-1.0f,0.0f,0.0f)));
-        parallel->setScale(Vector3(1.0f,1.0f,0.0f));
-
-        parallelNodes.push_back(scenegraph->createNode("parallel"));
-        parallelNodes[i]->setObject(parallel);
-        parallelNodes[i]->shaderData = programs[0];
-
-        objects[objIndex] = parallel;
-        objIndex++;
-
-        x = nextRandom(lo, hi);
-        y = nextRandom(lo, hi);
-        z = nextRandom(lo, hi);
-
-        Suzanne* suzanne = new Suzanne("suzanne" + iter);
-        suzanne->meshData = meshes[suzanneID];
-        suzanne->speed = Vector3(0.015f, 0.025f, 0.0315f);
-        suzanne->setTranslation(Vector3(x,y,z));
-        suzanne->setRotation(Quaternion(0.0f,Vector3(-1.0f,0.0f,0.0f)));
-        suzanne->setScale(Vector3(1.0f,1.0f,0.0f));
-
-        suzanneNodes.push_back(scenegraph->createNode("parallel"));
-        suzanneNodes[i]->setObject(suzanne);
-        suzanneNodes[i]->shaderData = programs[0];
-
-        objects[objIndex] = suzanne;
         objIndex++;
     }
 
-    graph = scenegraph;
-}
+    // ------------------------------------------------//
+    
+    // SPHERES
 
-void setViewProjectionMatrix() {
-    Matrix4 translation = math::translate(Vector3(0.0f,0.0f,(cameraDistance * -1)));
-    Matrix4 rotation    = rotationQuaternion.toMatrix();
-    graph->getCamera()->setViewMatrix(translation * rotation);
-}
-
-void updateAccelerations() {
-    size_t i;
-    float x, y, z;
-    float lo = -0.01f;
-    float hi = 0.01f;
-    for(i = 0; i < totalObjects; i++) {
+    for (i = 0; i < nObjects; i++) {
         x = nextRandom(lo, hi);
         y = nextRandom(lo, hi);
         z = nextRandom(lo, hi);
-        objects[i]->acceleration = Vector3(x, y, z);
+
+        gModels.translations[objIndex] = Vector3(x, y, z);
+        gModels.rotations[objIndex] = Quaternion(0.0f,Vector3(-1.0f,0.0f,0.0f));
+        gModels.scales[objIndex] = Vector3(1.0f, 1.0f, 1.0f);
+
+        gPhysics.speeds[objIndex] = Vector3(0.01f, 0.02f, 0.03f);
+        gPhysics.accelerations[objIndex] = Vector3();
+
+        gNodes.meshes[objIndex] = moldMeshes[ballID];
+        gNodes.shaders[objIndex] = moldPrograms[0];
+        gNodes.parents[objIndex] = (size_t)0;
+        gNodes.locals[objIndex] = math::Create4DIdentity();
+        gNodes.globals[objIndex] = math::Create4DIdentity();
+
+        objIndex++;
     }
-}
 
-float lastTime = 0;
-float currentTime = 0;
+    // ------------------------------------------------//
+    
+    // Parallels
 
-float timeForAdding = 3;
+    for (i = 0; i < nObjects; i++) {
+        x = nextRandom(lo, hi);
+        y = nextRandom(lo, hi);
+        z = nextRandom(lo, hi);
 
-void drawScene()
-{
-    currentTime = timeSinceStart();
-    if (currentTime - lastTime > timeForAdding) {
-        lastTime = currentTime;
-        updateAccelerations();
+        gModels.translations[objIndex] = Vector3(x, y, z);
+        gModels.rotations[objIndex] = Quaternion(0.0f,Vector3(-1.0f,0.0f,0.0f));
+        gModels.scales[objIndex] = Vector3(1.0f,1.0f,0.0f);
+
+        gPhysics.speeds[objIndex] = Vector3(0.005f, 0.01f, 0.015f);
+        gPhysics.accelerations[objIndex] = Vector3();
+
+        gNodes.meshes[objIndex] = moldMeshes[parallelID];
+        gNodes.shaders[objIndex] = moldPrograms[0];
+        gNodes.parents[objIndex] = (size_t)0;
+        gNodes.locals[objIndex] = math::Create4DIdentity();
+        gNodes.globals[objIndex] = math::Create4DIdentity();
+
+        objIndex++;
     }
 
-    setViewProjectionMatrix();
-    graph->draw();
+    // ------------------------------------------------//
+    
+    // Suzannes
 
-    glUseProgram(0);
-    glBindVertexArray(0);
-}
+    for (i = 0; i < nObjects; i++) {
+        x = nextRandom(lo, hi);
+        y = nextRandom(lo, hi);
+        z = nextRandom(lo, hi);
 
-void updateObjects() {
-    size_t i;
+        gModels.translations[objIndex] = Vector3(x, y, z);
+        gModels.rotations[objIndex] = Quaternion(0.0f,Vector3(-1.0f,0.0f,0.0f));
+        gModels.scales[objIndex] = Vector3(1.0f, 1.0f, 1.0f);
 
-    for(i = 0; i < totalObjects; i++) {
-        objects[i]->update();
-    }
-}
+        gPhysics.speeds[objIndex] = Vector3(0.015f, 0.025f, 0.0315f);
+        gPhysics.accelerations[objIndex] = Vector3();
 
-void calculateObjectsCollisionsWithBox(float xInf, float xSup, float yInf, float ySup, float zInf, float zSup) {
-    size_t i;
+        gNodes.meshes[objIndex] = moldMeshes[suzanneID];
+        gNodes.shaders[objIndex] = moldPrograms[0];
+        gNodes.parents[objIndex] = (size_t)0;
+        gNodes.locals[objIndex] = math::Create4DIdentity();
+        gNodes.globals[objIndex] = math::Create4DIdentity();
 
-    for(i = 0; i < totalObjects; i++) {
-        objects[i]->calculateCollisionsWithBox(xInf, xSup, yInf, ySup, zInf, zSup);
+        objIndex++;
     }
 }
 
 void computePhysics()
 {
-    updateObjects();
+    updateSpeeds(gPhysics.speeds, gPhysics.accelerations);
 
-    calculateObjectsCollisionsWithBox(xInf, xSup, yInf, ySup, zInf, zSup);
+    updateTranslations(gModels.translations, gPhysics.speeds);
+
+    updateRotations(gModels.rotations, gPhysics.speeds);
+
+    calculateObjectsCollisionsWithBox(gModels.translations, gPhysics.speeds, gPhysics.accelerations);
 }
 
 void display()
@@ -283,7 +432,6 @@ void init(int argc, char* argv[])
 
 int main(int argc, char* argv[])
 {
-    std::cout << "oi" << std::endl;
     init(argc, argv);
     glutMainLoop();
     exit(EXIT_SUCCESS);

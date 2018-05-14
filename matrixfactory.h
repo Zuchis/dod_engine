@@ -63,8 +63,7 @@ namespace math{
     }
 
     Matrix4 Create4DTranslation(float XTranslation, float YTranslation, float ZTranslation){
-        Matrix4 trans = Matrix4(1.0f,0.0f,0.0f,XTranslation,0.0f,1.0f,0.0f,YTranslation,0.0f,0.0f,1.0f,ZTranslation,0.0f,0.0f,0.0f,1.0f);
-        return trans;
+        return Matrix4(1.0f,0.0f,0.0f,XTranslation,0.0f,1.0f,0.0f,YTranslation,0.0f,0.0f,1.0f,ZTranslation,0.0f,0.0f,0.0f,1.0f);
     }
 
     Matrix2 Create2DScalingMatrix(float XFactor, float YFactor){
@@ -75,6 +74,10 @@ namespace math{
     Matrix3 Create3DScalingMatrix(float XFactor, float YFactor, float ZFactor){
         Matrix3 scale = Matrix3(XFactor,0.0f,0.0f,0.0f,YFactor,0.0f,0.0f,0.0f,ZFactor);
         return scale;
+    }
+
+    Matrix4 Create4DScalingMatrix(float XFactor, float YFactor, float ZFactor){
+        return Matrix4(XFactor, 0.0f, 0.0f, 0.0f, 0.0f, YFactor, 0.0f, 0.0f, 0.0f, 0.0f, ZFactor, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f);
     }
 
     Matrix3 CONVERT_4D_TO_3D_MATRIX(Matrix4 m){
@@ -183,8 +186,7 @@ namespace math{
     }
 
     Matrix4 scale(Vector3 v) {
-        Matrix4 scaleMatrix = CONVERT_3D_TO_4D_MATRIX(Create3DScalingMatrix(v.x,v.y,v.z));
-        return scaleMatrix;
+        return Create4DScalingMatrix(v.x, v.y, v.z);
     }
 
     // HACK
