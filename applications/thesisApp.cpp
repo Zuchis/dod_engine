@@ -26,7 +26,7 @@ float timeForAdding = 3;
 
 const size_t nPrograms = 1;
 const size_t nMeshes =  4;
-const size_t nObjects = 3;
+const size_t nObjects = 25;
 const size_t totalObjects = (nObjects * 4) + 1;
 
 const size_t squareID = 0;
@@ -248,12 +248,6 @@ void setViewProjectionMatrix() {
 
 void drawScene()
 {
-    currentTime = timeSinceStart();
-    if (currentTime - lastTime > timeForAdding) {
-        lastTime = currentTime;
-        updateAccelerations(gPhysics.accelerations);
-    }
-
     setViewProjectionMatrix();
 
     calculateLocals(gModels.translations, gModels.rotations, gModels.scales, gNodes.locals);
@@ -399,6 +393,8 @@ void createSceneGraph() {
 
 void computePhysics()
 {
+    updateAccelerations(gPhysics.accelerations);
+
     updateSpeeds(gPhysics.speeds, gPhysics.accelerations);
 
     updateTranslations(gModels.translations, gPhysics.speeds);
