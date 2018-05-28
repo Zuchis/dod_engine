@@ -26,7 +26,7 @@ float timeForAdding = 3;
 
 const size_t nPrograms = 1;
 const size_t nMeshes =  4;
-const size_t nObjects = 25;
+const size_t nObjects = 100;
 const size_t totalObjects = (nObjects * 4) + 1;
 
 const size_t squareID = 0;
@@ -187,53 +187,46 @@ void updateRotations(Quaternion* rotations, Vector3* speeds) {
     }
 }
 
-void calculateObjectsCollisionsWithBox(Vector3* translations, Vector3* speeds, Vector3* accelerations) {
+void calculateObjectsCollisionsWithBox(Vector3* translations, Vector3* speeds) {
     size_t i;
     float bounceAmount = 0.01f;
 
     for(i = 1; i < totalObjects; i++) {
         Vector3& translation = translations[i];
         Vector3& speed = speeds[i];
-        Vector3& acceleration = accelerations[i];
 
         if (translation.x < xInf) {
             speed = Vector3(-speed.x, speed.y, speed.z);
-            acceleration = Vector3(-acceleration.x, acceleration.y , acceleration.z);
             translation.x = translation.x + bounceAmount;
             continue;
         }
 
         if (translation.x > xSup) {
             speed = Vector3(-speed.x, speed.y, speed.z);
-            acceleration = Vector3(-acceleration.x, acceleration.y , acceleration.z);
             translation.x = translation.x - bounceAmount;
             continue;
         }
 
         if (translation.y < yInf) {
             speed = Vector3(speed.x, -speed.y, speed.z);
-            acceleration = Vector3(acceleration.x, -acceleration.y , acceleration.z);
             translation.y = translation.y + bounceAmount;
             continue;
         }
 
         if (translation.y > ySup) {
             speed = Vector3(speed.x, -speed.y, speed.z);
-            acceleration = Vector3(acceleration.x, -acceleration.y , acceleration.z);
             translation.y = translation.y - bounceAmount;
             continue;
         }
 
         if (translation.z < zInf) {
             speed = Vector3(speed.x, speed.y, -speed.z);
-            acceleration = Vector3(acceleration.x, acceleration.y , -acceleration.z);
             translation.z = translation.z + bounceAmount;
             continue;
         }
 
         if (translation.z > zSup) {
             speed = Vector3(speed.x, speed.y, -speed.z);
-            acceleration = Vector3(acceleration.x, acceleration.y , -acceleration.z);
             translation.z = translation.z - bounceAmount;
             continue;
         }
@@ -401,7 +394,7 @@ void computePhysics()
 
     updateRotations(gModels.rotations, gPhysics.speeds);
 
-    calculateObjectsCollisionsWithBox(gModels.translations, gPhysics.speeds, gPhysics.accelerations);
+    calculateObjectsCollisionsWithBox(gModels.translations, gPhysics.speeds);
 }
 
 void display()
