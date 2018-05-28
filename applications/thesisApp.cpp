@@ -2,6 +2,8 @@
 #include "../objects.h" 
 
 #include <algorithm>
+#include <time.h>
+#include <unistd.h>
 
 #define MIN_SPEED -2
 #define MAX_SPEED 2
@@ -23,6 +25,9 @@ float zSup =  20.0f;
 float lastTime = 0;
 float currentTime = 0;
 float timeForAdding = 3;
+
+int frameCounter = 0;
+int totalFrames = 1000;
 
 const size_t nPrograms = 1;
 const size_t nMeshes =  4;
@@ -399,12 +404,19 @@ void computePhysics()
 
 void display()
 {
-    ++FrameCount;
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    computeTime();
-    computePhysics();
-    drawScene();
-    glutSwapBuffers();
+    if (frameCounter <= totalFrames + 1) {
+        ++FrameCount;
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        computeTime();
+        computePhysics();
+        drawScene();
+        glutSwapBuffers();
+        frameCounter++;
+    } else {
+        std::cout << "Parando após " << totalFrames << " execuções" << std::endl;
+        glutDestroyWindow(currentWindow);
+        exit(0);
+    }
 }
 
 void init(int argc, char* argv[])
