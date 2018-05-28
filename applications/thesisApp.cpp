@@ -51,6 +51,39 @@ NodeData gNodes;
 
 ArcballCamera* graphCamera;
 
+struct timespec time_diff(struct timespec start, struct timespec end) {
+    struct timespec temp;
+    if ((end.tv_nsec-start.tv_nsec)<0) {
+        temp.tv_sec = end.tv_sec-start.tv_sec-1;
+        temp.tv_nsec = 1000000000+end.tv_nsec-start.tv_nsec;
+    } else {
+        temp.tv_sec = end.tv_sec-start.tv_sec;
+        temp.tv_nsec = end.tv_nsec-start.tv_nsec;
+    }
+    return temp;
+}
+
+void timekeeper_tic  (struct timespec *t1) {
+    clock_gettime(CLOCK_MONOTONIC_RAW, t1);
+}
+
+double time_diff_double(struct timespec start, struct timespec end) {
+    return time_diff(start, end).tv_sec + 1e-9 * time_diff(start, end).tv_nsec;
+}
+
+struct timespec draw_t1;
+struct timespec draw_t2;
+
+struct timespec update_t1;
+struct timespec update_t2;
+
+struct timespec colision_t1;
+struct timespec colision_t2;
+
+FILE *drawF     = fopen("draw.log", "w+");
+FILE *updateF   = fopen("update.log", "w+");
+FILE *colisionF = fopen("colision.log", "w+");
+
 void createShaderProgram()
 {
     moldPrograms.reserve(nPrograms);
@@ -248,11 +281,17 @@ void drawScene()
 {
     setViewProjectionMatrix();
 
+    timekeeper_tic(&draw_t1);
+
     calculateLocals(gModels.translations, gModels.rotations, gModels.scales, gNodes.locals);
 
     calculateGlobals(gNodes.locals, gNodes.globals, gNodes.parents);
 
-    drawNodes(gNodes.globals, gNodes.shaders, gNodes.meshes);
+    timekeeper_tic(&draw_t2);
+    
+    fprintf(drawF, "%f\n", time_diff_double(draw_t1, draw_t2) * 1000);
+
+    //drawNodes(gNodes.globals, gNodes.shaders, gNodes.meshes);
 
     glUseProgram(0);
     glBindVertexArray(0);
@@ -387,11 +426,15 @@ void createSceneGraph() {
 
         objIndex++;
     }
+
+    //gNodes.parents[2] = 1;
 }
 
 void computePhysics()
 {
     updateAccelerations(gPhysics.accelerations);
+
+    timekeeper_tic(&update_t1);
 
     updateSpeeds(gPhysics.speeds, gPhysics.accelerations);
 
@@ -399,7 +442,17 @@ void computePhysics()
 
     updateRotations(gModels.rotations, gPhysics.speeds);
 
+    timekeeper_tic(&update_t2);
+
+    fprintf(updateF, "%f\n", time_diff_double(update_t1, update_t2) * 1000);
+
+    timekeeper_tic(&colision_t1);
+
     calculateObjectsCollisionsWithBox(gModels.translations, gPhysics.speeds);
+
+    timekeeper_tic(&colision_t2);
+
+    fprintf(colisionF, "%f\n", time_diff_double(colision_t1, colision_t2) * 1000);
 }
 
 void display()

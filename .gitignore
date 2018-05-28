@@ -5,3 +5,5 @@
 glad
 app
 sfml-engine
+*.log
+magic
