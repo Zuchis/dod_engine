@@ -1,4 +1,0 @@
-KeyBuffer class
-
-SceneGraph
-    Node -> Has a entity
