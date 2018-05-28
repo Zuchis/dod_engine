@@ -80,9 +80,9 @@ struct timespec update_t2;
 struct timespec colision_t1;
 struct timespec colision_t2;
 
-FILE *drawF     = fopen("draw.log", "w+");
-FILE *updateF   = fopen("update.log", "w+");
-FILE *colisionF = fopen("colision.log", "w+");
+FILE *drawF     = fopen("tests/draw.log", "w+");
+FILE *updateF   = fopen("tests/update.log", "w+");
+FILE *colisionF = fopen("tests/colision.log", "w+");
 
 void createShaderProgram()
 {
