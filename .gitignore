@@ -7,3 +7,4 @@ app
 sfml-engine
 *.log
 magic
+*.zip
