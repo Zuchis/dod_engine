@@ -31,8 +31,9 @@ int totalFrames = 1000;
 
 const size_t nPrograms = 1;
 const size_t nMeshes =  4;
-const size_t nObjects = 100;
-const size_t totalObjects = (nObjects * 4) + 1;
+
+size_t nObjects;
+size_t totalObjects;
 
 const size_t squareID = 0;
 const size_t ballID = 1;
@@ -474,6 +475,8 @@ void display()
 
 void init(int argc, char* argv[])
 {
+    nObjects = atoi(argv[1]);
+    totalObjects = (nObjects * 4) + 1;
     engine_init(argc,argv);
     glutDisplayFunc(display);
 
