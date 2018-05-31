@@ -8,6 +8,10 @@ drawFile = open("tests/drawResults.log", "a+")
 updateFile = open("tests/updateResults.log", "a+")
 colisionFile = open("tests/colisionResults.log", "a+")
 
+drawGraphFile = open("tests/drawGraph.plot", "a+")
+updateGraphFile = open("tests/updateGraph.plot", "a+")
+colisionGraphFile = open("tests/colisionGraph.plot", "a+")
+
 nObjects = int(sys.argv[1])
 
 drawFile.write("%d\n" % (nObjects))
@@ -27,6 +31,8 @@ for row in rows:
 average/= len(rows)
 
 drawFile.write("Average draw: %f\n" % (average))
+
+drawGraphFile.write("%d\t%f\n" % (nObjects, average))
 
 variance = 0
 
@@ -55,6 +61,8 @@ average/= len(rows)
 
 updateFile.write("Average update: %f\n" % (average))
 
+updateGraphFile.write("%d\t%f\n" % (nObjects, average))
+
 variance = 0
 
 for i in range(len(elements)):
@@ -81,6 +89,8 @@ for row in rows:
 average/= len(rows)
 
 colisionFile.write("Average colision: %f\n" % (average))
+
+colisionGraphFile.write("%d\t%f\n" % (nObjects, average))
 
 variance = 0
 
