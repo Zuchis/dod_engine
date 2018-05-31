@@ -300,6 +300,7 @@ void drawScene()
 
 void createSceneGraph() {
     size_t i;
+    size_t currentParent = 0;
     float lo = xInf + 1;
     float hi = xSup - 1;
     float x, y, z;
@@ -333,6 +334,7 @@ void createSceneGraph() {
     // PLANES
 
     for (i = 0; i < nObjects; i++) {
+        // ------------------ 1 ----------------------------------
         x = nextRandom(lo, hi);
         y = nextRandom(lo, hi);
         z = nextRandom(lo, hi);
@@ -350,85 +352,51 @@ void createSceneGraph() {
         gNodes.locals[objIndex] = math::Create4DIdentity();
         gNodes.globals[objIndex] = math::Create4DIdentity();
 
+        currentParent = objIndex;
         objIndex++;
-    }
 
-    // ------------------------------------------------//
-    
-    // SPHERES
-
-    for (i = 0; i < nObjects; i++) {
+        // ------------------ 2 ----------------------------------
         x = nextRandom(lo, hi);
         y = nextRandom(lo, hi);
         z = nextRandom(lo, hi);
 
         gModels.translations[objIndex] = Vector3(x, y, z);
         gModels.rotations[objIndex] = Quaternion(0.0f,Vector3(-1.0f,0.0f,0.0f));
-        gModels.scales[objIndex] = Vector3(1.0f, 1.0f, 1.0f);
+        gModels.scales[objIndex] = Vector3(5.0f, 0.5f, 5.0f);
 
-        gPhysics.speeds[objIndex] = Vector3(0.01f, 0.02f, 0.03f);
+        gPhysics.speeds[objIndex] = Vector3(0.001f, 0.002f, 0.003f);
         gPhysics.accelerations[objIndex] = Vector3();
 
-        gNodes.meshes[objIndex] = moldMeshes[ballID];
+        gNodes.meshes[objIndex] = moldMeshes[squareID];
         gNodes.shaders[objIndex] = moldPrograms[0];
-        gNodes.parents[objIndex] = (size_t)0;
+        gNodes.parents[objIndex] = currentParent;
         gNodes.locals[objIndex] = math::Create4DIdentity();
         gNodes.globals[objIndex] = math::Create4DIdentity();
 
+        currentParent = objIndex;
         objIndex++;
-    }
 
-    // ------------------------------------------------//
-    
-    // Parallels
-
-    for (i = 0; i < nObjects; i++) {
+        // ------------------ 3 ----------------------------------
         x = nextRandom(lo, hi);
         y = nextRandom(lo, hi);
         z = nextRandom(lo, hi);
 
         gModels.translations[objIndex] = Vector3(x, y, z);
         gModels.rotations[objIndex] = Quaternion(0.0f,Vector3(-1.0f,0.0f,0.0f));
-        gModels.scales[objIndex] = Vector3(1.0f,1.0f,0.0f);
+        gModels.scales[objIndex] = Vector3(5.0f, 0.5f, 5.0f);
 
-        gPhysics.speeds[objIndex] = Vector3(0.005f, 0.01f, 0.015f);
+        gPhysics.speeds[objIndex] = Vector3(0.001f, 0.002f, 0.003f);
         gPhysics.accelerations[objIndex] = Vector3();
 
-        gNodes.meshes[objIndex] = moldMeshes[parallelID];
+        gNodes.meshes[objIndex] = moldMeshes[squareID];
         gNodes.shaders[objIndex] = moldPrograms[0];
-        gNodes.parents[objIndex] = (size_t)0;
+        gNodes.parents[objIndex] = currentParent;
         gNodes.locals[objIndex] = math::Create4DIdentity();
         gNodes.globals[objIndex] = math::Create4DIdentity();
 
         objIndex++;
     }
 
-    // ------------------------------------------------//
-    
-    // Suzannes
-
-    for (i = 0; i < nObjects; i++) {
-        x = nextRandom(lo, hi);
-        y = nextRandom(lo, hi);
-        z = nextRandom(lo, hi);
-
-        gModels.translations[objIndex] = Vector3(x, y, z);
-        gModels.rotations[objIndex] = Quaternion(0.0f,Vector3(-1.0f,0.0f,0.0f));
-        gModels.scales[objIndex] = Vector3(1.0f, 1.0f, 1.0f);
-
-        gPhysics.speeds[objIndex] = Vector3(0.015f, 0.025f, 0.0315f);
-        gPhysics.accelerations[objIndex] = Vector3();
-
-        gNodes.meshes[objIndex] = moldMeshes[suzanneID];
-        gNodes.shaders[objIndex] = moldPrograms[0];
-        gNodes.parents[objIndex] = (size_t)0;
-        gNodes.locals[objIndex] = math::Create4DIdentity();
-        gNodes.globals[objIndex] = math::Create4DIdentity();
-
-        objIndex++;
-    }
-
-    //gNodes.parents[2] = 1;
 }
 
 void computePhysics()
@@ -476,7 +444,7 @@ void display()
 void init(int argc, char* argv[])
 {
     nObjects = atoi(argv[1]);
-    totalObjects = (nObjects * 4) + 1;
+    totalObjects = (nObjects * 3) + 1;
     engine_init(argc,argv);
     glutDisplayFunc(display);
 
