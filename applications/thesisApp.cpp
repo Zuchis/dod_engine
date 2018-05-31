@@ -331,8 +331,6 @@ void createSceneGraph() {
 
     size_t objIndex = 1;
 
-    // PLANES
-
     for (i = 0; i < nObjects; i++) {
         // ------------------ 1 ----------------------------------
         x = nextRandom(lo, hi);
@@ -377,6 +375,27 @@ void createSceneGraph() {
         objIndex++;
 
         // ------------------ 3 ----------------------------------
+        x = nextRandom(lo, hi);
+        y = nextRandom(lo, hi);
+        z = nextRandom(lo, hi);
+
+        gModels.translations[objIndex] = Vector3(x, y, z);
+        gModels.rotations[objIndex] = Quaternion(0.0f,Vector3(-1.0f,0.0f,0.0f));
+        gModels.scales[objIndex] = Vector3(5.0f, 0.5f, 5.0f);
+
+        gPhysics.speeds[objIndex] = Vector3(0.001f, 0.002f, 0.003f);
+        gPhysics.accelerations[objIndex] = Vector3();
+
+        gNodes.meshes[objIndex] = moldMeshes[squareID];
+        gNodes.shaders[objIndex] = moldPrograms[0];
+        gNodes.parents[objIndex] = currentParent;
+        gNodes.locals[objIndex] = math::Create4DIdentity();
+        gNodes.globals[objIndex] = math::Create4DIdentity();
+
+        currentParent = objIndex;
+        objIndex++;
+
+        // ------------------ 4 ----------------------------------
         x = nextRandom(lo, hi);
         y = nextRandom(lo, hi);
         z = nextRandom(lo, hi);
@@ -444,7 +463,7 @@ void display()
 void init(int argc, char* argv[])
 {
     nObjects = atoi(argv[1]);
-    totalObjects = (nObjects * 3) + 1;
+    totalObjects = (nObjects * 4) + 1;
     engine_init(argc,argv);
     glutDisplayFunc(display);
 
