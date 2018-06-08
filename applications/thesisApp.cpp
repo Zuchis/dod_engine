@@ -24,7 +24,7 @@ float zSup =  20.0f;
 
 float lastTime = 0;
 float currentTime = 0;
-float timeForAdding = 3;
+float timeForEnding = 12;
 
 int frameCounter = 0;
 int totalFrames = 1000;
@@ -84,6 +84,7 @@ struct timespec colision_t2;
 FILE *drawF     = fopen("tests/draw.log", "w+");
 FILE *updateF   = fopen("tests/update.log", "w+");
 FILE *colisionF = fopen("tests/colision.log", "w+");
+FILE *fpsF      = fopen("tests/fps.log", "w+");
 
 void createShaderProgram()
 {
@@ -290,7 +291,7 @@ void drawScene()
 
     timekeeper_tic(&draw_t2);
     
-    fprintf(drawF, "%f\n", time_diff_double(draw_t1, draw_t2) * 1000);
+    //fprintf(drawF, "%f\n", time_diff_double(draw_t1, draw_t2) * 1000);
 
     //drawNodes(gNodes.globals, gNodes.shaders, gNodes.meshes);
 
@@ -433,7 +434,7 @@ void createSceneGraph() {
 
 void computePhysics()
 {
-    updateAccelerations(gPhysics.accelerations);
+    //updateAccelerations(gPhysics.accelerations);
 
     timekeeper_tic(&update_t1);
 
@@ -445,7 +446,7 @@ void computePhysics()
 
     timekeeper_tic(&update_t2);
 
-    fprintf(updateF, "%f\n", time_diff_double(update_t1, update_t2) * 1000);
+    //fprintf(updateF, "%f\n", time_diff_double(update_t1, update_t2) * 1000);
 
     timekeeper_tic(&colision_t1);
 
@@ -453,12 +454,17 @@ void computePhysics()
 
     timekeeper_tic(&colision_t2);
 
-    fprintf(colisionF, "%f\n", time_diff_double(colision_t1, colision_t2) * 1000);
+    //fprintf(colisionF, "%f\n", time_diff_double(colision_t1, colision_t2) * 1000);
 }
 
 void display()
 {
-    if (frameCounter <= totalFrames + 1) {
+    currentTime = timeSinceStart();
+    if (currentTime - lastTime >= timeForEnding) {
+        std::cout << "Parando após " << timeForEnding << " segundos" << std::endl;
+        glutDestroyWindow(currentWindow);
+        exit(0);
+    } else {
         ++FrameCount;
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         computeTime();
@@ -466,11 +472,40 @@ void display()
         drawScene();
         glutSwapBuffers();
         frameCounter++;
-    } else {
-        std::cout << "Parando após " << totalFrames << " execuções" << std::endl;
-        glutDestroyWindow(currentWindow);
-        exit(0);
     }
+}
+
+//void display()
+//{
+    //if (frameCounter <= totalFrames + 1) {
+        //++FrameCount;
+        //glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        //computeTime();
+        //computePhysics();
+        //drawScene();
+        //glutSwapBuffers();
+        //frameCounter++;
+    //} else {
+        //std::cout << "Parando após " << totalFrames << " execuções" << std::endl;
+        //glutDestroyWindow(currentWindow);
+        //exit(0);
+    //}
+//}
+
+void timer(int value)
+{
+    std::ostringstream oss;
+    oss << winCaption << ": " << FrameCount << " FPS @ (" << winWidth << "x" << winHeight << ")";
+    std::string s = oss.str();
+    glutSetWindow(currentWindow);
+    glutSetWindowTitle(s.c_str());
+
+    if (FrameCount != 0) {
+        fprintf(fpsF, "%d\n", FrameCount);
+    }
+
+    FrameCount = 0;
+    glutTimerFunc(1000, timer, 0);
 }
 
 void init(int argc, char* argv[])
@@ -478,6 +513,7 @@ void init(int argc, char* argv[])
     nObjects = atoi(argv[1]);
     totalObjects = (nObjects * 4) + 1;
     engine_init(argc,argv);
+    glutTimerFunc(0,timer,0);
     glutDisplayFunc(display);
 
     createMeshes();
